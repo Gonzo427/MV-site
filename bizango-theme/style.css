@@ -9,7 +9,7 @@ a,b,body,div,h1,h2,h3,h4,h5,h6,hr,html,i,img,li,ol,p,span,table,tbody,td,tfoot,t
 html,body{ height:100%;}
 body{
 	width:100%;
-	color:#235885;
+	color:#221e20;
 	font-family:"Lato", "Helvetica", Arial, Sans-Serif;
 	font-size:14px;
 	font-weight: 400;
@@ -35,7 +35,6 @@ h1, h2, h3, h4{
 	margin-bottom:0.5em;
 	line-height:120%;
 	font-weight:400;
-	font-family: "imperial-urw";
 }
 
 h1{font-size:2em;}
@@ -419,6 +418,53 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .table{display: table;width: 100%;}
 .cell{display: table-cell;vertical-align: middle;}
 .clear{clear:both;}
+
+/* COLORS */
+
+.orange{
+	color: #e35539;
+}
+
+/* Cover Story */
+.cover-story{
+	height: 500px;
+	position: relative;
+	
+}
+
+.cover-snippet-wrap{
+	background:white;
+	padding: 20px 0 40px;
+	top: 43%;
+	position: absolute;
+}
+.cover-snippet-wrap h1 {
+
+}
+.cover-snippet-wrap p{
+
+}
+.categories{
+	display: block;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: .12em
+	font-size: .8em;
+	padding: 0 0 20px 0;
+}
+.categories a{
+	color: #e35539;
+}
+
+/* Feature Stories */
+.feature-group{
+	display: flex;
+}
+.feature-story{
+	flex-flow: row nowrap;
+	padding: 20px;
+}
+
 
 /* Desktop Small */
 @media only screen and (max-width: 1099px){

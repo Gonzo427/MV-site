@@ -20,4 +20,15 @@ register_nav_menus( array(
 
 add_action( 'init', 'register_my_menus' );
 
+//custom background
+/*add_action('genesis_header', 'add_content_to_header');
+function add_content_to_header() {
 
+$bg = get_field('cover_image');
+
+if( !empty($bg) ){
+$new_background = $bg['url'];
+echo '<body style="background: url('.$new_background.') center no-repeat; background-size: cover;">';
+}
+
+}*/
