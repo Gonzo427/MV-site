@@ -27,10 +27,19 @@ function enqueue_font_awesome(){
 add_action('wp_enqueue_scripts','enqueue_font_awesome');
 
 
-function bizango_scripts() {
-    wp_enqueue_script( 'subscribe-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+function add_theme_scripts() {
+   wp_enqueue_script( 'subscribe-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+ 
+  wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slick.css', array(), '1.1', 'all');
+  wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slick-theme.css', array(), '1.1', 'all');
+ 
+  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/slick.min.js', array ( 'jquery' ), 1.1, true);
+  wp_enqueue_script( 'slickjs-init', get_stylesheet_directory_uri(). '/js/slick-init.js', array( 'slickjs' ), '1.5.9', true );
+
+ 
 }
-add_action( 'wp_enqueue_scripts', 'bizango_scripts' );
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
 
 
 //custom background

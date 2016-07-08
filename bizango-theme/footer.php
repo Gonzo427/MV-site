@@ -43,23 +43,24 @@
 
 
 			</div>
+
+			
+			<div class="copy tAc">&copy; <?php echo date("Y"); ?> <?php echo bloginfo("name");?> </div>
 		</div>
 
+		
+			<div class="col4 fr">
+				<?php query_posts('showposts=1&cat=17'); ?>
+                    <?php while (have_posts()) : the_post(); ?>
+                         <img src="<?php the_field('upcoming_issue_image'); ?>" alt="upcoming issue"/>
+                     <?php endwhile; ?>
+			</div>
 
-					<div class="copy tAc">&copy; <?php echo date("Y"); ?> <?php echo bloginfo("name");?> </div>
+					
+	</div>
+	
 	</div>
 
-
-
-
-		</div>
-
-<!-- 	<div class="cell second">
-			<div class="copy">&copy; <?php echo date("Y"); ?> <?php echo bloginfo("name");?> </div>
-		<div class="footnav">
-		<?php wp_nav_menu(array('theme_location' => 'Main_Menu','menu' => '', 'menu_class' => 'nav')); ?> 
-		</div>
-	</div> -->
 
 
 </div>

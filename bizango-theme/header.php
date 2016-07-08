@@ -22,6 +22,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+		<script src="https://use.typekit.net/jmj7nut.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 		<!--wordpress head-->
 		<?php wp_head(); ?>
 	</head>
@@ -37,8 +40,9 @@
 
 
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/mag.png" class="mag">
-			<div id="subscribe"><a href="#">Subscribe</a></div>
+			
 			<div id="subnav">
+				<div id="subscribe" class="alt-gothic"><a href="#">Subscribe</a></div>
 						<?php wp_nav_menu(array('theme_location' => 'sub-menu','menu' => '', 'menu_class' => 'subnav')); ?> 
 			</div>
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/print-digital.png" class="navbutton">

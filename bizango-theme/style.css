@@ -176,7 +176,7 @@ ul.subnav a{
 #mobile_nav{display: none;}
 .mag{    
 	float: right;
-    margin-top: -9px;
+    margin-top: 11px;
     margin-right: 33px;
 }
 .navbutton{
@@ -185,20 +185,35 @@ ul.subnav a{
     right: 18px;
     bottom: -25px;
 }
+#subscribe{
+	position: relative;
+	top: 50px;
+}
 #subscribe a{
 	color: #e35539;
 	text-transform: uppercase;
 	float: right;
-	font-weight: 700;
+	letter-spacing: .05em;
+	font-size: 1.5em;
 }
 #subscribe a:after{
 	content: ">";
+	background: #e35539;
+	color: white;
+    border-radius: 50%;
+    padding: 3px 7px 2px;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+    top: -2px;
+    right: 5px;<div class="fr">
 }
 
 
 #footer{
     font-size: 13px;
     background-color: #ededed;
+    height: 308px;
 }
 #footer ul{margin-left: 0;}
 .col1{
@@ -213,10 +228,18 @@ ul.subnav a{
 	float: left;
 	text-align: center;
 }
+.col2 a{
+	font-weight: 700;
+}
 .col3{
 	width: 223px;
 	float: left;
 	text-align: center;
+}
+.col4{
+	width: 30.2%;
+    position: absolute;
+    right: -0px;
 }
 .tagline{    
 	margin-top: 4px;
@@ -236,6 +259,12 @@ ul.subnav a{
 #footer .page_content{    padding: 35px 0 30px;}
 .copy{
     float:left;
+    color: #909090;
+    display: inline-block;
+    width: 380px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    font-size: .78571428571429em;
 }
 .footnav{
 	position: relative;
@@ -441,8 +470,8 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 }
 
 .cover-snippet-wrap{
-	background:white;
-	padding: 20px 0 40px;
+	/*background:white;
+	padding: 20px 0 40px;*/
 	top: 43%;
 	position: absolute;
 }
@@ -458,13 +487,19 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	font-weight: 700;
 	letter-spacing: .12em;
 	font-size: .8em;
-	padding: 0 0 20px 20px;
+	padding: 0 0 30px 20px;
 }
 .categories a{
 	color: #e35539;
 }
-
+.read-more{
+	text-transform: uppercase;
+	font-size: .857142em;
+	float: right;
+    font-weight: 600;
+}
 /* Feature Stories */
+
 .feature-group{
    	display: flex;
     -webkit-box-shadow: -11px 12px 22px -11px rgba(0,0,0,0.75);
@@ -482,11 +517,17 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .feature-story{
 	width: 33%;
 }
+.feature-story img{
+	min-height: 131px;
+}
 .news-group{
 	padding-top: 20px;
 }
+.news-feed{
+	padding: 0 30px;
+}
 .feature-story p,.feature-story h2 {
-	padding: 0 20px;
+	padding: 0 30px;
     color: #221e20;
 }
 
@@ -496,6 +537,9 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	background: lightgrey;
 	margin: 22px 0;
 	height: 90px;
+}
+.sidebar-ad {
+    margin: 25px 0;
 }
 
 .living-the-life{
@@ -562,7 +606,6 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	display: inline-block;
 	color: white;
 	margin: 30px 0;
-    text-align: center;
     width: 100%;
     font-size: 1.1157142857em;
     text-transform: uppercase;
@@ -576,8 +619,8 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .news-signup p:before, .news-signup p:after {
   content: "";
   display: inline-block;
-  width: 18%;
-  margin: 0 30px;
+  width: 16%;
+  margin: 0 40px;
   vertical-align: middle;
   border-bottom: 1px solid;
 }
@@ -611,6 +654,32 @@ input[placeholder="Email Address *"]{
 }
 
 
+/*Current Issue */
+
+
+/* Sponsored content - News,Products and Profiles  */
+.sponsored-wrap h3{
+	background: #f7f7f7;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 1.42857142857143em;
+	letter-spacing: .120em;
+}
+.sponsored-wrap{
+	background: #feffff;
+	margin: 30px 0;
+}
+.row{
+	display: inline-block;
+	margin: 18px 0;
+}
+.sponsored-content{
+	padding: 0 40px;
+}
+
+.sponsored-excerpt{
+	width: 59.5%;
+}
 
 /* Desktop Small */
 @media only screen and (max-width: 1099px){
