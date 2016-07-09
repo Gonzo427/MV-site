@@ -11,7 +11,6 @@ get_header();
 
 
 
-
 <div class="main_content">
     <div   <?php
             if ( get_field('cover_image') ) {//display "cover story" image as background image 
@@ -20,27 +19,37 @@ get_header();
    
 
         <div class="cover-snippet-wrap" >
-        <div class="white-bg">
-            <!-- display categories of cover story-->
-            <div class="categories page_frame"><?php $cats='' ;
-            foreach((get_the_category()) as $category) {
-                $cats=$cats.$category->cat_name . ': ';}
-            $cats = substr($cats,0,-2); echo $cats; ?></div>
+        
+            
+            <div class=" page_frame cover-content">
+            
 
             <!--display most recent story with "Cover Story" category -->
-            <div class=" page_frame">
+           
             <?php $cat_id = 8; //the cover story category ID
             $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
             if( $latest_cat_post->have_posts() ) : while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post();  ?>
+                <div class="fl ">
+            <!-- display categories of cover story-->
+                    <div class="categories">
+                    <?php $cats='' ;
+                    foreach((get_the_category()) as $category) {
+                        $cats=$cats.$category->cat_name . ': ';}
+                        $cats = substr($cats,0,-2);
+                        echo $cats; ?>  
+                    </div>
+
+
+                <a href="<?php the_permalink(); ?>">
+                <h1><?php the_title(); ?></h1>  </a>
+                </div>
+                <div class="cover-blurb">
+                <p><?php the_field('post_excerpt'); ?></p>
+                
+                <?php endwhile; endif; ?>
+                <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a></div>
             </div>
             
-                <a href="<?php the_permalink(); ?>">
-                <h1><?php the_title(); ?></h1>  
-                <div class="fr">
-                <?php the_field('post_excerpt'); ?>
-
-                <?php endwhile; endif; ?></div></a>
-                </div>
         </div><!--end cover snippet wrap-->
      
     </div> <!-- end .cover-story -->
@@ -84,59 +93,94 @@ get_header();
        
      </div>  <!--end feature group--> 
 
-        <div class="main-ad"> 
-            <?php query_posts('showposts=1&cat=9'); ?>
-            <?php while (have_posts()) : the_post(); ?>
-                  <?php the_content(); ?> 
-             <?php endwhile; ?>
+    <div class="main-ad"> 
+        <?php query_posts('showposts=1&cat=9'); ?>
+        <?php while (have_posts()) : the_post(); 
+            the_content(); 
+        endwhile; ?>
+    </div>
 
-            </div>
-
-             <div class="spotlight"> 
-                 <div class="living-the-life fl white-bg"> 
+    <div class="spotlight"> 
+        <div class="living-the-life fl white-bg"> 
 
                     <?php query_posts('showposts=1&cat=13'); ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php the_category(); ?>  <?php the_content(); ?> 
+                        <?php the_category(); ?>  
+                        <img src="<?php the_field('post_image'); ?>"  alt=""/>
+                        <div class="padding-25">
+                        <h2> <?php the_title(); ?> </h2>
+                        <p> <?php the_field('post_excerpt'); ?> </p>
                         <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+                        </div>
                      <?php endwhile; ?>
                  </div>
 
                  <div class="product-spotlight fl white-bg"> 
                     <?php query_posts('showposts=1&cat=14'); ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php the_post_thumbnail() ?>
-                         <?php the_category(); ?>   
-                         <?php the_content(); ?> 
+                        <?php the_category(); ?> 
+                        <img src="<?php the_field('post_image'); ?>"  alt=""/> 
+                         
+                        <div class="padding-25">
+                         <h2> <?php the_title(); ?> </h2>
+                         <p><?php the_field('post_excerpt'); ?></p>
                          <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+                         </div>
                      <?php endwhile; ?>
                  </div>
 
 
-            </div>
+    </div>
 
-            <!-- BEGIN: Benchmark Email Signup Form Code -->
-            <div class="news-signup tAc">
+        <!-- BEGIN: Benchmark Email Signup Form Code -->
+        <div class="news-signup tAc">
                 Get weekly updates from
-                <p class="subscribe"><span>marijuana venture</span></p>
-                <script type="text/javascript" id="lbscript704450" src="https://www.benchmarkemail.com/code/lbformnew.js?mFcQnoBFKMTz2sY8%252Ft2m0uZXUawFafLCaOj5IMQffuk1SgsGRzPBIg%253D%253D"></script><noscript>Please enable JavaScript <br /></noscript>
-            </div>
+            <p class="subscribe"><span>marijuana venture</span></p>
+            <script type="text/javascript" id="lbscript704450" src="https://www.benchmarkemail.com/code/lbformnew.js?mFcQnoBFKMTz2sY8%252Ft2m0uZXUawFafLCaOj5IMQffuk1SgsGRzPBIg%253D%253D"></script><noscript>Please enable JavaScript <br /></noscript>
+        </div>
             <!-- END: Benchmark Email Signup Form Code -->
 
-            <div class="now-available">
-           
-               
-               
-            </div><!--end now-available-->
+        <!--NOW AVAILABLE SLIDER -->
+        <div class="now-available">
+         <?php query_posts('showposts=1&cat=15'); ?>
+         <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
+         
+                <!--slider code-->
+                <?php  
+
+                $images = get_field('current_issue');
+
+                if( $images ): ?>
+                    <div id="slider" class="flexslider">
+                        <span class="orange-circle"><p>Now Available</p></span>
+                        <ul class="slides">
+                            <?php foreach( $images as $image ): ?>
+                                <li>
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                    <h3>In This Issue</h3>
+                                    <p><?php echo $image['caption']; ?></p>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                   
+                <?php endif; ?>
+
+
+
+      <?php endwhile; ?>   
+        </div><!--end now-available-->
+
+
             <div class="sponsored-wrap">
             <h3>NEWS, PRODUCTS &amp; PROFILES</h3>
             <div class="sponsored-content">
-                <?php query_posts('showposts=&cat=16'); ?>
+                <?php query_posts('showposts=2&cat=16'); ?>
                 <?php while (have_posts()) : the_post(); ?>
-                   <div class="row"><img src="<?php the_field('sponsored_product_image'); ?>"  alt="sponsored product"/> 
+                   <div class="row"><img src="<?php the_field('post_image'); ?>"  alt="sponsored product"/> 
                     <div class="fr sponsored-excerpt"><h4> <?php the_title(); ?> </h4>
                     <p class="sponsored-post">Sponsored Post</p>
-                    <p><?php the_field('sponsored_product_description'); ?></p>
+                    <p><?php the_field('post_excerpt'); ?></p>
                     <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
                     </div>
                     </div><!--end row-->
@@ -166,15 +210,17 @@ get_header();
             <?php if (in_category('10')) : ?>
                   <p><?php the_content(); ?> </p>
             <?php else : ?>
+                <div class="categories">
                 <?php $categories = get_the_category();
  
                 if ( ! empty( $categories ) ) {
-                    echo esc_html( $categories[0]->name );   
-                } ?>
+                    echo esc_html(  $categories[0]->name );   
+                } ?></div>
                  <a href="<?php the_permalink(); ?>">
                 <h3> <?php the_title(); ?> </h3> </a> 
                 <p><?php the_field('post_excerpt'); ?></p>
-               
+                <div class="time-stamp"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></div>
+                <hr>
             <?php endif; ?>
 
                

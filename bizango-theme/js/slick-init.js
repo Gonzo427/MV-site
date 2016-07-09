@@ -1,13 +1,19 @@
 jQuery(document).ready(function($){
-	 $('.slider-for').slick({
+
+   $(document).ready(function(){
+   	alert('hi');
+          //  $('.slick-slider').slick();
+        });
+	 /*$('.slick-slider').slick({
+	
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
 	  arrows: true,
 	  fade: true,
 	  asNavFor: '.slider-nav'
-	});
-	$('.slider-nav').slick({
-	  slidesToShow: 2,
+	});*/
+	/*s$('.slider-nav').slick({
+	  lidesToShow: 2,
 	  slidesToScroll: 1,
 	  asNavFor: '.slider-for',
 	  dots: true,
@@ -15,6 +21,7 @@ jQuery(document).ready(function($){
 	  focusOnSelect: true,
 	  arrows: true,
 	  autoplay: false
-	});
+	});*/
+
 });
 

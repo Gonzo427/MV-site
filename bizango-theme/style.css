@@ -16,7 +16,11 @@ body{
 	-webkit-font-smoothing: antialiased;
 	background: url(images/leaf-bg.jpg);
 }
-
+hr{
+	background-color:#e0e0e0;
+	height: 1px;
+	margin: 25px -15px;
+}
 /*
 Lato:500,300,700
 */
@@ -38,7 +42,7 @@ h1, h2, h3, h4{
 	font-weight:400;
 }
 
-h1{font-size:2em;}
+h1{font-size:2.142857em;}
 h2{font-size:1.5em;}
 h3{font-size:1.2em;}
 h4{font-size:1.1em;}
@@ -79,11 +83,11 @@ body.home #hero_frame{
 
 .page_sidebar{
 	position: relative;
-	width:28.4684%;
+	width:29%;
 }
 .page_content{
 	position: relative;
-	width:69.1891%;
+	width:69%;
 }
 .page_half{
 	position: relative;
@@ -206,7 +210,7 @@ ul.subnav a{
     font-size: 15px;
     position: relative;
     top: -2px;
-    right: 5px;<div class="fr">
+    margin-left: 5px;
 }
 
 
@@ -237,9 +241,9 @@ ul.subnav a{
 	text-align: center;
 }
 .col4{
-	width: 30.2%;
+
     position: absolute;
-    right: -0px;
+    right: -8%;
 }
 .tagline{    
 	margin-top: 4px;
@@ -455,48 +459,53 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	color: #e35539;
 }
 
-.white-bg{
-	background:white;
-}
-.padding-20{
-	padding:20px;
+
+.padding-25{
+	padding:25px;
 }
 
 /* Cover Story */
 .cover-story{
 	height: 500px;
 	position: relative;
-	
 }
-
+.white-bg{
+	background:white;
+}
 .cover-snippet-wrap{
-	/*background:white;
-	padding: 20px 0 40px;*/
-	top: 43%;
-	position: absolute;
+	background-image:linear-gradient(to right,#fff, #fff 15%, #fff 15%,  #fff 85%, rgba(255,255,255,0)85% );
+	display: flex;
+	position: relative;
+	top: 250px;
 }
-.cover-snippet-wrap h1 {
-
+.cover-snippet-wrap h1{
+	color: #221e20;
 }
 .cover-snippet-wrap p{
 
 }
+.cover-content{
+	padding: 30px;	
+}
 .categories{
-	display: block;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: .12em;
 	font-size: .8em;
-	padding: 0 0 30px 20px;
+
 }
 .categories a{
 	color: #e35539;
+}
+.cover-blurb{
+	width: 50%;
 }
 .read-more{
 	text-transform: uppercase;
 	font-size: .857142em;
 	float: right;
     font-weight: 600;
+    padding: 20px 30px 20px 0;
 }
 /* Feature Stories */
 
@@ -515,7 +524,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	box-shadow: inset -13px 0px 22px -17px lightgrey;
 }
 .feature-story{
-	width: 33%;
+	width: 33.3%;
 }
 .feature-story img{
 	min-height: 131px;
@@ -526,16 +535,34 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .news-feed{
 	padding: 0 30px;
 }
+.news-feed .categories{
+	color: #e35539;
+	padding:5px 0;
+}
+.news-feed h3{
+	font-size: 1.1428571em;
+	font-weight: 900;
+	line-height: 22px;
+	color: #221e20;
+	margin-bottom: 0;
+}
+
 .feature-story p,.feature-story h2 {
 	padding: 0 30px;
     color: #221e20;
+    line-height: 22px;
 }
-
+.time-stamp{
+	font-size: 11px;
+	color: #868686;
+	text-transform: uppercase;
+	line-height: 22px;
+}
 
 /* Ads */
 .main-ad{
 	background: lightgrey;
-	margin: 22px 0;
+	margin: 25px 0;
 	height: 90px;
 }
 .sidebar-ad {
@@ -544,7 +571,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 .living-the-life{
 	width: 57%;
-	margin-right: 35px;
+	margin-right: 25px;
 }
 .product-spotlight{
 	width: 38%;
@@ -654,9 +681,40 @@ input[placeholder="Email Address *"]{
 }
 
 
-/*Current Issue */
+/*Now Available Issue */
+.now-available{
+	background: #feffff;
+	display: inline-block;
+}
+.slides{
+	display: inline;
+}
+.flexslider{
+	display: inline;
+	position:relative;
+}
+.flexslider{
+	display: inline;
+}
+.orange-circle{
+	background: #e35539;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: .12em;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 10;
+	display: table;
+	height: 150px;
+	width: 150px;
 
-
+}
+.orange-circle p{
+	font-weight: 700;
+    display: table-cell;
+    vertical-align: middle;
+}
 /* Sponsored content - News,Products and Profiles  */
 .sponsored-wrap h3{
 	background: #f7f7f7;
