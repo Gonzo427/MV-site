@@ -153,15 +153,29 @@ get_header();
                 if( $images ): ?>
                     <div id="slider" class="flexslider">
                         <span class="orange-circle"><p>Now Available</p></span>
+
                         <ul class="slides">
+                     
                             <?php foreach( $images as $image ): ?>
                                 <li>
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                    <h3>In This Issue</h3>
-                                    <p><?php echo $image['caption']; ?></p>
-                                </li>
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />     
+                                </li>  
+                                
                             <?php endforeach; ?>
+
+                             
+                            <?php foreach( $images as $image ): ?>
+                                <div class="flexslider-controls">
+                                    <ol class="flex-control-nav">
+                                    <li>
+                                    <h3><?php echo $image['caption']; ?>:</h3>
+                                    <p><?php echo $image['description']; ?> </p>
+                                    </li></ol>
+                                </div>
+                            <?php endforeach; ?>
+
                         </ul>
+<span class="in-this-issue"><h3>In This Issue:</h3></span>
                     </div>
                    
                 <?php endif; ?>

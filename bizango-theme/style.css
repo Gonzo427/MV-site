@@ -180,7 +180,6 @@ ul.subnav a{
 #mobile_nav{display: none;}
 .mag{    
 	float: right;
-    margin-top: 11px;
     margin-right: 33px;
 }
 .navbutton{
@@ -189,9 +188,13 @@ ul.subnav a{
     right: 18px;
     bottom: -25px;
 }
-#subscribe{
+.search-subscribe {
 	position: relative;
-	top: 50px;
+	top: 30px;
+	width: 100%;
+}
+#subscribe{
+	margin-bottom: 20px;
 }
 #subscribe a{
 	color: #e35539;
@@ -212,7 +215,32 @@ ul.subnav a{
     top: -2px;
     margin-left: 5px;
 }
+.search-form{
+	width: 100%;
+	display: inline-block;
+	margin-top: 12px;
+}
+.search-form input#s{
+    background: #f0f0f0;
+    border: none;
+    width: 96%;
+    padding: 10px 0;
+    margin-top: 10px;
+    letter-spacing: .05em;
+    color: #a4a4a4;	
+    text-indent: 28px;
+    text-transform: uppercase;
+}
+span.fa.fa-search{
+	 color: #a4a4a4;
+	 position: relative;
+	 left: -15px;
+	 top: -25px;
+}
 
+#searchsubmit{
+	display: none;
+}
 
 #footer{
     font-size: 13px;
@@ -473,7 +501,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	background:white;
 }
 .cover-snippet-wrap{
-	background-image:linear-gradient(to right,#fff, #fff 15%, #fff 15%,  #fff 85%, rgba(255,255,255,0)85% );
+	background-image:linear-gradient(to right,#fff, #fff 15%, #fff 15%,  #fff 65%, rgba(255,255,255,0)65% );
 	display: flex;
 	position: relative;
 	top: 250px;
@@ -685,17 +713,55 @@ input[placeholder="Email Address *"]{
 .now-available{
 	background: #feffff;
 	display: inline-block;
+	padding-bottom: 75px;
 }
 .slides{
-	display: inline;
+	margin-left: 0;
+	position:relative;
 }
 .flexslider{
 	display: inline;
 	position:relative;
 }
-.flexslider{
-	display: inline;
+.flexslider-controls {
+    position: relative;
+    bottom: -370px;
+    z-index: 10;
+    float: left;
+    width: 33.333%;
 }
+ol.flex-control-nav{
+	list-style: none;
+}
+.flex-control-nav li {
+	cursor: pointer;
+    float: left;
+	margin: 0.09em 0 0 0;
+	padding: 1em 1.5em;  
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  	background: #ededed;
+    height: 90px;
+    text-align: center;
+}
+
+.flex-control-nav li:last-child {
+   border: none;
+}
+.flex-control-nav p {
+	font-size: 11px;
+}
+.flex-control-nav h3 {
+	font-size: 16px;
+}
+
+.flex-control-nav .flex-active {
+  background: green;
+  color: #000;
+}
+
 .orange-circle{
 	background: #e35539;
 	color: white;
@@ -708,13 +774,25 @@ input[placeholder="Email Address *"]{
 	display: table;
 	height: 150px;
 	width: 150px;
-
 }
 .orange-circle p{
 	font-weight: 700;
     display: table-cell;
     vertical-align: middle;
 }
+.in-this-issue{
+ 	display: inline-block;
+    position: relative;
+    z-index: 2222;
+    background: #feffff;
+    width: 100%;
+    text-align: center;
+    bottom: -241px;
+    text-transform: uppercase;
+    color: #3b3b3b;
+    padding-top: 10px;
+}
+    
 /* Sponsored content - News,Products and Profiles  */
 .sponsored-wrap h3{
 	background: #f7f7f7;

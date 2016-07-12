@@ -7,36 +7,40 @@
 
 get_header();
 
-/**
- * determine main column size from actived sidebar
- */
-$main_column_size = bootstrapBasicGetMainColumnSize();
 ?> 
-<?php get_sidebar('left'); ?> 
-				<div class="col-md-<?php echo $main_column_size; ?> content-area" id="main-column">
-					<main id="main" class="site-main" role="main">
-						<?php if (have_posts()) { ?> 
-						<header class="page-header">
-							<h1 class="page-title"><?php printf(__('Search Results for: %s', 'bootstrap-basic'), '<span>' . get_search_query() . '</span>'); ?></h1>
-						</header><!-- .page-header -->
-						<?php 
-						// start the loop
-						while (have_posts()) {
-							the_post();
-							
-							/* Include the Post-Format-specific template for the content.
-							* If you want to override this in a child theme, then include a file
-							* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							*/
-							get_template_part('content', 'search');
-						}// end while
-						
-						bootstrapBasicPagination();
-						?> 
-						<?php } else { ?> 
-						<?php get_template_part('no-results', 'search'); ?>
-						<?php } // endif; ?> 
-					</main>
-				</div>
-<?php get_sidebar('right'); ?> 
+
+<div class="main_content">
+<div class="page_frame group">
+<?php
+    global $query_string;
+    $query_args = explode("&", $query_string);
+    $search_query = array();
+
+    foreach($query_args as $key => $string) {
+      $query_split = explode("=", $string);
+      $search_query[$query_split[0]] = urldecode($query_split[1]);
+    } // foreach
+
+    $the_query = new WP_Query($search_query);
+    if ( $the_query->have_posts() ) : 
+    ?>
+    <!-- the loop -->
+
+    <ul>    
+    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+        <h2>Search Results: </h2>
+        <li>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </li>   
+    <?php endwhile; ?>
+    </ul>
+    <!-- end of the loop -->
+
+    <?php wp_reset_postdata(); ?>
+
+<?php else : ?>
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
+</div>
+</div>
 <?php get_footer(); ?> 

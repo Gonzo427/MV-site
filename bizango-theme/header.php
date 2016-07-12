@@ -42,8 +42,11 @@
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/mag.png" class="mag">
 			
 			<div id="subnav">
+				<div class="search-subscribe fr">
 				<div id="subscribe" class="alt-gothic"><a href="#">Subscribe</a></div>
-						<?php wp_nav_menu(array('theme_location' => 'sub-menu','menu' => '', 'menu_class' => 'subnav')); ?> 
+				<div class="search-form"><?php get_search_form( ); ?></div>
+				</div>
+				<?php wp_nav_menu(array('theme_location' => 'sub-menu','menu' => '', 'menu_class' => 'subnav')); ?> 
 			</div>
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/print-digital.png" class="navbutton">
 
