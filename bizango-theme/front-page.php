@@ -162,7 +162,7 @@ get_header();
                                 </li>  
                                 
                             <?php endforeach; ?>
-
+<h3>In This Issue:</h3>
                              
                             <?php foreach( $images as $image ): ?>
                                 <div class="flexslider-controls">
@@ -175,7 +175,7 @@ get_header();
                             <?php endforeach; ?>
 
                         </ul>
-<span class="in-this-issue"><h3>In This Issue:</h3></span>
+                        <!--<span class="in-this-issue"><h3>In This Issue:</h3></span>-->
                     </div>
                    
                 <?php endif; ?>
