@@ -28,42 +28,32 @@ add_action('wp_enqueue_scripts','enqueue_font_awesome');
 
 
 function add_theme_scripts() {
-   wp_enqueue_script( 'subscribe-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+   wp_enqueue_script( 'subscribe-script', get_template_directory_uri() . '/js/email-subscribe.js', array( 'jquery' ), '1.0.0', true );
+   wp_enqueue_script( 'mobilenav-script', get_template_directory_uri() . '/js/mobile-nav.js', array( 'jquery' ), '1.0.0', true );
    wp_enqueue_script( 'flex-2-script', get_template_directory_uri() . '/js/flex-slideshow.js', array( 'jquery' ), '1.0.0', true );
- 
-  wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slick.css', array(), '1.1', 'all');
-  wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slick-theme.css', array(), '1.1', 'all');
-  wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/flexslider.css', array(), '1.1', 'all');
- 
-  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/slick.min.js', array ( 'jquery' ), 1.1, true);
-  wp_enqueue_script( 'slickjs-init', get_template_directory_uri(). '/js/slick-init.js', array( 'slickjs' ), '1.5.9', true );
-
    wp_enqueue_script( 'flex-script', get_template_directory_uri() .  '/js/jquery.flexslider-min.js', array( 'jquery' ), false, true );
+  
+   wp_enqueue_style( 'front-page', get_template_directory_uri() . '/css/front-page.css', array(), '1.1', 'all');
+   wp_enqueue_style( 'posts', get_template_directory_uri() . '/css/posts.css', array(), '1.1', 'all');
+   wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/flexslider.css', array(), '1.1', 'all');
  
+  
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 
-function themename_widgets_init() {
+function  mv_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Primary Sidebar', 'theme_name' ),
         'id'            => 'sidebar-1',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
-        'before_title'  => '<h1 class="widget-title">',
-        'after_title'   => '</h1>',
-    ) );
- 
-    register_sidebar( array(
-        'name'          => __( 'Secondary Sidebar', 'theme_name' ),
-        'id'            => 'sidebar-2',
-        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</li></ul>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
+ 
 }
-add_action( 'widgets_init', 'themename_widgets_init' );
+add_action( 'widgets_init', 'mv_widgets_init' );
 
 
 
