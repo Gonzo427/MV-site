@@ -28,6 +28,7 @@ p, li, figcaption {
 	line-height:1.4em;margin-top:0;
 	font-weight: 100;
 }
+
 figure {
   margin: 1em 0;
 }
@@ -83,7 +84,7 @@ body.home #hero_frame{
 
 .page_sidebar{
 	position: relative;
-	width:29%;
+	width:28%;
 }
 .page_content{
 	position: relative;
@@ -111,6 +112,11 @@ body.home #hero_frame{
 .page_third{
 	position: relative;
 	width: 33.33%;
+}
+.page_two_thirds{
+	position: relative;
+	width: 69%;
+	clear:left;
 }
 .abs{
 	position: absolute;
@@ -206,7 +212,7 @@ ul.subnav a{
 	text-transform: uppercase;
 	float: right;
 	letter-spacing: .05em;
-	font-size: 1.5em;
+	font-size: 37.59px;
 }
 #subscribe a:after{
 	content: ">";
@@ -293,7 +299,7 @@ span.fa.fa-search{
 
 }
 #footer .footnav a{height: initial!important;line-height: inherit;}
-#footer .page_content{    padding: 35px 0 30px;}
+#footer .page_content{    padding: 35px 0 15px;}
 .copy{
     float:left;
     color: #909090;
@@ -497,6 +503,9 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .padding-25{
 	padding:25px;
 }
+.thick-top-border{
+	border-top: 8px solid black;
+}
 
 
 /* Awkward size fixes */
@@ -654,6 +663,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	
 
 	/**********NEWS SIGNUP **********/
+
 	.news-signup p::before, .news-signup p::after{
 		margin: 0 10px;
 	}

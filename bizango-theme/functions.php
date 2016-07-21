@@ -41,21 +41,56 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+//Add sidebars
 
-function  mv_widgets_init() {
-    register_sidebar( array(
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+    /* Register the 'primary' sidebar. */
+    register_sidebar(
+        array(
         'name'          => __( 'Primary Sidebar', 'theme_name' ),
         'id'            => 'sidebar-1',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ) );
- 
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => __( 'Secondary Sidebar', 'theme_name' ),
+        'id'            => 'secondary',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+        )
+    );
+    /* Repeat register_sidebar() code for additional sidebars. */
 }
-add_action( 'widgets_init', 'mv_widgets_init' );
 
 
+
+//Add Woocommerce support
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<div class="main_content"><div class="page_frame group">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</div></div>';
+}
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
 //custom background
 /*add_action('genesis_header', 'add_content_to_header');

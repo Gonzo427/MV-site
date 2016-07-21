@@ -1,18 +1,58 @@
 /* Styles for single posts */
-.single .page_content {
-    padding: 30px 55px;
+
+/* UNIQUE BACKGROUND IMAGE */
+.post-bg{
+	width: 100%;
+	padding: 44px 0;
+}
+/**/
+.single h2, .single h3, .single p{
+	color: #666565;
+} 
+.single h1{
+	text-shadow: 1px 1px 1px grey;
 }
 
-.single .news-group{
+.post_content {
+    padding: 30px 55px;
+    width: 59%;
+    margin-top: -15px;
+}
+
+.single .news-group, .single .news-group h2 {
 	background: none;
 	-webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
-.single .news-group h2 {
+
+.single h1, .single .news-feed h3, .single .news-group h2 , .single .news-feed p, p.byline, p.post-date, .news-signup p{
 	color: white;
-	background: none;
+	margin: 0;
 }
-.single .news-feed h3, .single .news-feed p{
-	color: white;
+.post_content p{
+	font-size: 1.142857em;
+	margin: 10px 0;
+}
+
+.byline{
+	font-weight: 700;
+	margin: 15px 0 -15px 0 !important;
+}
+.post-date{
+	font-weight: 400;
+}
+
+.white-dot{
+
+    width: 65px;
+    height: 65px;
+    display: block;
+    background: white;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+}
+.page_three_quarter span.post-category-info{
+	left: 0;
 }

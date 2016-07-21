@@ -29,7 +29,7 @@ get_header();
                      
 
 </div>
-<img src="http://susanblacknarayan.com/wp-content/uploads/2016/05/emblem.png" class="emblem">
+
 </div>
 
 <?php get_footer(); ?> 

@@ -45,7 +45,8 @@
 /* Feature Stories */
 
 .feature-group{
-   	display: flex;
+   	display: table;
+   	 margin-top: 40px;
     -webkit-box-shadow: -11px 12px 22px -11px rgba(0,0,0,0.75);
 	-moz-box-shadow: -11px 12px 22px -11px rgba(0,0,0,0.75);
 	box-shadow: -11px 12px 22px -11px rgba(0,0,0,0.75);
@@ -53,13 +54,14 @@
 .feature-story, .news-group{
 	 margin-top: 40px;
 	background: white;
-	 border-top: 8px solid black;
 	-webkit-box-shadow: inset -13px 0px 22px -17px lightgrey;
 	-moz-box-shadow: inset -13px 0px 22px -17px lightgrey;
 	box-shadow: inset -13px 0px 22px -17px lightgrey;
 }
 .feature-story{
-	width: 33.3%;
+	width: 33%;
+	display: table-cell;
+    vertical-align: top;
 }
 .feature-story img{
 	min-height: 131px;
@@ -87,9 +89,13 @@ span.post-category-info{
 		left:30px ;
 	}
 .feature-story p,.feature-story h2 {
-	padding: 15px 30px 0;
+	padding: 0px 30px 0;
     color: #221e20;
-    line-height: 22px;
+    line-height: 16px;
+}
+.feature-story h2 {
+	padding-top: 15px;
+	line-height: 22px;
 }
 .time-stamp{
 	font-size: 11px;
@@ -164,10 +170,10 @@ img.mag-cover{
 
 .living-the-life{
 	width: 57%;
-	margin-right: 25px;
+	margin-right: 30px;
 }
 .product-spotlight{
-	width: 38%;
+	width: 39%;
 }
 
 .living-the-life ul, .product-spotlight ul{
@@ -232,15 +238,15 @@ img.mag-cover{
 }
 .news-signup p{
 	font-family: impact, sans-serif;
-	font-size: 2.685em;
+	font-size: 2.685em !important;
 	text-align: center; 
    margin: 10px 0 -23px; 
 }
 .news-signup p:before, .news-signup p:after {
   content: "";
   display: inline-block;
-  width: 16%;
-  margin: 0 30px;
+  width: 22%;
+  margin: 0 5px;
   vertical-align: middle;
   border-bottom: 1px solid;
 }

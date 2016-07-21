@@ -190,9 +190,10 @@ get_header();
 
     
 
-        <!--SIDEBAR-->
+        <!--SIDEBAR--> 
+         <div class="page_sidebar fr">
         <?php get_sidebar(); ?>
-
+        </div>
      </div><!--end page-frame-group -->
 </div>
 

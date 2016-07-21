@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template for feature stories
+ * Template for features category
  * 
  * @package bizango-theme
  */
@@ -8,13 +8,13 @@
 
  ?>    
 
-    <div class="feature-group">
-    <?php query_posts('category_name=FEATURES&showposts=3');
+    <div class="feature-group ">
+    <?php query_posts('cat=3&showposts=3');
         while ( have_posts() ) : the_post(); ?> 
 
-            
+           
           
-            <div class="feature-story">
+            <div class="feature-story thick-top-border">
                <!--Display category name except "Features"-->
                 <img src="<?php the_field('post_image'); ?>">
                 <div class="categories"><?php
