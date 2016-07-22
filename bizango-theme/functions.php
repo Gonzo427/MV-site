@@ -35,6 +35,7 @@ function add_theme_scripts() {
   
    wp_enqueue_style( 'front-page', get_template_directory_uri() . '/css/front-page.css', array(), '1.1', 'all');
    wp_enqueue_style( 'posts', get_template_directory_uri() . '/css/posts.css', array(), '1.1', 'all');
+   wp_enqueue_style( 'pages', get_template_directory_uri() . '/css/pages.css', array(), '1.1', 'all');
    wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/flexslider.css', array(), '1.1', 'all');
  
   
@@ -70,7 +71,6 @@ function my_register_sidebars() {
 }
 
 
-
 //Add Woocommerce support
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
@@ -91,6 +91,30 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+//this code creates a shortcode to create Pull Quotes in a post
+
+
+function pullQuote($atts, $content = null) {
+   
+   return '<p class="pull-quote" >' . do_shortcode($content) . '</p>';
+}
+add_shortcode('pullquote', 'pullQuote');
+
+function pullQuoteLeft($atts, $content = null) {
+   
+   return '<p class="pull-quote-left" >' . do_shortcode($content) . '</p>';
+}
+add_shortcode('pullquote-left', 'pullQuoteLeft');
+
+function pullQuoteRight($atts, $content = null) {
+   
+   return '<p class="pull-quote-right" >' . do_shortcode($content) . '</p>';
+}
+add_shortcode('pullquote-right', 'pullQuoteRight');
+
+
+
 
 //custom background
 /*add_action('genesis_header', 'add_content_to_header');

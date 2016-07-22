@@ -13,12 +13,10 @@ get_header();
 <?php
     // TO SHOW THE PAGE CONTENTS
     while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-        <div class="page_quarter fl">
-            <?php the_title(); ?> <!-- Page Content -->
-        </div>
-
-        <div class="page_wide_content fr">
-            <?php the_content(); ?> <!-- Page Content -->
+        <div class="page_wrap white-bg thick-top-border fl">
+            <h1><?php the_title(); ?></h1> <!-- Page Title -->
+       
+            <p><?php the_content(); ?></p> <!-- Page Content -->
         </div><!-- .entry-content-page -->
 
     <?php
@@ -26,6 +24,10 @@ get_header();
     wp_reset_query(); //resetting the page query
 ?>
 
+   <!--SIDEBAR--> 
+         <div class="page_sidebar fr">
+        <?php get_sidebar(); ?>
+        </div>
                      
 
 </div>

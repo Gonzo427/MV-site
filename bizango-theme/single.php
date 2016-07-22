@@ -46,13 +46,11 @@ get_header();
                 <img src="<?php the_field('post_image'); ?>"  alt=""/>
                 <?php the_content(); ?> <!-- Page Content -->
              
-                <p> <a href=" <?php comments_link(); ?> ">Comment</a> </p> 
+               
               
-<a href="<?php the_permalink(); ?>#respond"><?php comments_number('No Comments', '1 Comment', '% Comments'); ?></a>
+<a style="cursor:pointer" onclick="jQuery('#respond').toggle();">Comment</a>
 
-<?php //comments_template('comments.php'); ?> 
-
-
+<?php comments_template('comments.php'); ?> 
             </div>
           
         </div><!-- .page-content-page -->

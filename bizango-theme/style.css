@@ -27,6 +27,7 @@ Lato:500,300,700
 p, li, figcaption {
 	line-height:1.4em;margin-top:0;
 	font-weight: 100;
+	margin: 10px 0;
 }
 
 figure {
@@ -93,7 +94,6 @@ body.home #hero_frame{
 .page_half{
 	position: relative;
 	width: 45%;
-	display: inline-block;
 }
 .page_half_noguttter{
 	position: relative;
@@ -212,7 +212,7 @@ ul.subnav a{
 	text-transform: uppercase;
 	float: right;
 	letter-spacing: .05em;
-	font-size: 37.59px;
+	font-size: 21px;
 }
 #subscribe a:after{
 	content: ">";
@@ -498,13 +498,37 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .orange{
 	color: #e35539;
 }
-
+/* PADDINGS AND MARGINS */
+.margin-top-20{
+	margin-top: 20px;
+}
+.margin-bottom-20{
+	margin-bottom: 20px;
+}
+.margin-top-40{
+	margin-top: 40px;
+}
+.margin-bottom-40{
+	margin-bottom: 40px;
+}
+.margin-30{
+	margin: 30px;
+}
+.padding-top-20{
+	padding-top: 20px;
+}
+.padding-bottom-20{
+	padding-bottom: 20px;
+}
 
 .padding-25{
 	padding:25px;
 }
 .thick-top-border{
 	border-top: 8px solid black;
+}
+.light-border-bottom{
+	border-bottom: 1px solid #e0e0e0;
 }
 
 
@@ -576,9 +600,9 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	}
 	#mobile_nav .nav{
 		position: absolute; 
-		width: 30%;
-		top:16px;
-		right: 21px;
+		width: 50%;
+		top:20px;
+		right: 0px;
 		z-index: 2;
 	}
 	#mobile_nav .nav li{
@@ -587,11 +611,13 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		line-height: 25px;
 		background-color: #ccc;
 		border-bottom: 1px solid white;
-		padding: 0 5%;
 		list-style: none;
 		text-align: center;
 		padding: 5px;
 		display: none;
+	}
+	#mobile_nav .nav li:last-child{
+		border-bottom: none;
 	}
 	/*******FOOTER ******/
 
@@ -611,8 +637,11 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		float:none;width: 100%;margin: 0;
 	
 	}
-	.page_quarter,.page_half_noguttter,.page_half,.page_tricol_right,.page_tricol_left,.page_tricol_content,.page_content,.page_sidebar,.blog_main_column,.blog_header{
-		width: 90%;margin:0;padding: 0 5%;
+	div#subnav, textarea, .copy{
+		width: 100%;
+	}
+	.page_quarter,.page_half_noguttter,.page_half, .page_two_thirds, .page_tricol_right,.page_tricol_left,.page_tricol_content,.page_content,.page_sidebar,.blog_main_column,.blog_header{
+		width: 100%;margin:0 auto;
 	}
 	.page_tricol_left{
 		text-align: left;
@@ -628,7 +657,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	.cover-blurb {
     	width: 100%;
 	}
-
+	
 
 	/********FEATURE STORIES ********/
 	.feature-group{

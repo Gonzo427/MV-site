@@ -1,0 +1,10 @@
+/* Styles for pages */
+
+
+.page_wrap {
+	position: relative;
+	width:69%;
+    padding: 30px 55px;
+    width: 59%;
+    margin-top: 40px;
+}

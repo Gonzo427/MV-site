@@ -135,14 +135,14 @@ get_header();
                             
                              <span class="in-this-issue"><h3>In This Issue:</h3></span>
                              <div class="abs editions-wrapper">
-                             <div class="page_half ">
+                             <div class="page_half buy-now-wrap">
                                     <span class="editions"><p>Print and Digital Editions</p></span>
                                     <button class="buy-now fr">Buy Now</button>
                                 </div>
                                  <div class="fr cover-month-year">
                                     
                                     <p class="month"><?php the_field('month'); ?>  </p>
-                                    <p class="year"><?php the_field('year'); ?>  </p>
+                                    <p class="year margin-bottom-20"><?php the_field('year'); ?>  </p>
                                      <img class="mag-cover" src="<?php the_field('small_magazine_cover_image'); ?>"  alt=""/>
                                 </div>
 
