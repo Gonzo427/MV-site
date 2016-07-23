@@ -11,14 +11,16 @@
 
 
        
-        <?php query_posts('showposts=5&cat=-3,-8,-9,-11,-13,-14,-15,-16,-17,-19'); ?>
+        <?php query_posts('showposts=7&cat=-3,-8,-9,-13,-14,-15,-16,-17,-18,-19'); ?>
        
         <?php while (have_posts()) : the_post(); ?>
 
             <div  class="news-feed">
 
-            <?php if (in_category('10')) : ?>
+            <?php if (in_category('Ad - News Feed')) : ?>
                   <p><?php the_content(); ?> </p>
+                  <hr>
+
             <?php else : ?>
                 <div class="categories">
                 <?php $categories = get_the_category();
@@ -33,7 +35,7 @@
                 <hr>
             <?php endif; ?>
 
-               
+              
               </div> 
          <?php endwhile; ?>
-       
+        <a class="more-news-btn" href="all-posts-archive">More</a>

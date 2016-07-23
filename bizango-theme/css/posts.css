@@ -81,6 +81,38 @@
     text-indent: 25px;
     padding: 20px 0;
 }
+/*  SOCIAL SHARING ICONS */
+.apss-theme-3  .apss-single-icon a{
+    border-radius: 10px;
+}
+
+.apss-theme-3  .apss-single-icon a[title="Share on Pinterest"] {
+    border-radius: 36px;
+}
+/* COMMENTS SECTION */
+.comments-section {
+    text-align: right;
+}
+.comment-btn {
+    background: #e35539;
+    padding: 12px 45px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .12em;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#respond{
+    display: none;
+}
+
+#respond input#submit {
+    background: #4e9f26;
+    border: none;
+    padding: 10px;
+    color: white;
+}
 
 
 /*- Mobile Styles Large */

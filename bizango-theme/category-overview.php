@@ -1,34 +1,28 @@
 <?php 
 /**
- * Template for feature stories
+ * Template for  category pages with overview text
  * 
  * @package bizango-theme
  */
 
+get_header();
 
  ?>    
 
-    <div class="feature-group ">
-    <?php query_posts('cat=3&showposts=3');
+  <div class="main_content">
+    <div class="page_frame group "> 
+    <h1>Special Stories</h1>
+    </div>
+    <?php query_posts('cat=5,6,7');
         while ( have_posts() ) : the_post(); ?> 
 
-           
+          <div class="page_frame group">
           
-            <div class="feature-story thick-top-border">
+            <div class="features"> 
                <!--Display category name except "Features"-->
-               
-
-                <?php 
-
-          $image = get_field('post_image');
-          $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
-
-          if( $image ) {
-
-            echo wp_get_attachment_image( $image, $size );
-
-          }?>
-                <div class="categories"><?php
+                <img src="<?php the_field('post_image'); ?>">
+                <div class="categories">
+                <?php
                     $categories = get_the_category();
                     $separator = ' ';
                     $output = '';
@@ -39,18 +33,22 @@
                         }
                     echo trim($output, $separator);
                     }
-                ?> </div>
+                ?> 
+                </div>
+                 <img src="<?php the_field('post_image'); ?>">
               <a href="<?php the_permalink(); ?>">
                 <h2> <?php the_title(); ?> </h2></a>
                 <p> <?php the_field('post_excerpt'); ?> </p>
                  <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
             </div>
-
-           
+          </div>
+ 
  
         <?php
         endwhile; //resetting the page loop
         wp_reset_query(); //resetting the page query
         ?>
-       
-     </div> 
+       </div>
+    
+
+     <?php get_footer(); ?> 

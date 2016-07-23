@@ -8,3 +8,10 @@
     width: 59%;
     margin-top: 40px;
 }
+
+.left-0{
+	left: 0 !important;
+}
+.page .categories ~ li{
+	list-style: none;
+}

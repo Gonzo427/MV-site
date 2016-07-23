@@ -14,7 +14,8 @@
 }
 .cover-snippet-wrap h1{
 	color: #221e20;
-	padding-right: 100px;
+	padding-right: 15px;
+	max-width: 65%
 }
 .cover-snippet-wrap p{
 
@@ -40,7 +41,20 @@
 	font-size: 10.23px;
 	float: right;
     font-weight: 600;
-    padding: 20px 30px 20px 0;
+    padding: 5px 30px 20px 0;
+}
+.see-more-btn{
+    color: #e35539;
+    display: inline-block;
+    border: 2px solid #e35539;
+    font-size: 12px;
+    line-height: 22px;
+    float: right;
+    text-transform: uppercase;
+    position: relative;
+    top: -57px;
+    right: 35px;
+    padding: 3px 20px;
 }
 /* Feature Stories */
 
@@ -64,7 +78,7 @@
     vertical-align: top;
 }
 .feature-story img{
-	min-height: 131px;
+	min-height: 134px;
 	padding-bottom: 15px;
 }
 .news-group{
@@ -83,6 +97,16 @@
 	line-height: 22px;
 	color: #221e20;
 	margin-bottom: 0;
+}
+
+a.more-news-btn{
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .120em;
+    padding-bottom: 15px;
+    margin-top: -15px;
 }
 span.post-category-info{
 		position: relative;
@@ -103,11 +127,12 @@ span.post-category-info{
 	text-transform: uppercase;
 	line-height: 22px;
 }
+/* CURRENT ISSUE */
 .buy-now-wrap{
 	top: 95px;
     right: -45px;
 }
-.buy-now{
+a.buy-now{
 	position: relative;
     background: #e35539;
     text-transform: uppercase;
@@ -115,9 +140,10 @@ span.post-category-info{
     font-size: 11px;
     color: white;
     width: 150px;
-    height: 37px;
     letter-spacing: .12em;
     font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
 }
 .editions-wrapper{
 	right:0;
@@ -281,7 +307,7 @@ input[placeholder="Email Address *"]{
 #btnSubmit{
 	background: #4e9f26 !important;
 	border-radius: 0 !important;
-	padding: 7.5px 14px;
+	padding: 7px 14px;
 	margin: 10px 0 0;
 }
 
@@ -292,6 +318,9 @@ input[placeholder="Email Address *"]{
 	display: inline-block;
 	padding-bottom: 60px;
 	margin-bottom: 10px;
+}
+.m-now-available{
+	display: none;
 }
 .slides{
 	margin-left: 0;
@@ -385,9 +414,10 @@ ol.flex-control-nav{
 .sponsored-wrap h3{
 	background: #f7f7f7;
 	text-align: center;
-	padding: 20px 0;
+	padding: 20px 30px;
 	font-size: 1.42857142857143em;
 	letter-spacing: .120em;
+	text-align: left;
 }
 .sponsored-wrap{
 	background: #feffff;
@@ -400,10 +430,23 @@ ol.flex-control-nav{
 .sponsored-content{
 	padding: 0 40px;
 }
+.sponsored-post{
+	background: #bebebe;
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    margin: -5px 0;
+}
 
 .sponsored-excerpt{
 	width: 59.5%;
 }
+.sponsored-excerpt h4{
+	font-size: 18px;
+	}
 /*- Mobile Styles Large */
 @media only screen and (max-width: 960px){
 	 .news-signup p{
@@ -421,10 +464,19 @@ ol.flex-control-nav{
     width: 100%;
     display: inline-block;
    }
-.flexslider{
-	display: none;
-}
-  
+	.flexslider{
+		display: none;
+	}
+	.m-now-available{
+		display: inline-block;
+	}
+	a.buy-now{
+	    margin: 20px auto -30px;
+	    text-align: center;
+    	display: block;
+	}
+    
+	  
    .news-signup p::before, .news-signup p::after {
    		width: 90%;
    }	

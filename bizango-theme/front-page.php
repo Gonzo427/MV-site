@@ -115,63 +115,25 @@ get_header();
          <?php query_posts('showposts=1&cat=19'); ?>
          <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
          
-                <!--slider code-->
-                <?php  
-
-                $images = get_field('current_issue');
-
-                if( $images ): ?>
-                    <div id="slider" class="flexslider">
-                        <span class="orange-circle"><p>Now Available</p></span>
-
-                        <ul class="slides">
-                     
-                            <?php foreach( $images as $image ): ?>
-                                <li>
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />     
-                                </li>  
-                                
-                            <?php endforeach; ?>
-                            
-                             <span class="in-this-issue"><h3>In This Issue:</h3></span>
-                             <div class="abs editions-wrapper">
-                             <div class="page_half buy-now-wrap">
-                                    <span class="editions"><p>Print and Digital Editions</p></span>
-                                    <button class="buy-now fr">Buy Now</button>
-                                </div>
-                                 <div class="fr cover-month-year">
-                                    
-                                    <p class="month"><?php the_field('month'); ?>  </p>
-                                    <p class="year margin-bottom-20"><?php the_field('year'); ?>  </p>
-                                     <img class="mag-cover" src="<?php the_field('small_magazine_cover_image'); ?>"  alt=""/>
-                                </div>
-
-                            </div>
-                              
-                            <?php foreach( $images as $image ): ?>
-                                <div class="flexslider-controls">   
-                                    <ol class="flex-control-nav">
-                                    <li>
-                                    <h3><?php echo $image['caption']; ?>:</h3>
-                                    <p><?php echo $image['description']; ?> </p>
-                                    </li></ol>
-                                </div>
-                            <?php endforeach; ?>
-
-                        </ul>
-                       
-                    </div>
-                   
-                <?php endif; ?>
-
-
-
+                <?php include "current-issue-slider.php"; ?>
+           
+                <?php include "m-current-issue.php"; ?>
       <?php endwhile; ?>   
+      <!--mobile view hides slider and shows this image plus buy now button -->
+               
         </div><!--end now-available-->
 
 
             <div class="sponsored-wrap">
             <h3>NEWS, PRODUCTS &amp; PROFILES</h3>
+           <?php
+                // Get the ID of a given category
+                $category_id = get_cat_ID( 'Sponsored News, Products, Profiles' );
+
+                // Get the URL of this category
+                $category_link = get_category_link( $category_id );?>
+                <a class="see-more-btn"href="<?php echo esc_url( $category_link ); ?>" title="News, Products and Profiles">See More</a>
+           
             <div class="sponsored-content">
                 <?php query_posts('showposts=2&cat=16'); ?>
                 <?php while (have_posts()) : the_post(); ?>

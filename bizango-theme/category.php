@@ -15,7 +15,7 @@ get_header(); ?>
 if ( have_posts() ) : ?>
 
 <header class="archive-header">
-<h1 class="archive-title">Category: <span class="orange"><?php single_cat_title( '', true ); ?></span></h1>
+<h1 class="archive-title margin-bottom-40 light-border-bottom padding-bottom-20 padding-top-20" >Category: <span class="orange"><?php single_cat_title( '', true ); ?></span></h1>
 
 
 <?php
@@ -29,18 +29,34 @@ if ( have_posts() ) : ?>
 
 // The Loop
 while ( have_posts() ) : the_post(); ?>
-<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-<small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
+        <div class="list-of-posts">   
+          <!--post thumbnail images -->
+          <?php 
 
-<div class="entry margin-bottom-40 light-border-bottom padding-bottom-20">
+          $image = get_field('post_image');
+          $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
-                <p> <?php the_field('post_excerpt'); ?> </p>
-                 <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+          if( $image ) {
 
- <p class="postmetadata"><?php
-  comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', 'Comments closed');
-?></p>
-</div>
+            echo wp_get_attachment_image( $image, $size );
+
+          }?>
+
+
+      <div class="posts-content">
+        <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+        <small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
+
+        <div class="entry margin-bottom-40 light-border-bottom padding-bottom-20">
+
+          <p> <?php the_field('post_excerpt'); ?> </p>
+          <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+
+          <p class="postmetadata"><?php comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', 'Comments closed');
+          ?></p>
+        </div>
+        </div>
+    </div><!--end of list-of-posts-->
 
 <?php endwhile; 
   
@@ -49,6 +65,12 @@ else: ?>
 
 
 <?php endif; ?>
+
+ <!--SIDEBAR--> 
+         <div class="page_sidebar fr">
+         <?php get_field('overview_content'); ?>
+        <?php get_sidebar(); ?>
+        </div>
   </div>
 </div>
 
