@@ -20,14 +20,14 @@
 
                 <?php 
 
-          $image = get_field('post_image');
-          $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
+                $image = get_field('post_image');
+                $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
 
-          if( $image ) {
+                if( $image ) {
 
-            echo wp_get_attachment_image( $image, $size );
+                  echo wp_get_attachment_image( $image, $size );
 
-          }?>
+                }?>
                 <div class="categories"><?php
                     $categories = get_the_category();
                     $separator = ' ';

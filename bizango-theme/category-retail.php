@@ -1,13 +1,13 @@
 <?php 
 /**
- * Template for Categories
+ * Template for retail category pages with overview text
  * 
  * @package bizango-theme
  */
 
-get_header(); ?> 
+get_header();
 
-
+ ?>    
 <div class="main_content">
   <div class="page_frame group white-bg thick-top-border margin-top-40 margin-bottom-40 padding-25"> 
 <?php 
@@ -24,9 +24,8 @@ if ( have_posts() ) : ?>
 <div class="archive-meta"><?php echo category_description(); ?></div>
 <?php endif; ?>
 </header>
-
+<div class="page_half fl" >
 <?php
-
 // The Loop
 while ( have_posts() ) : the_post(); ?>
         <div class="list-of-posts">   
@@ -55,6 +54,7 @@ while ( have_posts() ) : the_post(); ?>
             ?></p>
           </div>
         </div>
+       
     </div><!--end of list-of-posts-->
 
 <?php endwhile; 
@@ -62,13 +62,22 @@ while ( have_posts() ) : the_post(); ?>
 else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
-
+</div><!--end page_half-->
 <?php endif; ?>
-
- <!--SIDEBAR--> 
-        
+   
   </div>
+
+ <div class="page_half fr" >
+   <!--SIDEBAR--> 
+    <?php the_field('category_content'); ?>
+    <?php
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+$subheading = get_field('category_content', $taxonomy . '_' . $term_id);?>
+
+<span class="sub_heading"><?php echo $subheading; ?></span>
+  
+  </div>    
 </div>
-
-
 <?php get_footer(); ?>

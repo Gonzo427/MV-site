@@ -132,7 +132,7 @@ span.post-category-info{
 	top: 95px;
     right: -45px;
 }
-a.buy-now{
+a.buy-now, a.media-kit, input.send{
 	position: relative;
     background: #e35539;
     text-transform: uppercase;
@@ -296,13 +296,18 @@ input[placeholder="Email Address *"]{
 	float:left;
 }
 
-.formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field{
+.formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field, input.wpcf7-form-control, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select{
     padding: 7px;
     text-align: center;
     text-transform: uppercase;
     font-size: 10px;
     color: #221e20;
     letter-spacing: .12em;
+}
+select.wpcf7-form-control.wpcf7-select{
+	border-radius: 0;
+    height: 25px;
+    margin: 20px 0px;
 }
 #btnSubmit{
 	background: #4e9f26 !important;

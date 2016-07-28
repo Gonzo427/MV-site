@@ -183,7 +183,7 @@ ul.subnav li:last-child a{
 }
 ul.subnav a{
     display: block;
-    padding: 0px 18px;
+    padding: 0px 10px;
     font-weight: 500;
     letter-spacing: .5px;
     font-size: 14px;

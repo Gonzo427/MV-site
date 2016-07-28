@@ -23,7 +23,7 @@ get_header();
                 $image_url = $image_array[0];
             if ( $image_id) {//display  image as header image 
             echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $image_url . '); background-size: cover;"';
-            }?>class="post-bg">
+            }?> class="post-bg">
                  <div class="page_frame group"> 
                     <div class="page_three_quarter fl">
                         <div class="categories"><?php
@@ -81,7 +81,7 @@ get_header();
 
         ?>
         <div class="page_sidebar fr">
-        <?php the_field('overview_content'); ?><
+       
         <?php get_sidebar(); ?>
         </div>
          

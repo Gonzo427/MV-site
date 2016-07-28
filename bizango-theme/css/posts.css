@@ -64,6 +64,7 @@
     line-height: 30px;
     text-align: center;
     margin: 35px 0 55px 0 !important;
+    color: #666565;
 }
 .pull-quote-left{
 	float: left;
@@ -112,6 +113,9 @@
     border: none;
     padding: 10px;
     color: white;
+}
+ol.commentlist {
+    list-style: none;
 }
 
 

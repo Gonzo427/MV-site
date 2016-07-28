@@ -76,7 +76,19 @@ get_header();
                     <?php query_posts('showposts=1&cat=13'); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php the_category(); ?>  
-                        <img src="<?php the_field('post_image'); ?>"  alt=""/>
+                       
+                <?php 
+
+                $image = get_field('post_image');
+                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+                if( $image ) {
+
+                  echo wp_get_attachment_image( $image, $size );
+
+                }?>
+
+
                         <div class="padding-25">
                         <h2> <?php the_title(); ?> </h2>
                         <p> <?php the_field('post_excerpt'); ?> </p>
@@ -89,8 +101,17 @@ get_header();
                     <?php query_posts('showposts=1&cat=14'); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php the_category(); ?> 
-                        <img src="<?php the_field('post_image'); ?>"  alt=""/> 
-                         
+                        <!--<img src="<?php //the_field('post_image'); ?>"  alt=""/> -->
+                          <?php 
+
+                        $image = get_field('post_image');
+                        $size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+                        if( $image ) {
+
+                          echo wp_get_attachment_image( $image, $size );
+
+                        }?>
                         <div class="padding-25">
                          <h2> <?php the_title(); ?> </h2>
                          <p><?php the_field('post_excerpt'); ?></p>
@@ -137,7 +158,17 @@ get_header();
             <div class="sponsored-content">
                 <?php query_posts('showposts=2&cat=16'); ?>
                 <?php while (have_posts()) : the_post(); ?>
-                   <div class="row"><img src="<?php the_field('post_image'); ?>"  alt="sponsored product"/> 
+                   <div class="row">
+                         <?php 
+
+                        $image = get_field('post_image');
+                        $size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+                        if( $image ) {
+
+                          echo wp_get_attachment_image( $image, $size );
+
+                        }?>
                     <div class="fr sponsored-excerpt"><h4> <?php the_title(); ?> </h4>
                     <p class="sponsored-post">Sponsored Post</p>
                     <p><?php the_field('post_excerpt'); ?></p>

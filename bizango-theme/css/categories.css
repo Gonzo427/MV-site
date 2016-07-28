@@ -5,4 +5,12 @@
 }
 .posts-content div {
     border-bottom: none;
+    display: inline-block;
+    width: 100%;
+}
+.list-of-posts{
+	display: flex;
+}
+.list-of-posts .read-more{
+	float: none;
 }
