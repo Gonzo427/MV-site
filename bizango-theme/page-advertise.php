@@ -24,6 +24,7 @@ get_header();
             echo 'style="background: url(' . $image_url . '); background-size: cover;"';
             }?> class="post-bg">
               <div class="page_frame group"> 
+              <div class="categories">Advertise </div>
                 <h1><?php the_title(); ?></h1> <!-- Page Title -->
               </div><!--end page_frame -->
 
@@ -53,30 +54,34 @@ get_header();
             <hr>
             <!--Quote section -->
             <h3 class="advertiser-quote orange">What Our Advertisers Say:</h3>
-                <?php
 
-                // check if the repeater field has rows of data
-                if( have_rows('advertiser_quote') ):
+           
 
-                    // loop through the rows of data
-                    while ( have_rows('advertiser_quote') ) : the_row();
 
-                        // display a sub field value
-                       ?> <p><?php the_sub_field('quote');?> </p>
-                     <p><?php the_sub_field('name');?></p>
+              <div class="left-col">
+              <?php $i = 0; $j = count( get_field('advertiser_quote') );?>
+              <?php if( have_rows('advertiser_quote') ): while ( have_rows('advertiser_quote') ) : the_row(); ?>
+                    <p class="quote"><?php the_sub_field('quote'); ?></p>
+                    <p class="quote-name"> <?php the_sub_field('name'); ?></p>
+                <?php if ( ( $i + 1 ) == ceil($j / 2) ) echo '</div><div class="right-col">'; ?>
+                <?php $i++; endwhile; ?>
+              <?php endif; ?>
+            </div>
 
-                  <?php endwhile;
-
-                else :
-
-                    // no rows ound
-
-                endif;
-
-                ?>
+                 
+                  
 
         </div><!--end page_full-->
+         <!--FEATURE STORIES -->
+             <div class="four-features">
+                  <?php query_posts('cat=3&showposts=4'); ?>
+                  <?php include "feature-stories.php"; ?>
+              </div>
+        <!--end feature stories -->
 
+        <!-- Email Signup Form-->
+            <?php include "email-signup.php"; ?>
+            
     </div><!-- .page_frame group -->
 
     <?php

@@ -6,12 +6,12 @@
  */
 ?>
 
+<?php query_posts('showposts=1&cat=17'); ?>
+<?php while (have_posts()) : the_post(); ?>
+	<!--show upcoming issue image in right corner of footer -->
+<div id="footer" style="background-image: url('<?php the_field('upcoming_issue_image'); ?>');">
+ <?php endwhile; ?>
 
-
-
-
-
-<div id="footer">
 
 	<div class="page_frame group">
 		<div class="page_content fl">
@@ -49,13 +49,6 @@
 		</div>
 
 		
-			<div class="col4 fr">
-				<?php query_posts('showposts=1&cat=17'); ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                         <img src="<?php the_field('upcoming_issue_image'); ?>" alt="upcoming issue"/>
-                     <?php endwhile; ?>
-			</div>
-
 					
 	</div>
 	

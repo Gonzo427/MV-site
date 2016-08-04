@@ -9,14 +9,11 @@
  ?>    
 
     <div class="feature-group ">
-    <?php query_posts('cat=3&showposts=3');
+    <?php 
         while ( have_posts() ) : the_post(); ?> 
-
-           
           
             <div class="feature-story thick-top-border">
                <!--Display category name except "Features"-->
-               
 
                 <?php 
 

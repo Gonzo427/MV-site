@@ -188,6 +188,27 @@ ul.subnav a{
     letter-spacing: .5px;
     font-size: 14px;
 }
+.sub-menu{
+	top: 45px;
+    position: absolute;
+    background: #343434;
+    width: 128px;
+    display: none;
+}
+#nav ul li ul li{
+	float: none;
+}
+#nav ul ul li a {
+    font-size: 15px;
+    border-right: 0;
+    border-bottom: 1px solid #5d5d5d;
+    text-align: left;
+    float: none;
+    padding: 10px !important;
+}
+#nav ul ul li:last-child a {
+	border-bottom: 0;
+}
 #mobile_nav{display: none;}
 .mag{    
 	float: right;
@@ -255,8 +276,10 @@ span.fa.fa-search{
 
 #footer{
     font-size: 13px;
+    background-position: center right;
+    height: 308px;
+    background-repeat: no-repeat;
     background-color: #ededed;
-    min-height: 308px;
 }
 #footer ul{margin-left: 0;}
 .col1{
@@ -279,10 +302,9 @@ span.fa.fa-search{
 	float: left;
 	text-align: center;
 }
-.col4{
-
-    position: absolute;
-    right: -8%;
+.upcoming-issue-image{
+	float: right;
+    width: 37%;
 }
 .tagline{    
 	margin-top: 4px;
@@ -543,7 +565,12 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 /* Tablet*/
 @media only screen and (max-width: 960px){
 	.page_frame{width:100%}
-
+	.thick-top-border{
+		border: 0;
+	}
+	.margin-bottom-40, .margin-top-40{
+		margin: 0;
+	}
 
 	/******HEADER****/
 
@@ -608,16 +635,25 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	#mobile_nav .nav li{
 		float: none;
 		height: 25px;
-		line-height: 25px;
-		background-color: #ccc;
-		border-bottom: 1px solid white;
+		line-height: 1;
+		background-color: #343434;
+		border-bottom: 1px solid #5d5d5d;
 		list-style: none;
 		text-align: center;
 		padding: 5px;
 		display: none;
+		margin: 0 auto;
+	}
+	#mobile_nav .nav li a{
+		color: white;
 	}
 	#mobile_nav .nav li:last-child{
 		border-bottom: none;
+	}
+	.sub-menu {
+	    display: inline-block !important;
+	    top: 5px;
+		position: relative;
 	}
 	/*******FOOTER ******/
 
@@ -625,6 +661,8 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		position: relative;
 		float: left !important;
 	}
+	#footer ul ul{display: none !important;}
+
 
 }
 
@@ -639,6 +677,10 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	}
 	div#subnav, textarea, .copy{
 		width: 100%;
+	}
+	span.fa.fa-search{
+		left: -35px;
+    	top: 0px;
 	}
 	.page_quarter,.page_half_noguttter,.page_half, .page_two_thirds, .page_tricol_right,.page_tricol_left,.page_tricol_content,.page_content,.page_sidebar,.blog_main_column,.blog_header{
 		width: 100%;margin:0 auto;
@@ -721,12 +763,14 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
     	padding: 0 0 30px;
     }
     .col2, .col3{
-		width: initial;
+		width: 50%;
 	}	
      .col4 {
 		display: none;
 	}
-
+#footer .page_frame{
+		background-color:#ededed;
+	}
 
 }
 

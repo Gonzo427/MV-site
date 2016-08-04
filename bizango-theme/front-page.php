@@ -58,7 +58,7 @@ get_header();
      
      <div class="page_content fl">
      <!--FEATURE STORIES -->
-
+      <?php query_posts('cat=3&showposts=3'); ?>
       <?php include "feature-stories.php"; ?>
 
     <!--end feature group--> 
@@ -73,8 +73,8 @@ get_header();
     <div class="spotlight"> 
         <div class="living-the-life fl white-bg"> 
 
-                    <?php query_posts('showposts=1&cat=13'); ?>
-                    <?php while (have_posts()) : the_post(); ?>
+                <?php query_posts('showposts=1&cat=13'); ?>
+                <?php while (have_posts()) : the_post(); ?>
                         <?php the_category(); ?>  
                        
                 <?php 
@@ -88,7 +88,6 @@ get_header();
 
                 }?>
 
-
                         <div class="padding-25">
                         <h2> <?php the_title(); ?> </h2>
                         <p> <?php the_field('post_excerpt'); ?> </p>
@@ -101,9 +100,8 @@ get_header();
                     <?php query_posts('showposts=1&cat=14'); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php the_category(); ?> 
-                        <!--<img src="<?php //the_field('post_image'); ?>"  alt=""/> -->
-                          <?php 
-
+                       
+                        <?php 
                         $image = get_field('post_image');
                         $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
@@ -119,8 +117,6 @@ get_header();
                          </div>
                      <?php endwhile; ?>
                  </div>
-
-
     </div>
 
 
@@ -139,9 +135,9 @@ get_header();
                 <?php include "current-issue-slider.php"; ?>
            
                 <?php include "m-current-issue.php"; ?>
-      <?php endwhile; ?>   
-      <!--mobile view hides slider and shows this image plus buy now button -->
-               
+          <?php endwhile; ?>   
+          <!--mobile view hides slider and shows this image plus buy now button -->
+                   
         </div><!--end now-available-->
 
 

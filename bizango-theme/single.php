@@ -25,7 +25,7 @@ get_header();
             echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $image_url . '); background-size: cover;"';
             }?> class="post-bg">
                  <div class="page_frame group"> 
-                    <div class="page_three_quarter fl">
+                    <div class="page_three_quarter fl story-title-wrap">
                         <div class="categories"><?php
                             $categories = get_the_category();
                             $separator = ' ';
@@ -87,7 +87,9 @@ get_header();
          
            <div class="page_two_thirds group">
            <!--NEWS STORIES-->
+            <?php query_posts('cat=3&showposts=3'); ?>
              <?php include "feature-stories.php"; ?>
+
             <!--end news stories-->
              <!-- Email Signup Form-->
            <?php include "email-signup.php"; ?>

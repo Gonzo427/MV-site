@@ -22,6 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+	<div class="product-header-bg">
+		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+			<!--this is custom to the theme, not to Woocommerce-->
+		    <div class="page_frame group">
+			<div class="page-full story-title-wrap">
+				<div class="categories">Subscribe </div>
+				<h1 class="page-title"><?php //woocommerce_page_title(); ?>Marijuana Venture Magazine</h1>
+			</div>
+			</div>
+			<!--end custom title-->
+		<?php endif; ?>
+	</div>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -31,13 +43,8 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
-
+	<div class="page_frame group">'
+	<div class="page_full white-bg thick-top-border">
 		<?php
 			/**
 			 * woocommerce_archive_description hook.
@@ -47,6 +54,23 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_archive_description' );
 		?>
+		
+			
+			<!--NOW AVAILABLE SLIDER -->
+	       <div class="now-available">
+	         <?php query_posts('showposts=1&cat=19'); ?>
+	         <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
+	         
+	                <?php include (TEMPLATEPATH	 . '/current-issue-slider.php'); ?>
+	           
+	                <?php //include (TEMPLATEPATH . "../../m-current-issue.php"); ?>
+
+		      <?php endwhile; 
+		        wp_reset_query(); ?>  
+		   </div> 
+		     
+	        
+		
 
 		<?php if ( have_posts() ) : ?>
 
@@ -59,17 +83,21 @@ get_header( 'shop' ); ?>
 				 */
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
-
+			 
+  
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
+   
 					<?php wc_get_template_part( 'content', 'product' ); ?>
-
+					
+				 
 				<?php endwhile; // end of the loop. ?>
 
+
+	
 			<?php woocommerce_product_loop_end(); ?>
 
 			<?php
@@ -79,13 +107,18 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_pagination - 10
 				 */
 				do_action( 'woocommerce_after_shop_loop' );
+
 			?>
+			<!--add Proceed to Checkout button -->
+			<div class="wc-proceed-to-checkout">
+				<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+			</div>
 
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
-		<?php endif; ?>
+		
 
 	<?php
 		/**
@@ -96,6 +129,28 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
+	<?php endif; ?>
+
+		<!-- BACK ISSUES -->
+		<div class="back-issues"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/back-issues.png ">
+		<p>Would you like to see more of Marijuana Venture’s past articles? </p>
+		<a  href="#">View back issues </a>
+			
+		</div>
+		<!--end back issues -->
+
+	<!-- ADVERTISE SECTION -->
+	<div class="advertise-wrap">
+	<img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-no-tag.gif" >
+		<div class="advertise">
+		<p>Advertise in the only nationally distributed business publication for the legal marijuana industry. </p>
+		<p><a class="advertise-btn" href="/advertise"> Advertiser Info </a></p>
+		</div>
+	</div>
+	<!--end advertise section -->
+
+	
+
 	<?php
 		/**
 		 * woocommerce_sidebar hook.
@@ -103,9 +158,21 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
 		
-		//do_action( 'woocommerce_sidebar' ); //This is removed so that no sidebar shows and only the custom news feed displays
+		//do_action( 'woocommerce_sidebar' ); //This is removed so that no sidebar shows 
 	?>
-	<!--CUSTOM NEWS FEED -->
-	 <?php get_sidebar('sidebar-2'); ?>
+	</div><!--end page_full -->
+	<!--FEATURE STORIES -->
+        <div class="four-features margin-bottom-20">
+            <?php query_posts('cat=3&showposts=4'); ?>
+            <?php include "feature-stories.php"; ?>
+        </div>
+    <!--end feature stories -->
+
+    <!-- Email Signup Form-->
+            <?php include "email-signup.php"; ?>
+
+    <!--end email signup -->
+
+	</div>
 
 <?php get_footer( 'shop' ); ?>

@@ -6,6 +6,9 @@
 	padding: 44px 0;
 }
 /**/
+.story-title-wrap{
+    margin-left: 55px;
+}
 .single h2, .single h3, .single p{
 	color: #666565;
 } 
@@ -25,6 +28,7 @@
     -moz-box-shadow: none;
     box-shadow: none;
 }
+
 
 .single h1, .single .news-feed h3, .single .news-group h2 , .single .news-feed p, p.byline, p.post-date, .news-signup p{
 	color: white;

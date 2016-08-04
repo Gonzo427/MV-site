@@ -28,7 +28,7 @@
 	font-weight: 700;
 	letter-spacing: .12em;
 	font-size: .8em;
-
+	color: #e35539;
 }
 .categories a{
 	color: #e35539;
@@ -78,8 +78,10 @@
     vertical-align: top;
 }
 .feature-story img{
-	min-height: 134px;
+	min-height: 133px;
+	max-height: 134px;
 	padding-bottom: 15px;
+	width: 100%;
 }
 .news-group{
 	padding-top: 20px;
@@ -289,6 +291,17 @@ input[name="fldfirstname"]{
 input[placeholder="Email Address *"]{
 	
 }
+
+
+/* CONTACT US PAGE */
+
+input.wpcf7-form-control[type="submit"]{
+	color: white;
+	margin-top: 20px;
+    padding: 10px;
+}
+
+
 .formbox-title-704450{
 	display: none;
 }
@@ -297,22 +310,26 @@ input[placeholder="Email Address *"]{
 }
 
 .formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field, input.wpcf7-form-control, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select{
-    padding: 7px;
+        margin: 10px 0;
+    padding: 10px;
     text-align: center;
     text-transform: uppercase;
     font-size: 10px;
     color: #221e20;
     letter-spacing: .12em;
+     border: 1px solid lightgrey;
 }
 select.wpcf7-form-control.wpcf7-select{
 	border-radius: 0;
     height: 25px;
     margin: 20px 0px;
+    background: white;
+
 }
 #btnSubmit{
 	background: #4e9f26 !important;
 	border-radius: 0 !important;
-	padding: 7px 14px;
+	padding: 9px 14px;
 	margin: 10px 0 0;
 }
 
@@ -327,9 +344,14 @@ select.wpcf7-form-control.wpcf7-select{
 .m-now-available{
 	display: none;
 }
-.slides{
+.flexslider .slides{
 	margin-left: 0;
 	position:relative;
+	overflow: hidden;
+    max-height: 454px;
+    -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
+	-moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
+	box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
 }
 .flexslider{
 	display: inline;
