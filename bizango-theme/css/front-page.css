@@ -1,10 +1,14 @@
 /* Cover Story */
-.cover-story{
+.cover-story-img{
 	height: 500px;
 	position: relative;
 }
 .white-bg{
 	background:white;
+}
+.flex-wrap{
+	width: 63%;
+	display: flex;
 }
 .cover-snippet-wrap{
 	background-image:linear-gradient(to right,#fff, #fff 15%, #fff 15%,  #fff 63%, rgba(255,255,255,0)63% );
@@ -15,7 +19,6 @@
 .cover-snippet-wrap h1{
 	color: #221e20;
 	padding-right: 15px;
-	max-width: 65%
 }
 .cover-snippet-wrap p{
 
@@ -34,8 +37,7 @@
 	color: #e35539;
 }
 .cover-blurb{
-	width: 63%;
-}
+	}
 .read-more{
 	text-transform: uppercase;
 	font-size: 10.23px;
@@ -78,9 +80,6 @@
     vertical-align: top;
 }
 .feature-story img{
-	min-height: 133px;
-	max-height: 134px;
-	padding-bottom: 15px;
 	width: 100%;
 }
 .news-group{
@@ -114,6 +113,11 @@ span.post-category-info{
 		position: relative;
 		left:30px ;
 	}
+.feature-image-wrap{
+	overflow: hidden;
+    height: 133px;
+    margin-bottom: 20px;
+}
 .feature-story p,.feature-story h2 {
 	padding: 0px 30px 0;
     color: #221e20 !important;
@@ -201,7 +205,9 @@ img.mag-cover{
 .sidebar-ad {
     margin: 25px 0;
 }
-
+.spotlight img {
+    height: auto;
+}
 .living-the-life{
 	width: 57%;
 	margin-right: 31px;
@@ -294,13 +300,14 @@ input[placeholder="Email Address *"]{
 
 
 /* CONTACT US PAGE */
-
+.formbox-field-email-704450 input{
+	height: 30px;
+}
 input.wpcf7-form-control[type="submit"]{
 	color: white;
 	margin-top: 20px;
     padding: 10px;
 }
-
 
 .formbox-title-704450{
 	display: none;
@@ -310,7 +317,7 @@ input.wpcf7-form-control[type="submit"]{
 }
 
 .formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field, input.wpcf7-form-control, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select{
-        margin: 10px 0;
+    margin: 10px 0;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -324,13 +331,13 @@ select.wpcf7-form-control.wpcf7-select{
     height: 25px;
     margin: 20px 0px;
     background: white;
-
 }
 #btnSubmit{
 	background: #4e9f26 !important;
 	border-radius: 0 !important;
-	padding: 9px 14px;
+	padding: 21.5% 14px;
 	margin: 10px 0 0;
+	height: 30px;
 }
 
 
@@ -347,7 +354,6 @@ select.wpcf7-form-control.wpcf7-select{
 .flexslider .slides{
 	margin-left: 0;
 	position:relative;
-	overflow: hidden;
     max-height: 454px;
     -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
 	-moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
@@ -361,9 +367,9 @@ select.wpcf7-form-control.wpcf7-select{
 .flexslider-controls {
     position: relative;
     bottom: -334px;
-    z-index: 10;
+    z-index: 1;
     float: left;
-    width: 33.333%;
+    width: 33.3333333333%;
     height: 90px;
 }
 ol.flex-control-nav{
@@ -380,7 +386,7 @@ ol.flex-control-nav{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
   	background: #ededed;
-    height: 90px;
+    height: auto;
     text-align: center;
     border-right: 2px solid white !important;
     overflow: hidden
@@ -473,23 +479,62 @@ ol.flex-control-nav{
 }
 .sponsored-excerpt h4{
 	font-size: 18px;
+}
+
+/*- Small Desktop */
+@media only screen and (max-width: 1069px){
+	.sponsored-wrap{
+		margin-top: 60px;
 	}
+	.sponsored-excerpt {
+	    width: 50%;
+	}
+	.btnSubmit{
+		padding: 20% 14px;
+	}
+
+}
+/* Awkward sizes */
+ol.flex-control-nav{
+	bottom: 3px !important;
+	height: 90px;
+	overflow: hidden;
+}
+
 /*- Mobile Styles Large */
 @media only screen and (max-width: 960px){
-	 .news-signup p{
+	.news-signup p{
    		font-size: 2em !important;
 
    }
+   .sponsored-wrap{
+		margin-top: 75px;
+	}
+	.green-icons{
+		top: -15px;
+	}
 
 }
 
 
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px){
-
-.feature-story,.product-spotlight, .living-the-life {
-    width: 100%;
-    display: inline-block;
+	.flex-wrap{
+		width: 100%;
+	}
+	.row{
+		text-align: center;
+	}
+	.feature-story,.product-spotlight, .living-the-life {
+	    width: 100%;
+	    display: inline-block;
+	    text-align: center;
+	    margin-top: 20px;
+   }
+   .feature-story p,.feature-story h2 {
+   		width: 80%;
+   		margin-left: auto;
+   		margin-right: auto;
    }
 	.flexslider{
 		display: none;
@@ -497,14 +542,59 @@ ol.flex-control-nav{
 	.m-now-available{
 		display: inline-block;
 	}
+	.sponsored-excerpt {
+	    width: 100%;
+	    padding: 20px 0 0 0;
+	}
+
 	a.buy-now{
 	    margin: 20px auto -30px;
 	    text-align: center;
     	display: block;
-	}
-    
-	  
+    	top: 10px;
+	} 
    .news-signup p::before, .news-signup p::after {
-   		width: 90%;
+   		margin: 0 10px;
    }	
+
+	/********LIVING THE LIFE & PRODUCT SPOTLIGHT *****/
+	.living-the-life ul, .product-spotlight ul{
+		padding: 30px;
+	}
+	.living-the-life ul ~ div, .product-spotlight ul ~ div{
+		padding-bottom: 50px;
+	}
+
+	/********FEATURE STORIES ********/
+	.feature-group{
+		display: inline-block;
+	}
+	.feature-story{
+		width: 100%;
+		padding-bottom: 50px;
+	}
+	.feature-story ~ .categories{
+		margin: 15px 0 0 30px;
+	}
+	.feature-story img{
+		width: auto;
+		padding-bottom: 15px;
+	}
+	.read-more{
+		float: none;
+    	padding: 0;
+	}
+	span.post-category-info{
+		left:0;
+	}
+	
+		/******COVER IMAGE *****/
+	.cover-snippet-wrap{
+		background-color: white;
+	}
+	.cover-blurb {
+    	width: 100%;
+	}
+	
+
 }

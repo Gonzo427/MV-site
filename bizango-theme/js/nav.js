@@ -5,10 +5,12 @@ jQuery(document).ready(function( $ ) {
    });
 
   //show or hide dropdown sub-menu on click of parent menu item
-   $(".menu-item-has-children").click(function(){
-   	$('.sub-menu').slideToggle();
+   $(".menu-item-has-children a").click(function(){
+   	$('.sub-menu').css("display", "none");
+   	$(this).next().slideToggle();
    });
 
+   $(this).scrollTop(0);
 
 });
 

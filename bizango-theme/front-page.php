@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying pages
+ * Template for displaying front page
  * 
  * @package bizango-theme
  */
@@ -18,44 +18,40 @@ get_header();
     <div   <?php
             if ( get_field('cover_image') ) {//display "cover story" image as background image 
             echo 'style="background-image: url(' . get_field('cover_image') . '); background-size: cover;"';
-            }?> class="cover-story ">
+            }?> class="cover-story-img ">
    
 
         <div class="cover-snippet-wrap" >
-        
-            
             <div class=" page_frame cover-content">
             
-
             <!--display most recent story with "Cover Story" category -->
-           
-        
-                <div class="fl ">
-            <!-- display categories of cover story-->
-                    <div class="categories">
-                    <?php $cats='' ;
-                    foreach((get_the_category()) as $category) {
-                        $cats=$cats.$category->cat_name . ': ';}
-                        $cats = substr($cats,0,-2);
-                        echo $cats; ?>  
-                    </div>
+            <div class="flex-wrap">
+                  <div class="fl ">
+              <!-- display categories of cover story-->
+                      <div class="categories">
+                        <?php $cats='' ;
+                        foreach((get_the_category()) as $category) {
+                            $cats=$cats.$category->cat_name . ': ';}
+                            $cats = substr($cats,0,-2);
+                            echo $cats; ?>  
+                      </div>
 
-
-                <a href="<?php the_permalink(); ?>">
-                <h1><?php the_title(); ?></h1>  </a>
-                </div>
-                <div class="cover-blurb">
-                <p><?php the_field('post_excerpt'); ?></p>
-                
-                <?php endwhile; endif; ?>
-                <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a></div>
+                      <a href="<?php the_permalink(); ?>">
+                      <h1><?php the_title(); ?></h1>  </a>
+                  </div>
+                  <div class="cover-blurb">
+                  <p><?php the_field('post_excerpt'); ?></p>
+                  
+                  <?php endwhile; endif; ?>
+                  <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+                  </div><!--end cover-blurb-->
+              </div><!--end flex-wrap -->
             </div>
             
         </div><!--end cover snippet wrap-->
      
-    </div> <!-- end .cover-story -->
+    </div> <!-- end .cover-story-img-->
     <div class="page_frame group ">
-     
      <div class="page_content fl">
      <!--FEATURE STORIES -->
       <?php query_posts('cat=3&showposts=3'); ?>

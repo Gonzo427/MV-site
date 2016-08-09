@@ -12,8 +12,12 @@ get_header();
 
 <?php
     // TO SHOW THE PAGE CONTENTS
-    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+    while ( have_posts() ) : the_post(); ?>
           
+     
+
+
+
           <div <?php
             $image_array = wp_get_attachment_image_src($image_id, $image_size);
             $image_id = get_field('post_image');
@@ -23,7 +27,7 @@ get_header();
                 $image_url = $image_array[0];
             if ( $image_id) {//display  image as header image 
             echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $image_url . '); background-size: cover;"';
-            }?> class="post-bg">
+            }?> class="post-bg <?php the_category_unlinked(' '); ?>">
                  <div class="page_frame group"> 
                     <div class="page_three_quarter fl story-title-wrap">
                         <div class="categories"><?php
@@ -47,6 +51,11 @@ get_header();
                     </div>
                 </div><!--end page_frame-->
             </div><!--end post-bg-->
+
+
+
+
+
          <div class="page_frame group"> 
          <div class="post_content white-bg fl thick-top-border">
             <div >

@@ -13,8 +13,8 @@
         while ( have_posts() ) : the_post(); ?> 
           
             <div class="feature-story thick-top-border">
-               <!--Display category name except "Features"-->
-
+              
+            <div class="feature-image-wrap">
                 <?php 
 
                 $image = get_field('post_image');
@@ -25,13 +25,14 @@
                   echo wp_get_attachment_image( $image, $size );
 
                 }?>
+                </div>
                 <div class="categories"><?php
                     $categories = get_the_category();
                     $separator = ' ';
                     $output = '';
                     if($categories){
                         foreach($categories as $category) {
-                    if($category->name !== 'Features'){
+                    if($category->name !== 'Features'){ //Display category name except "Features"
                             $output .= '<span class="post-category-info"><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;}
                         }
                     echo trim($output, $separator);

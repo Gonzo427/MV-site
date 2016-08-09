@@ -11,7 +11,7 @@
 
 
        
-        <?php query_posts('showposts=7&cat=-3,-8,-9,-13,-14,-15,-16,-17,-18,-19'); ?>
+        <?php query_posts('showposts=7&cat=5,6,7,10,12,-8'); ?>
        
         <?php while (have_posts()) : the_post(); ?>
 

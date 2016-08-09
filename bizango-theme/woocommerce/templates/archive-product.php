@@ -63,7 +63,7 @@ get_header( 'shop' ); ?>
 	         
 	                <?php include (TEMPLATEPATH	 . '/current-issue-slider.php'); ?>
 	           
-	                <?php //include (TEMPLATEPATH . "../../m-current-issue.php"); ?>
+	                <?php include (TEMPLATEPATH . '/m-current-issue.php'); ?>
 
 		      <?php endwhile; 
 		        wp_reset_query(); ?>  

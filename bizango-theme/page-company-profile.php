@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Directory
+ * Template Name: Company Profile
  * 
  * @package bizango-theme
  */
@@ -13,7 +13,7 @@ get_header();
 
 
 
-<?php  query_posts('cat=42');
+<?php  query_posts('cat=31');
     // TO SHOW THE PAGE CONTENTS
     while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
         <div class="page_wrap white-bg thick-top-border fl">

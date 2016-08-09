@@ -19,19 +19,31 @@
  	color: white;
  }
 
- .woocommerce-page .flex-control-nav p{
- 	padding: 0px 5px;
- }
-
- .woocommerce-page .flexslider-controls {
-    bottom: -330px;
-    width: 33.333333%;
+ .woocommerce-page {
+	 .flex-control-nav p{
+	 	padding: 0px 5px;
+	 }
+	 .flexslider-controls {
+	    bottom: -333px;
+	    width: 33.333333%;
+	    z-index: 2;
+	}
+	.flexslider .slides{
+		/*overflow: hidden;*/
+	}
 }
+ 
+ .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+ 	border-radius: 0;
+ 	font-family: 'Lato', Helvetica, Arial, sans-serif;
+ }
 
 .woocommerce{
 	ul.products li.product, .woocommerce-page ul.products li.product {
 		text-align: center;
-		float: right;
+		margin-left: 5.6%;
+		margin-right: 5.6%;
+
 	}
 	 ul.products li.product h3{
 		color: #5e5e5e;
@@ -57,7 +69,7 @@
 	}
 }
 
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .advertise-btn{
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .advertise-btn, {
 	border-radius: 0;
 	background: #e35539;
 	text-transform: uppercase;
@@ -73,8 +85,6 @@
 
 
 .back-issues {
-    display: inline-block;
-    width: 100%;
     margin: 158px 0 20px;
     padding: 0 20px;
 
@@ -90,7 +100,7 @@
 	    font-weight: 600;
 	    text-transform: uppercase;
 	    font-size: 10px;
-	    margin: -40px 35px;
+	    margin: -43px 35px;
     }
     a:after{
     	content: ">";
@@ -130,6 +140,33 @@
 	}
 }
 
+/*- Tablet*/
+@media only screen and (max-width: 960px){
+	.woocommerce .four-features .feature-group{
+		margin: 20px;
+	}
+	.advertise-wrap {
+	    text-align: center;
+	    margin-top: 50px;
+	}
+	.advertise p{
+		padding-left: 0;
+	}
+
+	.woocommerce .now-available {
+	    margin-bottom: 50px;
+	}
+	.back-issues {
+		p{
+			padding: 29px 45px;
+		}
+		a{
+			float: left;
+			margin-left: 45px;
+			margin-top: -35px;
+		}
+	}
+}
 
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px){

@@ -15,6 +15,7 @@ body{
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	background: url(images/leaf-bg.jpg);
+	overflow-x: hidden;
 }
 hr{
 	background-color:#e0e0e0;
@@ -36,6 +37,7 @@ figure {
 strong{font-weight: 700;}
 img {
   max-width: 100%;
+
 }
 ul{margin-left: 50px;}
 h1, h2, h3, h4{
@@ -174,6 +176,7 @@ ul.subnav{
 	position: absolute;
 	bottom: 5px;
 	right: 0;
+	width: 100%;
 }
 ul.subnav li{
 	float: left;
@@ -192,7 +195,7 @@ ul.subnav a{
 	top: 45px;
     position: absolute;
     background: #343434;
-    width: 128px;
+    width: auto;
     display: none;
 }
 #nav ul li ul li{
@@ -255,7 +258,7 @@ ul.subnav a{
 .search-form input#s{
     background: #f0f0f0;
     border: none;
-    width: 96%;
+    width: 100%;
     padding: 10px 0;
     margin-top: 10px;
     letter-spacing: .05em;
@@ -277,9 +280,9 @@ span.fa.fa-search{
 #footer{
     font-size: 13px;
     background-position: center right;
-    height: 308px;
     background-repeat: no-repeat;
     background-color: #ededed;
+   height: 308px;
 }
 #footer ul{margin-left: 0;}
 .col1{
@@ -328,7 +331,7 @@ span.fa.fa-search{
     display: inline-block;
     width: 380px;
     text-transform: capitalize;
-    padding-top: 20px;
+    padding: 20px 0;
     font-size: .78571428571429em;
 }
 .footnav{
@@ -347,9 +350,12 @@ span.fa.fa-search{
     text-align: left;
 }
 .footnav a{color:#3b3b3b;}
-
+.footnav .menu-item-has-children{ display: none; }
 #subfooter{background-color: black;}
 #subfooter *{color: white;}
+#subfooter div {
+    display: table;
+}
 #bizango{
     text-align: left;
     width: 154px;
@@ -422,7 +428,6 @@ img.content_image{
 }
 
 
-
 /* collection list items */
 
 .collection_list_item{
@@ -431,8 +436,6 @@ img.content_image{
 p.collection_list_item_readmore{text-align:right;clear:both;}
 
 #body_home #nav_home,#body_home #nh{display:none;}
-
-
 
 
 
@@ -556,15 +559,37 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 /* Awkward size fixes */
 @media only screen and (min-width:961px) and (max-width:1099px){
-.page_frame{width:100%}
+/*.page_frame{width:100%}
 
-.col4{position: relative; float:left !important;}
+.col4{position: relative; float:left !important;}*/
 
+}
+
+/* Small Desktop*/
+@media only screen and (max-width: 1026px){
+	#footer{
+		 background-size: contain;
+		 height: 250px;
+		 padding-bottom: 3%;
+	}
+	#subfooter{
+		display: inline-block;
+		width: 100%
+	}
 }
 
 /* Tablet*/
 @media only screen and (max-width: 960px){
 	.page_frame{width:100%}
+	.page_sidebar, .page_content{
+		width: 80%;
+		margin: 0 auto;
+		float: none !important;
+		display: block;
+		clear: both;
+	}
+
+
 	.thick-top-border{
 		border: 0;
 	}
@@ -651,17 +676,18 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		border-bottom: none;
 	}
 	.sub-menu {
-	    display: inline-block !important;
 	    top: 5px;
 		position: relative;
 	}
 	/*******FOOTER ******/
-
-	.col4{
-		position: relative;
-		float: left !important;
+	#footer{
+		height: 400px;
+		background-size: 36%;
+		background-position: top right;
 	}
-	#footer ul ul{display: none !important;}
+	.col2{
+		width: 50%;
+	}
 
 
 }
@@ -675,12 +701,13 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		float:none;width: 100%;margin: 0;
 	
 	}
-	div#subnav, textarea, .copy{
+	div#subnav{width:80%;}
+	textarea, .copy{
 		width: 100%;
 	}
 	span.fa.fa-search{
 		left: -35px;
-    	top: 0px;
+    	top: -25px;
 	}
 	.page_quarter,.page_half_noguttter,.page_half, .page_two_thirds, .page_tricol_right,.page_tricol_left,.page_tricol_content,.page_content,.page_sidebar,.blog_main_column,.blog_header{
 		width: 100%;margin:0 auto;
@@ -691,58 +718,6 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	.page_tricol_left img{
 		display: block;
 		margin: 0 auto;
-	}
-	/******COVER IMAGE *****/
-	.cover-snippet-wrap{
-		background-color: white;
-	}
-	.cover-blurb {
-    	width: 100%;
-	}
-	
-
-	/********FEATURE STORIES ********/
-	.feature-group{
-		display: inline-block;
-	}
-	.feature-story{
-		width: 100%;
-		padding-bottom: 50px;
-	}
-	.feature-story ~ .categories{
-		margin: 15px 0 0 30px;
-	}
-	.feature-story img{
-		max-width: 100%;
-		padding-bottom: 15px;
-	}
-	.read-more{
-		float: left;
-	}
-	
-	
-
-
-	/********LIVING THE LIFE & PRODUCT SPOTLIGHT *****/
-	.living-the-life ul, .product-spotlight ul{
-		padding: 30px;
-		margin-top: 30px;
-	}
-	.living-the-life ul ~ div, .product-spotlight ul ~ div{
-		padding-bottom: 50px;
-	}
-	
-
-	/**********NEWS SIGNUP **********/
-
-	.news-signup p::before, .news-signup p::after{
-		margin: 0 10px;
-	}
-
-	/******SPONSORED CONTENT ******/
-	.sponsored-excerpt {
-	    width: 100%;
-	    padding: 20px 0 0 0;
 	}
 
 
@@ -778,7 +753,23 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 @media only screen and (max-width: 659px){
     input{-webkit-appearance: none;-webkit-border-radius:0; }
 
+    ul.subnav li {
+    	margin: 0;
+    }
 
+
+}
+
+/*- Extra small phone*/
+@media only screen and (max-width: 373px){
+    input{-webkit-appearance: none;-webkit-border-radius:0; }
+
+    div#subnav{
+    	height: 170px;
+    }
+    #logo{
+    	max-width: 95%;
+    }
 
 
 }

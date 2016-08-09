@@ -21,6 +21,7 @@
             <a href="<?php the_permalink(); ?>">
                 <img src="<?php echo $images[0]['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
             </a>  
+            <a class="buy-now" href="<?php the_permalink(); ?>"> Buy Now</a>
     </div>
-     <a class="buy-now" href="<?php the_permalink(); ?>"> Buy Now</a>
+     
 <?php endif; ?>

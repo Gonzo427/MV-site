@@ -48,6 +48,7 @@
 }
 a.media-kit{
 	padding: 10px 20px;
+	display: table-cell;
 }
 .find-us-in {
     display: inline-block;
@@ -136,8 +137,12 @@ a.media-kit{
 	color: #e35539;
 
 }
-/
 
+/* 404 Error page */
+.error404 .page_full {
+    margin: 20px 0;
+    padding: 40px;
+}
 
 
 /*- Mobile Styles Large */
@@ -146,6 +151,7 @@ a.media-kit{
 		clear:both;
 		margin-left: 20px;
     	width: 100%;
+    	margin-top: -10px;
 	}
 }
 
@@ -161,8 +167,7 @@ a.media-kit{
     	padding-bottom: 35px;
 	}
 	a.media-kit{
-		width: 100%;
-	    display: inline-block;
+		
 	}
-	}
+	
 }

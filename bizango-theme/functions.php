@@ -25,8 +25,6 @@ add_action( 'init', 'register_my_menus' );
 
 add_action('wp_footer', 'add_googleanalytics');
 function add_googleanalytics() { 
-// Paste your Google Analytics code 
-
 ?><script>
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-51806321-1', 'auto'); ga('send', 'pageview'); (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-51806321-1', 'auto'); ga('send', 'pageview');
@@ -93,21 +91,42 @@ function my_register_sidebars() {
     );
     /* Repeat register_sidebar() code for additional sidebars. */
 }
+//Make Category slug name into css class names
+function the_category_unlinked($separator = ' ') {
+    $categories = (array) get_the_category();
+    
+    $thelist = '';
+    foreach($categories as $category) {    // concate
+        $thelist .= $separator . $category->category_nicename;
+    }
+    
+    echo $thelist;
+}
+
+
+//Create custom post for specific category
+
+ 
+function get_custom_cat_template($single_template) {
+     global $post;
+ 
+       if ( in_category( 'cover-story' )) {
+          $single_template = dirname( __FILE__ ) . '/single-cover-story.php';
+     }
+     return $single_template;
+}
+ 
+add_filter( "single_template", "get_custom_cat_template" ) ;
+
 
 
 //Add Woocommerce support
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-remove_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail',10);
+//remove_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail',10);
 
-    // Change number of products per row to 4
- add_filter( 'loop_shop_columns', 'wc_loop_shop_columns', 1, 10 );
- 
 
-function wc_loop_shop_columns( $number_columns ) {
-return 3;
-}
 
 
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
@@ -129,7 +148,27 @@ remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0
 remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count', 20, 0);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
+// add additional shipping fees
+add_action( 'woocommerce_flat_rate_shipping_add_rate', 'add_another_custom_flat_rate', 10, 2 );
 
+function add_another_custom_flat_rate( $method, $rate ) {
+  $new_rate          = $rate;
+  $new_rate['id']    .= ':' . 'discreet_mailing'; // Append a custom ID
+  $new_rate['label'] = 'Discreet Mailing'; // Rename rate
+  $new_rate['cost']  += 4.99; // Add $4.99 to the cost
+
+  // Add it to WC
+  $method->add_rate( $new_rate );
+}
+
+
+ // Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+  function loop_columns() {
+    return 3; // 3 products per row
+  }
+}
 
 
   // Change Proceed To Checkout button Text 
@@ -138,8 +177,35 @@ function woocommerce_button_proceed_to_checkout() {
        ?>
        <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Check Out', 'woocommerce' ); ?></a>
        <?php
-     }
+}
 
+
+     //Adds Discreet Mailing shipping option
+/*add_action('woocommerce_cart_totals_after_shipping', 'wc_discreet_shipping_after_cart');
+function wc_discreet_shipping_after_cart() {
+global $woocommerce;
+    $product_id = 207;
+foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
+    $_product = $values['data'];
+    if ( $_product->id == $product_id )
+        $found = true;
+    }
+    // if product not found, add it
+if ( ! $found ):
+?>
+    <tr class="discreet">
+        <th><?php _e( 'Discreet Mailing', 'woocommerce' ); ?></th>
+        <td><a href="<?php echo do_shortcode('[add_to_cart_url id="207"]'); ?>"><?php _e( 'Discreet Mailing (+$4.99)' ); ?> </a></td>
+    </tr>
+<?php else: ?>
+    <tr class="discreet">
+        <th><?php _e( 'Discreet Mailing', 'woocommerce' ); ?></th>
+        <td>$4.99</td>
+    </tr>
+<?php endif;
+}
+
+*/
 
 
 //this code creates a shortcode to create Pull Quotes in a post

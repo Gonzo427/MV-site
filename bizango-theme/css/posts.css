@@ -5,6 +5,7 @@
 	width: 100%;
 	padding: 44px 0;
 }
+
 /**/
 .story-title-wrap{
     margin-left: 55px;
@@ -21,7 +22,9 @@
     width: 59%;
     margin-top: -15px;
 }
-
+.post_content img {
+    height: auto;
+}
 .single .news-group, .single .news-group h2 {
 	background: none;
 	-webkit-box-shadow: none;
@@ -121,6 +124,16 @@
 ol.commentlist {
     list-style: none;
 }
+/****** Cover Story Single Post Styles ******/
+
+.cover-story .cover-snippet-wrap{
+    top: 155px;
+}
+
+.post-bg.cover-story{
+    padding: 190px 0;
+}
+
 
 
 /*- Mobile Styles Large */
