@@ -1,0 +1,173 @@
+/* Styles for pages */
+
+
+.page_wrap {
+	position: relative;
+    padding: 30px 55px;
+    width: 59%;
+    margin-top: 40px;
+}
+.page_full {
+    margin-top: -15px;
+    display: inline-block;
+}
+
+
+.left-0{
+	left: 0 !important;
+}
+.page .categories ~ li{
+	list-style: none;
+}
+
+/* ADVERTISERS PAGE */
+.page-id-6 h1 {
+    color: white;
+}
+.advertiser_wrap {
+	position: relative;
+    width: 69%;
+    margin-top: 30px;
+}
+.advertiser_wrap .pull_quote{
+	margin-bottom: 22px;
+}
+
+.download-media-kit {
+    display: inline-block;
+    margin: 20px 0;
+}
+.download-media-kit img{
+	margin-right: 40px;
+}
+.download-media-kit h4{
+	font-size: 16px;
+	color: #666565;
+	margin-bottom: 45px;
+	font-weight: 700;
+}
+a.media-kit{
+	padding: 10px 20px;
+	display: table-cell;
+}
+.find-us-in {
+    display: inline-block;
+    margin: 70px 0;
+    width: 50%;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255, .95);
+    padding: 20px 28px;
+}
+.find-us-in h3{
+	font-size: 30px;
+	display: inline;
+	float: left;
+    margin-right: 50px;
+}
+.find-us-in ul{
+	margin-left: 0;
+	width: 30%;
+}
+.find-us-in {
+	margin-top: -8px;
+}
+.wrap{
+	background: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/fiind-us-in.png);
+	background-size: cover;
+	height: 440px;
+	margin-bottom: 30px;
+	padding-top: 70px;
+}
+.advertiser-quote{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 48px;
+}
+.left-col, .right-col{
+	width: 43%;
+	float: left;
+}
+.left-col{
+	margin-right: 20px;
+}
+.right-col{
+	margin-left: 20px;
+}
+.quote-name{
+	padding-bottom: 40px;
+	color: #9a9a9a;
+}
+.four-features .feature-group{
+	padding-top: 20px;
+}
+.four-features .feature-story{
+	width: 25%;
+}
+.contact-wrap{
+	margin-top: 90px;
+	height: auto;
+	min-height: 175px;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+	display: block;
+}
+.contact-wrap h4{
+	text-align: center;
+	text-transform: uppercase;
+	background: #f7f7f7;
+	font-size: 12px;
+	letter-spacing: .120em;
+	padding: 20px;
+}
+.contact-wrap p{
+	font-size: 16px;
+	font-weight: 400;
+	 padding: 15px 20px 0px;
+    margin-bottom: -20px;
+    word-wrap: break-word;
+}
+
+.contact-wrap a{
+	color: #666565;
+	
+}
+.contact-wrap i{
+	margin-right: 10px;
+	color: #e35539;
+
+}
+
+/* 404 Error page */
+.error404 .page_full {
+    margin: 20px 0;
+    padding: 40px;
+}
+
+
+/*- Mobile Styles Large */
+@media only screen and (max-width: 1038px){
+	.find-us-in ul{
+		clear:both;
+		margin-left: 20px;
+    	width: 100%;
+    	margin-top: -10px;
+	}
+}
+
+/*- Mobile Styles Large */
+@media only screen and (max-width: 767px){
+
+	.advertiser_wrap, .right-col, .left-col, .four-features .feature-story{
+		width: 100%; margin:0;;
+	}
+	.contact-wrap {
+    	margin-top: 30px;
+    	margin-bottom: 50px;
+    	padding-bottom: 35px;
+	}
+	a.media-kit{
+		
+	}
+	
+}

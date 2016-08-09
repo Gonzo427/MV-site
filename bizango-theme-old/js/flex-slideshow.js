@@ -5,6 +5,6 @@ jQuery(window).load(function() {
         controlNav: true, 
         directionNav: false,    
         controlsContainer: ".flexslider", 
-       manualControls: ".flex-control-nav li"
+        manualControls: ".flex-control-nav li"
     });
 });

@@ -77,10 +77,10 @@ get_header();
                   <?php query_posts('cat=3&showposts=4'); ?>
                   <?php include "feature-stories.php"; ?>
               </div>
-                  <!--end feature stories -->
+        <!--end feature stories -->
 
         <!-- Email Signup Form-->
-                  <?php include "email-signup.php"; ?>
+            <?php include "email-signup.php"; ?>
             
     </div><!-- .page_frame group -->
 

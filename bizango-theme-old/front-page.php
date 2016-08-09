@@ -10,7 +10,7 @@ get_header();
 
 
 <div class="main_content">
-    <?php $cat_id = 'Cover Story'; //the cover story category ID
+    <?php $cat_id = 8; //the cover story category ID
             $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
             if( $latest_cat_post->have_posts() ) : while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post();  ?>
     <div   <?php
