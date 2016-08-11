@@ -9,7 +9,7 @@ get_header();
 
 ?> 
 <?php
-   query_posts('showposts=1&cat=8'); 
+   query_posts('showposts=1&cat=2072'); 
     while ( have_posts() ) : the_post(); ?> 
           <div <?php
             
@@ -23,35 +23,47 @@ get_header();
             echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $image_url . '); background-size: cover;"';
             }?> class="post-bg <?php the_category_unlinked(' '); ?>">
 
-                  <div class="cover-snippet-wrap" >
+            <div class="cover-snippet-wrap" >
             <div class=" page_frame cover-content">
             
             <!--display most recent story with "Cover Story" category -->
             <div class="flex-wrap">
                   <div class="fl ">
-                        <div class="categories"><?php
-                    $categories = get_the_category();
-                    $separator = ' ';
-                    $output = '';
-                    if($categories){
-                        foreach($categories as $category) {
-                    if($category->name !== 'Features'){
-                            $output .= '<span class="post-category-info"><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;}
-                        }
-                    echo trim($output, $separator);
-                    }
-                ?> </div>
+                    <div class="categories">
+
+                    <!--show only one category name, even if post has multiple categories-->
+                        <?php 
+                        $category = get_the_category(); 
+
+                        if($category[0]->cat_name == "Cover Story") {
+
+                            //if first category in array is "Cover Story", get next category in line
+                             $name = $category[1]->cat_name;
+                             $cat_id = get_cat_ID( $name );
+                             $link = get_category_link( $cat_id );
+                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+
+                        } else {
+
+                            //get the first category
+                             $name = $category[0]->cat_name;
+                             $cat_id = get_cat_ID( $name );
+                             $link = get_category_link( $cat_id );
+                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+
+                        }?>  
+                  </div><!--end categories -->
                         <h1><?php the_title(); ?></h1>
-                    </div>
+                    </div><!--end fl-->
                     <div class="page_quarter fr">
                         <div class="white-dot"></div>
                         <p class="byline">By <?php the_author(); ?></p>
                         <p class="post-date"><?php the_date(); ?></p>
                     </div>
-                </div><!--end page_frame-->
-            </div><!--end post-bg-->
-</div>
-</div>
+                </div><!--end flex-wrap-->
+            </div><!--end page-frame-->
+            </div>
+</div><!--end post-bg-->
 
          <div class="page_frame group"> 
          <div class="post_content white-bg fl thick-top-border">

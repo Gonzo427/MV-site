@@ -79,6 +79,9 @@
 	display: table-cell;
     vertical-align: top;
 }
+.feature-story .categories{
+	margin-left: 30px;
+}
 .feature-story img{
 	width: 100%;
 }
@@ -109,10 +112,7 @@ a.more-news-btn{
     padding-bottom: 15px;
     margin-top: -15px;
 }
-span.post-category-info{
-		position: relative;
-		left:30px ;
-	}
+
 .feature-image-wrap{
 	overflow: hidden;
     height: 133px;
@@ -344,9 +344,7 @@ select.wpcf7-form-control.wpcf7-select{
 /*Now Available Issue */
 .now-available{
 	background: #feffff;
-	display: inline-block;
-	padding-bottom: 60px;
-	margin-bottom: 10px;
+	margin-bottom: 150px;
 }
 .m-now-available{
 	display: none;
@@ -359,6 +357,13 @@ select.wpcf7-form-control.wpcf7-select{
 	-moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
 	box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.56);
 }
+
+.flexslider .slides li{
+	height: 330px;
+    overflow: hidden;
+}
+
+
 .flexslider{
 	display: inline;
 	position:relative;
@@ -459,9 +464,14 @@ ol.flex-control-nav{
 .row{
 	display: inline-block;
 	margin: 18px 0;
+	width: 100%;
 }
 .sponsored-content{
 	padding: 0 40px;
+}
+.sponsored-content img {
+    max-width: 257px;
+    height: auto;
 }
 .sponsored-post{
 	background: #bebebe;
@@ -480,7 +490,31 @@ ol.flex-control-nav{
 .sponsored-excerpt h4{
 	font-size: 18px;
 }
-
+/*sidebar */
+.instagram{
+	position: relative;
+}
+#sb_instagram .sbi_header_img, p.sbi_bio, #sb_instagram #sbi_load .fa, #sb_instagram .sbi_follow_btn .fa {
+    display: none;
+}
+#sb_instagram .sb_instagram_header h3 {
+    font-size: 20px;
+    position: relative;
+    left: -60px;
+}
+#sb_instagram .sb_instagram_header a{
+	color: #3b3b3b;
+}
+#sb_instagram .sbi_follow_btn a{
+	text-transform: uppercase;
+    border: 2px solid #e35539;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 0;
+    padding: 2px 15px;
+    font-size: 10px;
+}
 /*- Small Desktop */
 @media only screen and (max-width: 1069px){
 	.sponsored-wrap{
@@ -496,7 +530,7 @@ ol.flex-control-nav{
 }
 /* Awkward sizes */
 ol.flex-control-nav{
-	bottom: 3px !important;
+	bottom: 4px !important;
 	height: 90px;
 	overflow: hidden;
 }
@@ -543,7 +577,6 @@ ol.flex-control-nav{
 		display: inline-block;
 	}
 	.sponsored-excerpt {
-	    width: 100%;
 	    padding: 20px 0 0 0;
 	}
 

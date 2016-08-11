@@ -89,6 +89,48 @@ function my_register_sidebars() {
         'after_title'   => '</h3>',
         )
     );
+    register_sidebar(
+        array(
+        'name'          => __( 'Main Ad', 'theme_name' ),
+        'id'            => 'main-ad',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => __( 'Sidebar Ad', 'theme_name' ),
+        'id'            => 'sidebar-ad',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => __( 'Newsfeed Ad', 'theme_name' ),
+        'id'            => 'newsfeed-ad',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => __( 'Feature Ad', 'theme_name' ),
+        'id'            => 'feature-ad',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+        )
+    );
+
+
     /* Repeat register_sidebar() code for additional sidebars. */
 }
 //Make Category slug name into css class names
@@ -103,6 +145,19 @@ function the_category_unlinked($separator = ' ') {
     echo $thelist;
 }
 
+
+
+//Shorten EXCERPT length
+
+add_filter('excerpt_length', 'my_excerpt_length');
+function my_excerpt_length($length) {
+return 10; }
+
+
+function new_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 //Create custom post for specific category
 

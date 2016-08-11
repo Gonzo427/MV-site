@@ -14,8 +14,6 @@ get_header();
     // TO SHOW THE PAGE CONTENTS
     while ( have_posts() ) : the_post(); ?>
           
-     
-
 
 
           <div <?php
@@ -56,9 +54,9 @@ get_header();
 
 
 
-         <div class="page_frame group"> 
-         <div class="post_content white-bg fl thick-top-border">
-            <div >
+        <div class="page_frame group"> 
+        <div class="post_content white-bg fl thick-top-border">
+        <div >
             <?php 
 
               $image = get_field('post_image');
@@ -68,20 +66,16 @@ get_header();
 
                <h3> <?php the_field('subtitle'); ?></h3>
                <p><?php the_content(); ?></p> <!-- Page Content -->
-             
-             <!--social share links -->
-            <?php echo do_shortcode('[apss_share]');?>
-            <!--end social -->
                
              <!--comment section -->     
              <div class="comments-section">
                 <a class="comment-btn" style="cursor:pointer" onclick="jQuery('#respond').toggle();">Comment</a>
                 <?php comments_template('comments.php'); ?> 
              </div>
-        <!--end comments section -->
+                <!--end comments section -->
         </div>
           
-        </div><!-- .page-content-page -->
+        </div><!-- .post-content-page -->
 
           
         <?php
@@ -96,7 +90,7 @@ get_header();
          
            <div class="page_two_thirds group">
            <!--NEWS STORIES-->
-            <?php query_posts('cat=3&showposts=3'); ?>
+            <?php query_posts('cat=35&showposts=3'); ?>
              <?php include "feature-stories.php"; ?>
 
             <!--end news stories-->

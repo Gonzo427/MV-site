@@ -523,12 +523,18 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .orange{
 	color: #e35539;
 }
+.black{
+	color: #221e20;
+}
 /* PADDINGS AND MARGINS */
 .margin-top-20{
 	margin-top: 20px;
 }
 .margin-bottom-20{
 	margin-bottom: 20px;
+}
+.margin-top-25{
+	margin-top: 25px;
 }
 .margin-top-40{
 	margin-top: 40px;

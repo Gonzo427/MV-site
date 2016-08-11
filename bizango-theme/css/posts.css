@@ -7,6 +7,12 @@
 }
 
 /**/
+.cover-story h1 {
+    color: #221e20 !important;
+    text-shadow: none !important;
+    font-size: 43.09px !important;
+}
+
 .story-title-wrap{
     margin-left: 55px;
 }
@@ -48,7 +54,9 @@
 .post-date{
 	font-weight: 400;
 }
-
+span.post-category-info{
+        position: relative;
+}
 .white-dot{
     width: 65px;
     height: 65px;

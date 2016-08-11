@@ -12,7 +12,7 @@
   <!--slider code-->
                 <?php  
 
-                $images = get_field('current_issue');
+                $images = get_field('current_issue_slider');
 
                 if( $images ): ?>
 
@@ -47,7 +47,7 @@
                                 <div class="flexslider-controls">   
                                     <ol class="flex-control-nav">
                                     <li>
-                                    <h3><?php echo $image['caption']; ?>:</h3>
+                                    <h3><?php echo $image['title']; ?>:</h3>
                                     <p><?php echo $image['description']; ?> </p>
                                     </li></ol>
                                 </div>

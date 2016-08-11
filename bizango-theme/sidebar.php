@@ -25,15 +25,13 @@
 		</div>
        	<!--end news stories-->
 
-        <div class="instagram">
+        <div class="instagram margin-top-25">
             <?php echo do_shortcode('[instagram-feed]'); ?>
         </div>
-         <div class="sidebar-ad"> 
-            <?php query_posts('showposts=1&cat=18'); ?>
-            <?php while (have_posts()) : the_post(); ?>
-                  <?php the_content(); ?> 
-             <?php endwhile; ?>
 
-        </div>
+         <div class="sidebar-ad">
+            <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar-ad')) : else : ?>
+            <?php endif; ?>
+         </div>
 
   <!--end sidebar -->
