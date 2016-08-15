@@ -6,7 +6,7 @@
 /**
  * Custom styles
  */
-.post-type-archive-product .product-header-bg {
+.product-header-bg {
   background-image: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/advertise-header-img.png);
   padding: 44px 0; }
 
@@ -25,10 +25,20 @@
 .woocommerce img, .woocommerce-page img {
   height: 100%; }
 
+.woocommerce-page img.navbutton {
+  height: auto; }
+
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
   border-radius: 0;
   font-family: 'Lato', Helvetica, Arial, sans-serif; }
 
+.woocommerce .page_full {
+  margin-top: -30px !important;
+  padding-top: 33px !important; }
+.woocommerce .term-description p, .woocommerce .term-description h2 {
+  color: #666565; }
+.woocommerce .term-description p {
+  font-size: 16px; }
 .woocommerce ul.products li.product, .woocommerce .woocommerce-page ul.products li.product {
   text-align: center;
   margin-left: 5.6%;

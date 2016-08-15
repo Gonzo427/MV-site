@@ -205,8 +205,16 @@ img.mag-cover{
 .sidebar-ad {
     margin: 25px 0;
 }
+
+/* spotlight */
+.spotlight-image{
+	height: 180px;
+    overflow: hidden;
+}
+
 .spotlight img {
-    height: auto;
+    max-height: 180px;
+    vertical-align: middle
 }
 .living-the-life{
 	width: 57%;
@@ -589,6 +597,11 @@ ol.flex-control-nav{
    .news-signup p::before, .news-signup p::after {
    		width: 0;
    }	
+
+   /* ADs */
+   .g-6, .g-5{
+   	margin: 0 auto !important;
+   }
 
 
 	/********LIVING THE LIFE & PRODUCT SPOTLIGHT *****/

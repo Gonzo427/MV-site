@@ -15,7 +15,7 @@ get_header();
     while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
      <div <?php
             $image_array = wp_get_attachment_image_src($image_id, $image_size);
-            $image_id = get_field('header_image');
+            $image_id = get_field('post_image');
             // and the image size you want to return
             $image_size = 'full';
                 $image_array = wp_get_attachment_image_src($image_id, $image_size);
@@ -36,7 +36,6 @@ get_header();
                  <div class="page_sidebar fr">
                  <div class="contact-wrap">
                     <h4>Contact Us</h4>
-                    <p>Advertising</p>
                    <?php the_field('contact_info') ?>
                    </div>
                  </div>
@@ -74,7 +73,7 @@ get_header();
         </div><!--end page_full-->
          <!--FEATURE STORIES -->
              <div class="four-features">
-                  <?php query_posts('cat=3&showposts=4'); ?>
+                  <?php query_posts('cat=35&showposts=4'); ?>
                   <?php include "feature-stories.php"; ?>
               </div>
                   <!--end feature stories -->

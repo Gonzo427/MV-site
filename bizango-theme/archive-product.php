@@ -58,15 +58,13 @@ get_header( 'shop' ); ?>
 			
 			<!--NOW AVAILABLE SLIDER -->
 	       <div class="now-available">
-	         <?php query_posts('showposts=1&cat=19'); ?>
-	         <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
+	    
 	         
 	                <?php include (TEMPLATEPATH	 . '/current-issue-slider.php'); ?>
 	           
-	                <?php include (TEMPLATEPATH . "../../m-current-issue.php"); ?>
+	                <?php include (TEMPLATEPATH . "/m-current-issue.php"); ?>
 
-		      <?php endwhile; 
-		        wp_reset_query(); ?>  
+		    
 		   </div> 
 		     
 	        

@@ -11,13 +11,15 @@
                     'include' => array( 2069)
                 ) ); ?> 
             </ul>
-                       
+                  <div class="spotlight-image">   
+
                   <?php //this code gets the image from the custom field
                     $image = get_field('post_image');
                     $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
                     if( $image ) {
                       echo wp_get_attachment_image( $image, $size ); }?>
+                  </div>
                         <div class="padding-25">
                           <h2> <?php the_title(); ?> </h2>
                           <p> <?php the_excerpt();//the_field('post_excerpt'); ?> </p>
@@ -36,12 +38,14 @@
                     'include' => array( 2076)
                 ) ); ?> 
             </ul>
-                       
-              <?php //this code gets the image from the custom field
+                 <div class="spotlight-image"> 
+                 
+                  <?php //this code gets the image from the custom field
                   $image = get_field('post_image');
                   $size = 'full'; // (thumbnail, medium, large, full or custom size)
                       if( $image ) {
                           echo wp_get_attachment_image( $image, $size );}?>
+                  </div>      
                       <div class="padding-25">
                         <h2> <?php the_title(); ?> </h2>
                         <p><?php the_excerpt();//the_field('post_excerpt'); ?></p>

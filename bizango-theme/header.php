@@ -43,7 +43,7 @@
 			
 			<div id="subnav">
 				<div class="search-subscribe fr">
-				<div id="subscribe" class="alt-gothic"><a href="<?php bloginfo('url'); ?>/shop">Subscribe</a></div>
+				<div id="subscribe" class="alt-gothic"><a href="<?php bloginfo('url'); ?>/product-category/subscriptions/">Subscribe</a></div>
 				<div class="search-form"><?php get_search_form( ); ?></div>
 				</div>
 				<?php wp_nav_menu(array('theme_location' => 'sub-menu','menu' => '', 'menu_class' => 'subnav')); ?> 

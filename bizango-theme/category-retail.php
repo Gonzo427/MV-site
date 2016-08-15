@@ -17,12 +17,6 @@ if ( have_posts() ) : ?>
 <header class="archive-header">
 <h1 class="archive-title margin-bottom-40 light-border-bottom padding-bottom-20 padding-top-20" >Category: <span class="orange"><?php single_cat_title( '', true ); ?></span></h1>
 
-
-<?php
-// Display optional category description
- if ( category_description() ) : ?>
-<div class="archive-meta"><?php echo category_description(); ?></div>
-<?php endif; ?>
 </header>
 <div class="page_half fl" >
 <?php
@@ -69,12 +63,7 @@ else: ?>
 
  <div class="page_half fr" >
    <!--SIDEBAR--> 
-    <?php the_field('category_content'); ?>
-    <?php
-$queried_object = get_queried_object();
-$taxonomy = $queried_object->taxonomy;
-$term_id = $queried_object->term_id;
-$subheading = get_field('category_content', $taxonomy . '_' . $term_id);?>
+    <?php echo category_description(1067); ?>
 
 <span class="sub_heading"><?php echo $subheading; ?></span>
   

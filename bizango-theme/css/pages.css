@@ -21,13 +21,16 @@
 }
 
 /* ADVERTISERS PAGE */
-.page-id-6 h1 {
+.page-id-5737 h1 {
     color: white;
 }
 .advertiser_wrap {
 	position: relative;
     width: 69%;
     margin-top: 30px;
+}
+.advertiser_wrap p{
+	font-size: 16px;
 }
 .advertiser_wrap .pull_quote{
 	margin-bottom: 22px;
@@ -65,8 +68,8 @@ a.media-kit{
     margin-right: 50px;
 }
 .find-us-in ul{
-	margin-left: 0;
-	width: 30%;
+	margin-left: 10px;
+	width: 25%;
 }
 .find-us-in {
 	margin-top: -8px;
@@ -121,8 +124,8 @@ a.media-kit{
 	padding: 20px;
 }
 .contact-wrap p{
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 14px;
+	font-weight: 100;
 	 padding: 15px 20px 0px;
     margin-bottom: -20px;
     word-wrap: break-word;

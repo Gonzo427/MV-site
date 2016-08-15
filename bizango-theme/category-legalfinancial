@@ -1,13 +1,13 @@
 <?php 
 /**
- * Template for Categories
+ * Template for combined legal and financial posts
  * 
  * @package bizango-theme
  */
 
-get_header(); ?> 
+get_header();
 
-
+ ?>    
 <div class="main_content">
   <div class="page_frame group white-bg thick-top-border margin-top-40 margin-bottom-40 padding-25"> 
 <?php 
@@ -17,12 +17,11 @@ if ( have_posts() ) : ?>
 <header class="archive-header">
 <h1 class="archive-title margin-bottom-40 light-border-bottom padding-bottom-20 padding-top-20" >Category: <span class="orange"><?php single_cat_title( '', true ); ?></span></h1>
 
-
 </header>
-
+<div class="page_half fl" >
 <?php
-
 // The Loop
+query_posts('cat=63,91')
 while ( have_posts() ) : the_post(); ?>
         <div class="list-of-posts">   
           <!--post thumbnail images -->
@@ -35,20 +34,8 @@ while ( have_posts() ) : the_post(); ?>
 
             echo wp_get_attachment_image( $image, $size );
 
-          } elseif(  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
-            echo get_the_post_thumbnail($post->ID);
-          } else {
-             echo main_image();
+          }?>
 
-
-            }?>
-
-          <?php /* this grabs first image from post to use as post thumbnail */
-         /* if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
-            echo get_the_post_thumbnail($post->ID);
-          } else {
-             echo main_image();
-         }*/ ?>
 
         <div class="posts-content">
         <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -62,6 +49,7 @@ while ( have_posts() ) : the_post(); ?>
             ?></p>
           </div>
         </div>
+       
     </div><!--end of list-of-posts-->
 
 <?php endwhile; 
@@ -69,13 +57,16 @@ while ( have_posts() ) : the_post(); ?>
 else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
-
+</div><!--end page_half-->
 <?php endif; ?>
-
- <!--SIDEBAR--> 
-        
+   
   </div>
+
+ <div class="page_half fr" >
+   <!--SIDEBAR--> 
+     <?php echo category_description(2067); ?>
+<span class="sub_heading"><?php echo $subheading; ?></span>
+  
+  </div>    
 </div>
-
-
 <?php get_footer(); ?>

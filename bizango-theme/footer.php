@@ -21,7 +21,7 @@
 					<a href="https://www.facebook.com/MJVenture/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/facebook.png"></a>&nbsp;&nbsp;&nbsp;
 					<a href="https://www.instagram.com/mjventure/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/instagram.png"></a>
 				</p>
-				<p><a href="/shop">SUBSCRIBE</a>   |   MAGAZINE   DIGITAL</p>
+				<p>SUBSCRIBE   |   <a href="/product-category/subscriptions/">MAGAZINE</a>   <a href="/product-category/digital/">DIGITAL</a></p>
 			</div>
 
 

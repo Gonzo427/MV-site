@@ -9,8 +9,7 @@
  * Custom styles
  */
 
-
- .post-type-archive-product .product-header-bg{
+ .product-header-bg{
  	background-image: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/advertise-header-img.png);
  	padding: 44px 0;
  }
@@ -44,6 +43,18 @@
  }
 
 .woocommerce{
+	.page_full{
+		margin-top: -30px !important;
+		padding-top: 33px !important;	
+	}
+	.term-description{
+		p, h2{
+			color: #666565;
+		}
+		p{
+			font-size: 16px;
+		}
+	} 
 	ul.products li.product, .woocommerce-page ul.products li.product {
 		text-align: center;
 		margin-left: 5.6%;
