@@ -8,8 +8,15 @@
     display: inline-block;
     width: 100%;
 }
+.category-thumb{
+	float: left;
+}
 .list-of-posts{
-	display: flex;
+	display: table;
+}
+.list-of-posts img{
+	width: 250px;
+	height: 100%;
 }
 .list-of-posts .read-more{
 	float: none;

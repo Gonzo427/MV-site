@@ -3,7 +3,7 @@
 /* UNIQUE BACKGROUND IMAGE */
 .post-bg{
 	width: 100%;
-	padding: 44px 0;
+    padding: 45px 0;
 /*background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(../images/marijuana.jpg);
     background-size: cover;*/
 }
@@ -17,6 +17,7 @@
 
 .story-title-wrap{
     margin-left: 55px;
+    width: auto;
 }
 .single h2, .single h3, .single p{
 	color: #666565;
@@ -49,6 +50,7 @@
 	font-size: 1.142857em;
 }
 
+
 .byline{
 	font-weight: 700;
 	margin: 15px 0 0 0 !important;
@@ -59,14 +61,22 @@
 span.post-category-info{
         position: relative;
 }
-.white-dot{
-    width: 65px;
-    height: 65px;
-    display: block;
-    background: white;
-    border-radius: 50%;
-    float: left;
+.author-image{
     margin-right: 15px;
+       width: 60px;
+    height: 60px;
+        border-radius: 50%;
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+}
+.author-image, .author-info{
+    display: inline-block;
+    float: left;
+}
+.author-image img{
+ 
+
 }
 .page_three_quarter span.post-category-info{
 	left: 0;

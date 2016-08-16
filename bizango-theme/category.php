@@ -24,10 +24,10 @@ if ( have_posts() ) : ?>
 
 // The Loop
 while ( have_posts() ) : the_post(); ?>
-        <div class="list-of-posts">   
+        <div class="list-of-posts group">   
           <!--post thumbnail images -->
+        <div class="category-thumb"> 
           <?php 
-
           $image = get_field('post_image');
           $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
@@ -35,20 +35,14 @@ while ( have_posts() ) : the_post(); ?>
 
             echo wp_get_attachment_image( $image, $size );
 
-          } elseif(  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
-            echo get_the_post_thumbnail($post->ID);
-          } else {
-             echo main_image();
-
-
+         // } elseif(  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
+           // echo get_the_post_thumbnail($post->ID);
+          } elseif( has_post_thumbnail() ) {
+               the_post_thumbnail($size);
+          }else{
+          echo '<img src="http://bizango.wpengine.com/wp-content/uploads/2016/01/IMG_2054-e1452531274736-1024x657.jpg ">';
             }?>
-
-          <?php /* this grabs first image from post to use as post thumbnail */
-         /* if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
-            echo get_the_post_thumbnail($post->ID);
-          } else {
-             echo main_image();
-         }*/ ?>
+        </div>
 
         <div class="posts-content">
         <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>

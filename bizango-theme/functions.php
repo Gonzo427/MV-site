@@ -37,7 +37,6 @@ function add_googleanalytics() {
 
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'feature-thumb', 257, 135, true ); // Hard Crop Mode
-add_image_size( 'category-thumb', 250, 250, true ); // Hard Crop Mode
 
 
 
@@ -298,38 +297,7 @@ add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_f
   }
 
 
-//function to call first uploaded image in functions file
-function main_image() {
-$files = get_children('post_parent='.get_the_ID().'&post_type=attachment
-&post_mime_type=image&order=desc');
-  if($files) :
-    $keys = array_reverse(array_keys($files));
-    $j=0;
-    $num = $keys[$j];
-    $image=wp_get_attachment_image($num, 'category_thumb', true);
-    $imagepieces = explode('"', $image);
-    $imagepath = $imagepieces[1];
-    $main=wp_get_attachment_url($num);
-    $template=get_template_directory();
-    $the_title=get_the_title();
-    print "<img src='$main' alt='$the_title' class='category-list-img' />";
-  endif;
-}
-
 //
 
 
 
-
-//custom background
-/*add_action('genesis_header', 'add_content_to_header');
-function add_content_to_header() {
-
-$bg = get_field('cover_image');
-
-if( !empty($bg) ){
-$new_background = $bg['url'];
-echo '<body style="background: url('.$new_background.') center no-repeat; background-size: cover;">';
-}
-
-}*/

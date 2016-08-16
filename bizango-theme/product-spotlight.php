@@ -38,13 +38,16 @@
                     'include' => array( 2076)
                 ) ); ?> 
             </ul>
-                 <div class="spotlight-image"> 
-                 
-                  <?php //this code gets the image from the custom field
+
+
+                                 
+                 <div class="spotlight-image" style="color:red;" > 
+                        <?php //this code gets the image from the custom field
                   $image = get_field('post_image');
                   $size = 'full'; // (thumbnail, medium, large, full or custom size)
-                      if( $image ) {
-                          echo wp_get_attachment_image( $image, $size );}?>
+                  ?>       
+                  <?php if( $image ) {echo wp_get_attachment_image( $image, $size );}?>     
+
                   </div>      
                       <div class="padding-25">
                         <h2> <?php the_title(); ?> </h2>

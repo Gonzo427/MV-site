@@ -22,7 +22,7 @@ if ( have_posts() ) : ?>
 <?php
 // The Loop
 while ( have_posts() ) : the_post(); ?>
-        <div class="list-of-posts">   
+        <div class="list-of-posts group">   
           <!--post thumbnail images -->
           <?php 
 

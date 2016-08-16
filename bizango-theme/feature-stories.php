@@ -15,7 +15,7 @@
             <div class="feature-story thick-top-border">
               
             <div class="feature-image-wrap">
-            <?php the_post_thumbnail();?>
+            
 
                 <?php 
 

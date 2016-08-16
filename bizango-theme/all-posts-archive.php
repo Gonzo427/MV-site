@@ -12,7 +12,7 @@ get_header();
 <div class="page_frame group">
 <?php 
 // the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-45, 'cat'=>-2075, 'id'=>-150)); ?>
+$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1, 'cat'=>-2075,-2079, 'id'=>-150)); ?>
 
 <?php if ( $wpb_all_query->have_posts() ) : ?>
 <div class="page_wrap white-bg thick-top-border fl">
@@ -28,7 +28,7 @@ $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish
                 <div class="categories ">
                 <?php
                     $categories = get_the_category();
-                    $separator = ' ';
+                    $separator = ', ';
                     $output = '';
                     if($categories){
                         foreach($categories as $category) {

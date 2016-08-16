@@ -10,6 +10,7 @@ jQuery(document).ready(function( $ ) {
    	$(this).next().slideToggle();
    });
 
+   //Open page at the top on reload
    $(this).scrollTop(0);
 
 });

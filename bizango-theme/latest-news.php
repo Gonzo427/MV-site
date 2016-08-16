@@ -6,7 +6,6 @@
  */
 
 
-
  ?>        
 
 
@@ -44,4 +43,4 @@
               </div> 
          <?php endwhile; ?>
 
-        <a class="more-news-btn" href="all-posts-archive">More</a>
+        <a class="more-news-btn" href="/all-posts-archive">More</a>

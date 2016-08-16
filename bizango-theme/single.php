@@ -13,13 +13,11 @@ get_header();
 <?php
     // TO SHOW THE PAGE CONTENTS
     while ( have_posts() ) : the_post(); ?>
-          
-
 
           <div <?php
             $image_array = wp_get_attachment_image_src($image_id, $image_size);
             $image_id = get_field('post_image');
-            $default_image = 'http://bizango.wpengine.com/wp-content/uploads/2016/08/marijuanja.jpg';
+            $default_image =  get_template_directory_uri() . '/images/marijuana.jpg';
             // and the image size you want to return
             $image_size = 'full';
                 $image_array = wp_get_attachment_image_src($image_id, $image_size);
@@ -27,7 +25,7 @@ get_header();
             if ( $image_id) {//display  image as header image 
             echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $image_url . '); background-size: cover;"';
             }else{
-                echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $default_image . '); background-size: cover;"';;
+                echo 'style="background: linear-gradient(rgba(50, 57, 72, 0.4), rgba(50, 57, 72, 0.4)), rgba(50, 57, 72, 0.4) url(' . $default_image . '); background-size: cover;"';
             }
 
             ?> class="post-bg <?php the_category_unlinked(' '); ?>">
@@ -48,9 +46,26 @@ get_header();
                         <h1><?php the_title(); ?></h1>
                     </div>
                     <div class="page_quarter fr">
-                        <div class="white-dot"><?php get_field('author_image'); ?></div>
-                        <p class="byline">By <?php get_field('author'); ?></p>
-                        <p class="post-date"><?php the_date(); ?></p>
+                         <?php //display author photo if available from post, otherwise display default image
+                            if(get_field('author_image'))
+                            {
+                                echo '<div class="author-image" style="background-image:url( '. get_field("author_image") .' )"></div>';
+                            }else{
+                                echo '<div class="author-image" style="background-image:url(/wp-content/uploads/2016/08/default-author-image.png)"></div>';
+                            }
+                        ?>
+                
+                        <div class="author-info">
+                            <?php //display author name if available from post, otherwise display default byline
+                                if(get_field('author'))
+                                {
+                                    echo '<p class="byline">By ' . get_field('author') . '</p>';
+                                }else{
+                                    echo '<p class="byline">By MV Staff Writer </p>'; 
+                                }
+                            ?>
+                            <p class="post-date"><?php the_date(); ?></p>
+                        </div>
                     </div>
                 </div><!--end page_frame-->
             </div><!--end post-bg-->

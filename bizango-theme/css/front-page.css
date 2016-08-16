@@ -213,8 +213,9 @@ img.mag-cover{
 }
 
 .spotlight img {
-    max-height: 180px;
-    vertical-align: middle
+/*    max-height: 180px;*/
+    vertical-align: middle;
+    height:initial;
 }
 .living-the-life{
 	width: 57%;
@@ -572,6 +573,9 @@ ol.flex-control-nav{
 	    display: inline-block;
 	    text-align: center;
 	    margin-top: 20px;
+   }
+   .feature-story .categories{
+   		margin-left: 0;
    }
    .feature-story p,.feature-story h2 {
    		width: 80%;
