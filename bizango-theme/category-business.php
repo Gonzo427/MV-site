@@ -24,28 +24,34 @@ if ( have_posts() ) : ?>
 while ( have_posts() ) : the_post(); ?>
         <div class="list-of-posts group">   
           <!--post thumbnail images -->
+          <div class="category-thumb"> 
           <?php 
-
           $image = get_field('post_image');
           $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
           if( $image ) {
-
             echo wp_get_attachment_image( $image, $size );
-
-          }?>
+           
+          } elseif( has_post_thumbnail() ) {
+               the_post_thumbnail($size);
+          }else{//use default image if no thumbnail available
+          echo '<img src=" '.$upload_dir['baseurl'] .'/2016/01/IMG_2054-e1452531274736-1024x657.jpg ">';
+            }?>
+        </div>
 
 
         <div class="posts-content">
         <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-        <small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
+        <small><?php the_time('F jS, Y') ?></small>
 
           <div class="entry margin-bottom-40 light-border-bottom padding-bottom-20">
-            <p> <?php the_field('post_excerpt'); ?> </p>
-            <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
-
-            <p class="postmetadata"><?php comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', 'Comments closed');
-            ?></p>
+            <?php
+            if(get_field('post_excerpt'))
+            {
+              echo '<p>' . get_field('post_excerpt') . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+            }else{
+              echo '<p>' . the_excerpt() . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+            }?>
           </div>
         </div>
        

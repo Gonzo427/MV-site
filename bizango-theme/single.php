@@ -45,17 +45,17 @@ get_header();
                         ?> </div>
                         <h1><?php the_title(); ?></h1>
                     </div>
-                    <div class="page_quarter fr">
+                    <div class="page_quarter fr padding-top-20 ">
                          <?php //display author photo if available from post, otherwise display default image
                             if(get_field('author_image'))
                             {
-                                echo '<div class="author-image" style="background-image:url( '. get_field("author_image") .' )"></div>';
+                                echo '<div class="author-image fl" style="background-image:url( '. get_field("author_image") .' )"></div>';
                             }else{
-                                echo '<div class="author-image" style="background-image:url(/wp-content/uploads/2016/08/default-author-image.png)"></div>';
+                                echo '<div class="author-image fl" style="background-image:url(/wp-content/uploads/2016/08/default-author-image.png)"></div>';
                             }
                         ?>
                 
-                        <div class="author-info">
+                        <div class="author-info fl ">
                             <?php //display author name if available from post, otherwise display default byline
                                 if(get_field('author'))
                                 {

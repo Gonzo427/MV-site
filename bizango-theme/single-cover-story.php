@@ -55,12 +55,30 @@ get_header();
                   </div><!--end categories -->
                         <h1><?php the_title(); ?></h1>
                     </div><!--end fl-->
-                    <div class="page_quarter fr">
-                        <div class="white-dot"></div>
-                        <p class="byline">By <?php the_author(); ?></p>
-                        <p class="post-date"><?php the_date(); ?></p>
-                    </div>
+                   
                 </div><!--end flex-wrap-->
+                 <div class="page_quarter fr byline-wrap">
+                            <?php //display author photo if available from post, otherwise display default image
+                            if(get_field('author_image'))
+                            {
+                                echo '<div class="author-image fl" style="background-image:url( '. get_field("author_image") .' )"></div>';
+                            }else{
+                                echo '<div class="author-image fl" style="background-image:url(/wp-content/uploads/2016/08/default-author-image.png)"></div>';
+                            }
+                        ?>
+                
+                        <div class="author-info fl">
+                            <?php //display author name if available from post, otherwise display default byline
+                                if(get_field('author'))
+                                {
+                                    echo '<p class="byline">By ' . get_field('author') . '</p>';
+                                }else{
+                                    echo '<p class="byline">By MV Staff Writer </p>'; 
+                                }
+                            ?>
+                            <p class="post-date"><?php the_date(); ?></p>
+                        </div>
+                    </div>
             </div><!--end page-frame-->
             </div>
 </div><!--end post-bg-->

@@ -316,6 +316,8 @@ input.wpcf7-form-control[type="submit"]{
 	color: white;
 	margin-top: 20px;
     padding: 10px;
+    border: 0;
+    background: #e35539;
 }
 
 .formbox-title-704450{
@@ -326,7 +328,7 @@ input.wpcf7-form-control[type="submit"]{
 }
 
 .formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field, input.wpcf7-form-control, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select{
-    margin: 10px;
+    margin: 10px !important;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -340,6 +342,11 @@ select.wpcf7-form-control.wpcf7-select{
     height: 25px;
     margin: 20px 0px;
     background: white;
+}
+div.wpcf7 {
+    padding: 15px;
+    background: #efefef;
+    border-radius: 3px;
 }
 #btnSubmit{
 	background: #4e9f26 !important;
@@ -387,8 +394,10 @@ select.wpcf7-form-control.wpcf7-select{
     height: 90px;
 }
 ol.flex-control-nav{
+	bottom: 4px !important;
+	height: 90px;
+	overflow: hidden;
 	list-style: none;
-	bottom: 0 !important;
 }
 .flex-control-nav li {
 	cursor: pointer;
@@ -460,7 +469,6 @@ ol.flex-control-nav{
 /* Sponsored content - News,Products and Profiles  */
 .sponsored-wrap h3{
 	background: #f7f7f7;
-	text-align: center;
 	padding: 20px 30px;
 	font-size: 1.42857142857143em;
 	letter-spacing: .120em;
@@ -525,7 +533,7 @@ ol.flex-control-nav{
     font-size: 10px;
 }
 /*- Small Desktop */
-@media only screen and (max-width: 1069px){
+@media only screen and (max-width: 1150px){
 	.sponsored-wrap{
 		margin-top: 60px;
 	}
@@ -535,24 +543,6 @@ ol.flex-control-nav{
 	.btnSubmit{
 		padding: 20% 14px;
 	}
-
-}
-/* Awkward sizes */
-ol.flex-control-nav{
-	bottom: 4px !important;
-	height: 90px;
-	overflow: hidden;
-}
-
-/*- Mobile Styles Large */
-@media only screen and (max-width: 960px){
-	.news-signup p{
-   		font-size: 2em !important;
-
-   }
-   .sponsored-wrap{
-		margin-top: 75px;
-	}
 	.green-icons{
 		top: -15px;
 	}
@@ -560,6 +550,31 @@ ol.flex-control-nav{
 }
 
 
+
+/*- Mobile Styles Large */
+@media only screen and (max-width: 960px){
+	.news-signup p{
+   		font-size: 2em !important;
+
+   }
+  
+   .sponsored-wrap{
+		margin-top: 75px;
+		text-align: center;
+	}
+	
+	
+
+}
+/*awkward sizes*/
+@media only screen and (max-width: 875px){
+	.product-spotlight, .living-the-life {
+		  width: 100%;
+		    display: inline-block;
+		    text-align: center;
+		    margin-top: 20px;
+	}
+}
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px){
 	.flex-wrap{
@@ -568,7 +583,7 @@ ol.flex-control-nav{
 	.row{
 		text-align: center;
 	}
-	.feature-story,.product-spotlight, .living-the-life {
+	.feature-story,{
 	    width: 100%;
 	    display: inline-block;
 	    text-align: center;
@@ -590,8 +605,12 @@ ol.flex-control-nav{
 	}
 	.sponsored-excerpt {
 	    padding: 20px 0 0 0;
+	    width: 100%;
 	}
-
+	.sponsored-wrap h3{
+		padding: 60px 15px;
+		text-align: center;
+	}
 	a.buy-now{
 	    margin: 20px auto -30px;
 	    text-align: center;
@@ -601,6 +620,10 @@ ol.flex-control-nav{
    .news-signup p::before, .news-signup p::after {
    		width: 0;
    }	
+   .see-more-btn{
+		float: none;
+		right: 0;
+	}
 
    /* ADs */
    .g-6, .g-5{

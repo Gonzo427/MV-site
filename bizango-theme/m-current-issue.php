@@ -12,7 +12,7 @@
  	 
 
 <?php 
-	$images = get_field('current_issue');
+	$images = get_field('current_issue_slider');
     if( $images ): 
         $image_1 = $images[0]; 
 ?>                

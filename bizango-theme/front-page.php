@@ -102,7 +102,7 @@ get_header();
       <div class="now-available">
        
               <?php include "current-issue-slider.php"; ?><!--this shows in desktop view-->
-              <?php include "m-current-issue.php"; ?><!--this shows in mobile view -->
+              <?php //include "m-current-issue.php"; ?><!--this shows in mobile view -->
                    
       </div><!--end now-available-->
 

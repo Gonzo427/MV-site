@@ -75,7 +75,7 @@ a.media-kit{
 	margin-top: -8px;
 }
 .wrap{
-	background: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/fiind-us-in.png);
+	background: url(/wp-content/uploads/2016/05/fiind-us-in.png);
 	background-size: cover;
 	height: 440px;
 	margin-bottom: 30px;
@@ -147,22 +147,32 @@ a.media-kit{
     padding: 40px;
 }
 
+/* Desktop */
+@media only screen and (max-width: 1150px){
+	.page_wrap {width: 100%; padding: 0;}
+	.page_wrap h1{ padding: 10px; }
+}
 
-/*- Mobile Styles Large */
+
+/*- Tablet */
 @media only screen and (max-width: 1038px){
+	.find-us-in{width: 100%;padding: 0;}
 	.find-us-in ul{
 		clear:both;
 		margin-left: 20px;
-    	width: 100%;
+    	width: auto;
     	margin-top: -10px;
+	}
+	.advertiser_wrap{
+		width: 100%; margin:0;
 	}
 }
 
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px){
 
-	.advertiser_wrap, .right-col, .left-col, .four-features .feature-story{
-		width: 100%; margin:0;;
+	 .right-col, .left-col, .four-features .feature-story{
+		width: 100%; margin:0;
 	}
 	.contact-wrap {
     	margin-top: 30px;

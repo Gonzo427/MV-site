@@ -709,11 +709,11 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 	.page_tricol_right img.illustration{width: 50%; margin: 10px auto;}
 	.collection_list_item{margin-bottom: 10px;}
-	.page_tricol_left_double,.page_frame,.product-spotlight, .living-the-life{
+	.fl,.fr,.page_tricol_left_double,.page_frame,.product-spotlight, .living-the-life{
 		float:none;
 	
 	}
-	div#subnav{width:80%;}
+	div#subnav{width:90%;}
 	textarea, .copy{
 		width: 100%;
 	}

@@ -12,9 +12,9 @@
 <!-- SIDEBAR -->
    
         <div class="green-icons">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <a href="https://www.facebook.com/MJVenture/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/mjventure/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/mjventure" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
       
         
