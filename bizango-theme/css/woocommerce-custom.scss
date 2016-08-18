@@ -61,23 +61,29 @@
 		margin-right: 5.6%;
 
 	}
-	 ul.products li.product h3{
-		color: #5e5e5e;
-	    font-weight: 700;
-	    font-size: 16px;
-	}
+	 ul.products li.product {
+		 h3{
+			color: #5e5e5e;
+			font-weight: 700;
+		    font-size: 16px;
+		}
+		.button{
+			border-radius: 0;
+			margin-bottom: 1em;
+		}
+		a img{
+			max-width: 100%;
+			width: inherit;
+			margin: 0 auto;
+		}
+	 }	 
 
-	ul.products li.product .button{
-		border-radius: 0;
-		margin-bottom: 1em;
-	}
 	.now-available{
 		margin-top: 30px;
 	}
 	.page-description{
 		margin-top: 35px;	
 	}
-
 	.four-features {
 
 		.feature-group {
@@ -230,4 +236,10 @@
 		padding: 10px;
 	}
 
+}
+
+@media only screen and (max-width: 670px){
+	.back-issues img{
+		display: none;
+	}
 }

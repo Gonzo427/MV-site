@@ -6,7 +6,7 @@
 
                 // Get the URL of this category
                 $category_link = get_category_link( $category_id );?>
-                <a class="see-more-btn"href="<?php echo esc_url( $category_link ); ?>" title="News, Products and Profiles">See More</a>
+                <a class="see-more-btn" href="<?php echo esc_url( $category_link ); ?>" title="News, Products and Profiles">See More</a>
            
   <div class="sponsored-content">
         <?php query_posts('showposts=2&cat=2077,2076'); ?> <!--show 2 posts of category = SPONSORED NEWS, PRODUCTS, PROFILES-->
@@ -20,8 +20,8 @@
                   }?>
               <div class="fr sponsored-excerpt"><h4> <?php the_title(); ?> </h4>
                   <p class="sponsored-post">Sponsored Post</p>
-                  <p><?php the_excerpt();//the_field('post_excerpt'); ?></p>
-                    <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
+                 <?php the_excerpt();?>
+                  <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
               </div>
             </div><!--end row-->
                     

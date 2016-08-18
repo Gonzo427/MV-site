@@ -23,3 +23,23 @@
 .list-of-posts .read-more{
 	float: none;
 }
+.category .page_half{
+	width: 48%;
+}
+
+@media only screen and (max-width: 767px){
+	.category-thumb {
+	    float: none;
+	    margin: 0 auto;
+	    text-align: center;
+	}
+	.posts-content{
+		text-align: center;
+		border-bottom: 1px solid #efefef;
+		margin: 0 auto 15px;
+		padding: 0;
+	}
+	.category-events .posts-content {
+	    text-align: left !important;
+	}
+}

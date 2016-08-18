@@ -149,8 +149,7 @@ a.media-kit{
 
 /* Desktop */
 @media only screen and (max-width: 1150px){
-	.page_wrap {width: 100%; padding: 0;}
-	.page_wrap h1{ padding: 10px; }
+	.page_wrap {width: 95%; padding: 10px;}
 }
 
 
@@ -165,6 +164,10 @@ a.media-kit{
 	}
 	.advertiser_wrap{
 		width: 100%; margin:0;
+	}
+	.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
+	    margin: 0 !important;
+	    padding: 0 !important;
 	}
 }
 

@@ -56,6 +56,9 @@ button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="su
 a{color:#4e9f26;text-decoration:none;transition: color .3s, background .3s, border .3s;}
 a:hover{text-decoration:none;}
 
+.wp-caption-text {
+    font-style: italic;
+}
 
 /* BIZANGO PAGE LAYOUT STRUCTURE */
 
@@ -279,7 +282,7 @@ span.fa.fa-search{
 
 #footer{
     font-size: 13px;
-    background-position: center right;
+    background-position: 85% center;
     background-repeat: no-repeat;
     background-color: #ededed;
    height: 308px;
@@ -310,11 +313,10 @@ span.fa.fa-search{
     width: 37%;
 }
 .tagline{    
-	margin-top: 4px;
+	margin: 4px 10px 20px;
     letter-spacing: 1.7px;
     color: #8f8f8f;
     font-family: Times,serif;
-    margin-bottom: 20px;
 }
 
 .cell.first{    background: #ededed;
@@ -567,8 +569,13 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 
 /* Awkward size fixes */
+@media only screen and (max-width:1240px){
+	#footer{
+		background-position: 92% center;
+	}
+}
 @media only screen and (max-width:1099px){
-	.page_frame{width:90%}
+	.page_frame{width:90%; margin: 0 auto !important;}
 }
 
 /* Small Desktop
@@ -693,7 +700,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	}
 	/*******FOOTER ******/
 	#footer{
-		height: 400px;
+		height: 296px;
 		background-size: 36%;
 		background-position: top right;
 	}
@@ -711,7 +718,10 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	.collection_list_item{margin-bottom: 10px;}
 	.fl,.fr,.page_tricol_left_double,.page_frame,.product-spotlight, .living-the-life{
 		float:none;
-	
+	}
+	.alignright{
+		float: none;
+		margin-left: 0;
 	}
 	div#subnav{width:90%;}
 	textarea, .copy{
@@ -741,9 +751,6 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	.sidebar-ad {
     	text-align: center;
 	}
-
-
-    
 
     /*********FOOTER ******/
     .col1{

@@ -247,10 +247,10 @@ function woocommerce_button_proceed_to_checkout() {
 
 
      //Adds Discreet Mailing shipping option
-/*add_action('woocommerce_cart_totals_after_shipping', 'wc_discreet_shipping_after_cart');
+add_action('woocommerce_cart_totals_after_shipping', 'wc_discreet_shipping_after_cart');
 function wc_discreet_shipping_after_cart() {
 global $woocommerce;
-    $product_id = 207;
+    $product_id = 5781;
 foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
     $_product = $values['data'];
     if ( $_product->id == $product_id )
@@ -259,19 +259,13 @@ foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
     // if product not found, add it
 if ( ! $found ):
 ?>
-    <tr class="discreet">
-        <th><?php _e( 'Discreet Mailing', 'woocommerce' ); ?></th>
-        <td><a href="<?php echo do_shortcode('[add_to_cart_url id="207"]'); ?>"><?php _e( 'Discreet Mailing (+$4.99)' ); ?> </a></td>
-    </tr>
+   
 <?php else: ?>
-    <tr class="discreet">
-        <th><?php _e( 'Discreet Mailing', 'woocommerce' ); ?></th>
-        <td>$4.99</td>
-    </tr>
+    
 <?php endif;
 }
 
-*/
+
 
 
 //this code creates a shortcode to create Pull Quotes in a post

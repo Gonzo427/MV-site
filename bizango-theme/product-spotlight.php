@@ -22,7 +22,7 @@
                   </div>
                         <div class="padding-25">
                           <h2> <?php the_title(); ?> </h2>
-                          <p> <?php the_excerpt();//the_field('post_excerpt'); ?> </p>
+                          <?php the_excerpt();?> 
                           <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
                         </div>
                      <?php endwhile; ?>
@@ -38,8 +38,6 @@
                     'include' => array( 2076)
                 ) ); ?> 
             </ul>
-
-
                                  
                  <div class="spotlight-image" style="color:red;" > 
                         <?php //this code gets the image from the custom field
@@ -51,7 +49,7 @@
                   </div>      
                       <div class="padding-25">
                         <h2> <?php the_title(); ?> </h2>
-                        <p><?php the_excerpt();//the_field('post_excerpt'); ?></p>
+                        <?php the_excerpt(); ?>
                         <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
                       </div>
           <?php endwhile; ?>

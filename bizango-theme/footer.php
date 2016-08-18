@@ -49,9 +49,6 @@
 	
 	</div>
 
-
-
-</div>
 <div id="subfooter">
 	<div class="page_frame tAc">
 		<a id="bizango" href="http://www.bizango.com"  title="Website Design" target=_NEW>Website Design</a>

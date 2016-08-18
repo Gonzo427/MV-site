@@ -411,20 +411,19 @@ ol.flex-control-nav{
   	background: #ededed;
     height: auto;
     text-align: center;
-    border-right: 2px solid white !important;
+    border-right: 2px solid white;
     overflow: hidden
 }
-
-.flex-control-nav li:last-child {
-   border: none;
+ .flex-control-nav li.flex-active {
+	border: none;
 }
+
 .flex-control-nav p {
 	font-size: 11px;
 }
 .flex-control-nav h3 {
 	font-size: 16px;
 }
-
 .flex-control-nav .flex-active {
   background: green;
   color: #000;
@@ -546,25 +545,63 @@ ol.flex-control-nav{
 	.green-icons{
 		top: -15px;
 	}
+	.news-feed{
+		text-align: center;
+	}
+	.sb_instagram_header {
+	    padding: 0 !important;
+	}
+	.g-4,.g-5,.g-6{
+		margin: 0 auto !important;
+	}
 
 }
 
-
-
 /*- Mobile Styles Large */
 @media only screen and (max-width: 960px){
+	.now-available{
+		background: none;
+	}
 	.news-signup p{
    		font-size: 2em !important;
-
    }
-  
    .sponsored-wrap{
 		margin-top: 75px;
 		text-align: center;
 	}
-	
-	
+	.cover-month-year,.flexslider-controls, img.mag-cover, .in-this-issue{
+		display: none !important; 
+	}
+	.cover-month-year{
+		margin: 0 auto;
+	}
+	.editions{
+		float: right;
+	}
+	.buy-now-wrap{
+		right: 0;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.editions-wrapper {
+	    padding-top: 0;
+	    text-align: center;
+	    width: 100%;
+	    top: 10px;
+	}
+	.flexslider .slides{
+		box-shadow: none;
+	}
+	.flexslider .slides li{
+		height: 292px;
+	}
 
+	.flexslider .slides li:nth-child(2), .flexslider .slides li:nth-child(3){
+		display: none !important;
+	}
+	.orange-circle{
+		top: 200%;
+	}
 }
 /*awkward sizes*/
 @media only screen and (max-width: 875px){
@@ -597,12 +634,7 @@ ol.flex-control-nav{
    		margin-left: auto;
    		margin-right: auto;
    }
-	.flexslider{
-		display: none;
-	}
-	.m-now-available{
-		display: inline-block;
-	}
+	
 	.sponsored-excerpt {
 	    padding: 20px 0 0 0;
 	    width: 100%;
@@ -624,6 +656,19 @@ ol.flex-control-nav{
 		float: none;
 		right: 0;
 	}
+	.editions{
+		float: none;
+		display: inline-block;
+	}
+	.orange-circle, .flexslider .slides img{
+		display: none !important;
+	}
+	.woocommerce .editions p{
+		color:#666565;
+	}
+	.now-available {
+	    margin: -10px 0 !important;
+	}
 
    /* ADs */
    .g-6, .g-5{
@@ -642,10 +687,13 @@ ol.flex-control-nav{
 	/********FEATURE STORIES ********/
 	.feature-group{
 		display: inline-block;
+		width: 100%;
 	}
 	.feature-story{
 		width: 100%;
 		padding-bottom: 50px;
+		display: block;
+		text-align: center;
 	}
 	.feature-story ~ .categories{
 		margin: 15px 0 0 30px;
@@ -668,6 +716,11 @@ ol.flex-control-nav{
 	}
 	.cover-blurb {
     	width: 100%;
+	}
+	/*contact form*/
+	
+	input.wpcf7-form-control{
+		margin: 0 !important;
 	}
 	
 

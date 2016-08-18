@@ -17,11 +17,7 @@
             <div  class="news-feed">
  
             <?php if (in_category('Ad - News Feed')) : ?>
-                  <p><?php the_content(); ?> 
-
-                 </p>
-
-
+                  <?php the_content(); ?> 
                   <hr>
 
             <?php else : ?>
@@ -33,7 +29,7 @@
                 } ?></div>
                  <a href="<?php the_permalink(); ?>">
                 <h3> <?php the_title(); ?> </h3> </a> 
-                <p><?php the_excerpt(); //the_field('post_excerpt') ?></p>
+                <?php the_excerpt(); ?>
                 <div class="time-stamp"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></div>
                 <hr>
 

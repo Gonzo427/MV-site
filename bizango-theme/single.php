@@ -89,7 +89,7 @@ get_header();
                
              <!--comment section -->     
              <div class="comments-section">
-                <a class="comment-btn" style="cursor:pointer" onclick="jQuery('#respond').toggle();">Comment</a>
+                <a class="comment-btn" style="cursor:pointer" onclick="$('#respond').toggle();">Comment</a>
                 <?php comments_template('comments.php'); ?> 
              </div>
                 <!--end comments section -->

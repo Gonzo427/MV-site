@@ -50,6 +50,10 @@
 .woocommerce ul.products li.product .button {
   border-radius: 0;
   margin-bottom: 1em; }
+.woocommerce ul.products li.product a img {
+  max-width: 100%;
+  width: inherit;
+  margin: 0 auto; }
 .woocommerce .now-available {
   margin-top: 30px; }
 .woocommerce .page-description {
@@ -169,5 +173,8 @@
 
   .advertise-btn {
     padding: 10px; } }
+@media only screen and (max-width: 670px) {
+  .back-issues img {
+    display: none; } }
 
 /*# sourceMappingURL=woocommerce-custom.css.map */

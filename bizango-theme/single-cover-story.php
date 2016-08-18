@@ -41,7 +41,7 @@ get_header();
                              $name = $category[1]->cat_name;
                              $cat_id = get_cat_ID( $name );
                              $link = get_category_link( $cat_id );
-                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'">'. $name .'</a>';
 
                         } else {
 
@@ -49,7 +49,7 @@ get_header();
                              $name = $category[0]->cat_name;
                              $cat_id = get_cat_ID( $name );
                              $link = get_category_link( $cat_id );
-                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+                             echo '<span class="black">Cover Story:</span> <a href="'. esc_url( $link ) .'">'. $name .'</a>';
 
                         }?>  
                   </div><!--end categories -->

@@ -39,7 +39,7 @@
                              $name = $category[1]->cat_name;
                              $cat_id = get_cat_ID( $name );
                              $link = get_category_link( $cat_id );
-                             echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+                             echo '<a href="'. esc_url( $link ) .'">'. $name .'</a>';
 
                         } else {
 
@@ -47,13 +47,13 @@
                              $name = $category[0]->cat_name;
                              $cat_id = get_cat_ID( $name );
                              $link = get_category_link( $cat_id );
-                             echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+                             echo '<a href="'. esc_url( $link ) .'">'. $name .'</a>';
 
                         }?>  
                 </div>
               <a href="<?php the_permalink(); ?>">
                 <h2> <?php the_title(); ?> </h2></a>
-                <p> <?php the_excerpt();//the_field('post_excerpt'); ?> </p>
+               <?php the_excerpt();//the_field('post_excerpt'); ?> 
                  <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
             </div>
 

@@ -13,9 +13,7 @@
              <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
   <!--slider code-->
                 <?php  
-
                 $images = get_field('current_issue_slider');
-
                 if( $images ): ?>
 
                     <div id="slider" class="flexslider">
@@ -34,7 +32,7 @@
                              <div class="abs editions-wrapper">
                              <div class="page_half buy-now-wrap">
                                     <span class="editions"><p>Print and Digital Editions</p></span>
-                                    <a  class="buy-now fr" href="<?php the_permalink(); ?>">Buy Now</a>
+                                    <a  class="buy-now fr" href="/product-category/subscriptions">Buy Now</a>
                                 </div>
                                  <div class="fr cover-month-year">
                                     

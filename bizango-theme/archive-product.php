@@ -58,13 +58,7 @@ get_header( 'shop' ); ?>
 			
 			<!--NOW AVAILABLE SLIDER -->
 	       <div class="now-available">
-	    
-	         
-	                <?php include (TEMPLATEPATH	 . '/current-issue-slider.php'); ?>
-	           
-	                <?php include (TEMPLATEPATH . "/m-current-issue.php"); ?>
-
-		    
+	            <?php include (TEMPLATEPATH	 . '/current-issue-slider.php'); ?>
 		   </div> 
 		     
 	        
@@ -132,8 +126,7 @@ get_header( 'shop' ); ?>
 		<!-- BACK ISSUES -->
 		<div class="back-issues"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/back-issues.png ">
 		<p>Would you like to see more of Marijuana Venture’s past articles? </p>
-		<a  href="#">View back issues </a>
-			
+		<a href="/product-category/back-issues">View back issues </a>
 		</div>
 		<!--end back issues -->
 
