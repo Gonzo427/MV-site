@@ -8,7 +8,7 @@
 
 <?php query_posts('showposts=1&cat=2075'); ?><!--show upcoming issue image in right corner of footer -->
 <?php while (have_posts()) : the_post(); ?>
-<div id="footer" style="background-image: url('<?php the_field('upcoming_issue_image'); ?>');">
+<div id="footer" style="background-image: url('<?php the_field('footer_image'); ?>');">
  <?php endwhile; ?>
 
 

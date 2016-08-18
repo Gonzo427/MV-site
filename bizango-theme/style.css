@@ -603,7 +603,10 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		clear: both;
 	}
 
-
+	.page_two_thirds{
+		width: 90%;
+		margin: 0 auto;
+	}
 	.thick-top-border{
 		border: 0;
 	}

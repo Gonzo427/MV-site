@@ -217,12 +217,15 @@ img.mag-cover{
     vertical-align: middle;
     height:initial;
 }
+.sp-wrap{
+	height: 120px;
+}
 .living-the-life{
-	width: 57%;
-	margin-right: 31px;
+	width: 56%;
+	margin-right: 4%;
 }
 .product-spotlight{
-	width: 38%;
+	width: 40%;
 }
 
 .living-the-life ul, .product-spotlight ul{

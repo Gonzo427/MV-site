@@ -15,19 +15,20 @@
             <div class="feature-story thick-top-border">
               
             <div class="feature-image-wrap">
-            
 
-                <?php 
+                 <?php 
+                  $image = get_field('post_image');
+                  $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
+                  $upload_dir = wp_upload_dir();
+                  if( $image ) {
+                    echo wp_get_attachment_image( $image, $size );
+                  } elseif( has_post_thumbnail() ) {
+                       the_post_thumbnail($size);
+                  }else{//use default image if no thumbnail available
+                   echo '<img src=" '.$upload_dir['baseurl'] .'/2016/08/marijuana-hands-1.jpg">';
+                    }?>
 
-                    $image = get_field('post_image');
-                    $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
-
-                if( $image ) {
-
-                  echo wp_get_attachment_image( $image, $size );
-
-                }?>
-                </div>
+            </div>
                 <div class="categories">
                      <!--show only one category name, even if post has multiple categories-->
                         <?php 
@@ -53,7 +54,7 @@
                 </div>
               <a href="<?php the_permalink(); ?>">
                 <h2> <?php the_title(); ?> </h2></a>
-               <?php the_excerpt();//the_field('post_excerpt'); ?> 
+               <?php the_excerpt(); ?> 
                  <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
             </div>
 

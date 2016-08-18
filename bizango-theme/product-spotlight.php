@@ -18,9 +18,13 @@
                     $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
                     if( $image ) {
-                      echo wp_get_attachment_image( $image, $size ); }?>
+                      echo wp_get_attachment_image( $image, $size ); 
+
+                    } elseif( has_post_thumbnail() ) {
+                         the_post_thumbnail($size);
+                    }?>
                   </div>
-                        <div class="padding-25">
+                        <div class="sp-wrap padding-25">
                           <h2> <?php the_title(); ?> </h2>
                           <?php the_excerpt();?> 
                           <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
@@ -47,7 +51,7 @@
                   <?php if( $image ) {echo wp_get_attachment_image( $image, $size );}?>     
 
                   </div>      
-                      <div class="padding-25">
+                      <div class="sp-wrap padding-25">
                         <h2> <?php the_title(); ?> </h2>
                         <?php the_excerpt(); ?>
                         <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>

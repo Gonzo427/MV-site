@@ -193,8 +193,6 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 //remove_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail',10);
 
 
-
-
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
@@ -246,24 +244,7 @@ function woocommerce_button_proceed_to_checkout() {
 }
 
 
-     //Adds Discreet Mailing shipping option
-add_action('woocommerce_cart_totals_after_shipping', 'wc_discreet_shipping_after_cart');
-function wc_discreet_shipping_after_cart() {
-global $woocommerce;
-    $product_id = 5781;
-foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
-    $_product = $values['data'];
-    if ( $_product->id == $product_id )
-        $found = true;
-    }
-    // if product not found, add it
-if ( ! $found ):
-?>
-   
-<?php else: ?>
-    
-<?php endif;
-}
+
 
 
 
@@ -287,22 +268,6 @@ function pullQuoteRight($atts, $content = null) {
    return '<p class="pull-quote-right" >' . do_shortcode($content) . '</p>';
 }
 add_shortcode('pullquote-right', 'pullQuoteRight');
-
-
-
-//add default image option
-add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field', 20);
-  function add_default_value_to_image_field($field) {
-    acf_render_field_setting( $field, array(
-      'label'     => 'Default Image',
-      'instructions'    => 'Appears when creating a new post',
-      'type'      => 'image',
-      'name'      => 'default_value',
-    ));
-  }
-
-
-//
 
 
 

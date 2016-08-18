@@ -151,6 +151,18 @@ span.post-category-info{
 ol.commentlist {
     list-style: none;
 }
+
+/*social share buttons */
+.apss-theme-4 .apss-single-icon .fa{
+    font-size: 25px;
+}
+.apss-theme-4 .apss-icon-block{
+    border-radius: 4px;
+}
+
+.apss-pinterest .apss-icon-block{
+    border-radius: 30px;
+}
 /****** Cover Story Single Post Styles ******/
 
 .cover-story .cover-snippet-wrap{
