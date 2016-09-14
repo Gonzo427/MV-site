@@ -20,7 +20,7 @@
                   }?>
               <div class="fr sponsored-excerpt"><h4> <?php the_title(); ?> </h4>
                   <p class="sponsored-post">Sponsored Post</p>
-                 <?php the_excerpt();?>
+                 <?php echo '<p>' . excerpt(10) . '</p>';?>
                   <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
               </div>
             </div><!--end row-->

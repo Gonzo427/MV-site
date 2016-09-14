@@ -49,6 +49,7 @@ add_action('wp_enqueue_scripts','enqueue_font_awesome');
 //enqueues all other styles and scripts 
 function add_theme_scripts() {
    wp_enqueue_script( 'subscribe-script', get_template_directory_uri() . '/js/email-subscribe.js', array( 'jquery' ), '1.0.0', true );
+   wp_enqueue_script( 'toggle-script', get_template_directory_uri() . '/js/toggle.js', array( 'jquery' ), '1.0.0', true );
    wp_enqueue_script( 'mobilenav-script', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ), '1.0.0', true );
    wp_enqueue_script( 'flex-2-script', get_template_directory_uri() . '/js/flex-slideshow.js', array( 'jquery' ), '1.0.0', true );
    wp_enqueue_script( 'flex-script', get_template_directory_uri() .  '/js/jquery.flexslider-min.js', array( 'jquery' ), false, true );
@@ -158,11 +159,11 @@ function the_category_unlinked($separator = ' ') {
 
 
 
-//Shorten EXCERPT length
+//Custom EXCERPT length. use 'excerpt(number of words)'
 
-add_filter('excerpt_length', 'my_excerpt_length');
-function my_excerpt_length($length) {
-return 10; }
+function excerpt($limit) {
+    return wp_trim_words(get_the_excerpt(), $limit);
+}
 
 
 function new_excerpt_more($more) {
@@ -226,7 +227,7 @@ function add_another_custom_flat_rate( $method, $rate ) {
 }
 
 
- // Change number or products per row to 3
+ // Change number of products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
   function loop_columns() {
@@ -245,8 +246,17 @@ function woocommerce_button_proceed_to_checkout() {
 
 
 
+//allow HTML to be used in category descriptions
 
-
+$filters = array('term_description' , 'category_description' , 'pre_term_description');
+foreach ( $filters as $filter ) {
+remove_filter($filter, 'wptexturize');
+remove_filter($filter, 'convert_chars');
+remove_filter($filter, 'wpautop');
+remove_filter($filter, 'wp_filter_kses');
+remove_filter($filter, 'strip_tags');
+}
+add_filter( 'category_description', 'do_shortcode' );
 
 
 //this code creates a shortcode to create Pull Quotes in a post

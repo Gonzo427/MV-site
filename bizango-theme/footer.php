@@ -7,9 +7,9 @@
 ?>
 
 <?php query_posts('showposts=1&cat=2075'); ?><!--show upcoming issue image in right corner of footer -->
-<?php while (have_posts()) : the_post(); ?>
-<div id="footer" style="background-image: url('<?php the_field('footer_image'); ?>');">
- <?php endwhile; ?>
+
+<div id="footer" <?php while (have_posts()) : the_post(); ?> style="background-image: url('<?php the_field('footer_image'); ?>');"  <?php endwhile; ?>>
+
 
 
 	<div class="page_frame group">
@@ -18,8 +18,9 @@
 				<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/footerlogo.gif" ></a>
 				<p class="tagline">The Journal of Professional Cannabis Growers and Retailers</p>
 				<p style="margin-bottom: 13px;">
-					<a href="https://www.facebook.com/MJVenture/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/facebook.png"></a>&nbsp;&nbsp;&nbsp;
+					<a href="https://www.facebook.com/MJVenture/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/facebook.png"></a>
 					<a href="https://www.instagram.com/mjventure/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/instagram.png"></a>
+					<a href="https://twitter.com/mjventure"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/twitter.png"></a>
 				</p>
 				<p>SUBSCRIBE   |   <a href="/product-category/subscriptions/">MAGAZINE</a>   <a href="/product-category/digital/">DIGITAL</a></p>
 			</div>

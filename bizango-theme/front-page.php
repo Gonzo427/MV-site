@@ -100,7 +100,7 @@ get_header();
 
     <!--NOW AVAILABLE SLIDER -->
       <div class="now-available">
-        <?php include "current-issue-slider.php"; ?><!--this shows in desktop view-->
+        <?php include "current-issue-slider.php"; ?>
         
       </div><!--end now-available-->
 

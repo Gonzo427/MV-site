@@ -9,60 +9,57 @@ get_header();
 ?> 
 
 <div class="main_content">
-<div class="page_frame group">
-<?php 
-// the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1, 'cat'=>-2075,-2079, 'id'=>-150)); ?>
-
-<?php if ( $wpb_all_query->have_posts() ) : ?>
-<div class="page_wrap white-bg thick-top-border fl">
-       
-
-        <h1><?php the_title(); ?></h1> <!-- Page Title -->
-       
-            <p><?php the_content(); ?></p> <!-- Page Content -->
-    <ul>
-
-        <!-- the loop -->
-        <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-                <div class="categories ">
-                <?php
-                    $categories = get_the_category();
-                    $separator = ', ';
-                    $output = '';
-                    if($categories){
-                        foreach($categories as $category) {
-                    if($category->name !== 'uncategorized'){
-                            $output .= '<span class="post-category-info left-0"><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;}
-                        }
-                    echo trim($output, $separator);
-                    }
-                ?> 
-                </div>
+<div class="page_frame group white-bg thick-top-border margin-top-40 margin-bottom-40 padding-25">
 
 
-            <li><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></li>
-        <?php endwhile; ?>
-        <!-- end of the loop -->
-
-    </ul>
-</div>
-    <?php wp_reset_postdata(); ?>
-
-
-    <?php else : ?>
-        <div class="page_wrap white-bg thick-top-border fl">
-        <h3><?php _e( 'Sorry, no posts matched your criteria.' ); ?></h3>
-        <p>Search for something different: </p>
-        <div class="search-form"><?php get_search_form( ); ?></div>
+<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array( 'post_type' => 'post', 'posts_per_page' => 10, 'paged' => $paged, 'cat'=>-2079, 'id'=>-150 );
+$wp_query = new WP_Query($args);
+while ( have_posts() ) : the_post(); ?>
+   
+     <div class="list-of-posts group">   
+          <!--post thumbnail images -->
+        <div class="category-thumb"> 
+          <?php 
+          $image = get_field('post_image');
+          $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+          $upload_dir = wp_upload_dir();
+          if( $image ) {
+            echo wp_get_attachment_image( $image, $size );
+           
+          } elseif( has_post_thumbnail() ) {
+               the_post_thumbnail($size);
+          }else{//use default image if no thumbnail available
+           echo '<img src=" '.$upload_dir['baseurl'] .'/2016/01/IMG_2054-e1452531274736-1024x657.jpg ">';
+            }?>
         </div>
-    <?php endif; ?>
 
-   <!--SIDEBAR--> 
-         <div class="page_sidebar fr">
-        <?php get_sidebar(); ?>
+        <div class="posts-content">
+        <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+        <small><?php the_time('F jS, Y') ?></small>
+
+          <div class="entry margin-bottom-40 light-border-bottom padding-bottom-20">
+           <?php
+            if(get_field('post_excerpt'))
+            {
+              echo '<p>' . excerpt(50) . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+            }else{
+              echo '<p>' . excerpt(50) . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+            }?>
+          </div>
         </div>
-                     
+    </div><!--end of list-of-posts-->
+
+
+
+<?php endwhile; ?>
+
+<!-- pagination links -->
+<div class="nav-previous alignleft"><?php next_posts_link( '< Older posts', $wp_query ->max_num_pages); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts >' ); ?></div>
+
+
+         
 
 </div>
 

@@ -194,6 +194,9 @@ ul.subnav a{
     letter-spacing: .5px;
     font-size: 14px;
 }
+ul.subnav a:hover {
+    color: #39731c;
+}
 .sub-menu{
 	top: 45px;
     position: absolute;
@@ -241,6 +244,10 @@ ul.subnav a{
 	letter-spacing: .05em;
 	font-size: 21px;
 }
+#subscribe a:hover{
+	color: #b33319;
+}
+
 #subscribe a:after{
 	content: ">";
 	background: #e35539;
@@ -399,6 +406,11 @@ Required WordPress CSS
 }
 .bypostauthor {
 }
+.nav-next, .nav-previous{
+	text-transform: uppercase;
+    font-weight: 700;
+}
+
 
 /* OPTIONAL */
 
@@ -556,7 +568,6 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 .padding-bottom-20{
 	padding-bottom: 20px;
 }
-
 .padding-25{
 	padding:25px;
 }
@@ -565,6 +576,12 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 }
 .light-border-bottom{
 	border-bottom: 1px solid #e0e0e0;
+}
+.light-border-top{
+	border-top: 1px solid #e0e0e0;
+}
+.shortcode.box.gray {
+    background: #d9d9d9;
 }
 
 

@@ -25,15 +25,17 @@ get_header();
     if ( $the_query->have_posts() ) : 
     ?>
     <!-- the loop -->
-
+  <div class="padding-25 margin-bottom-20 white-bg thick-top-border">
     <ul>    
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
         <h2>Search Results: </h2>
         <li>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </li>   
     <?php endwhile; ?>
     </ul>
+    </div>
     <!-- end of the loop -->
 
     <?php wp_reset_postdata(); ?>

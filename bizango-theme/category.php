@@ -51,15 +51,17 @@ while ( have_posts() ) : the_post(); ?>
             {
               echo '<p>' . get_field('post_excerpt') . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
             }else{
-              echo '<p>' . the_excerpt() . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+              echo '<p>' . excerpt(50) . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
             }?>
           </div>
         </div>
     </div><!--end of list-of-posts-->
 
-<?php endwhile; 
-  
-else: ?>
+<?php endwhile; ?>
+  <div class="nav-previous alignleft"><?php next_posts_link( '< Older posts' ); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts >' ); ?></div>
+
+<?php else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
 

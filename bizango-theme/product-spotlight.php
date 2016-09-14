@@ -26,7 +26,7 @@
                   </div>
                         <div class="sp-wrap padding-25">
                           <h2> <?php the_title(); ?> </h2>
-                          <?php the_excerpt();?> 
+                          <?php echo '<p>' . excerpt(10) . '</p>';?> 
                           <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
                         </div>
                      <?php endwhile; ?>
@@ -53,7 +53,7 @@
                   </div>      
                       <div class="sp-wrap padding-25">
                         <h2> <?php the_title(); ?> </h2>
-                        <?php the_excerpt(); ?>
+                        <?php echo '<p>' . excerpt(10) . '</p>' ?>
                         <a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>
                       </div>
           <?php endwhile; ?>

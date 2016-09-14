@@ -29,7 +29,7 @@
                 } ?></div>
                  <a href="<?php the_permalink(); ?>">
                 <h3> <?php the_title(); ?> </h3> </a> 
-                <?php the_excerpt(); ?>
+                <?php echo '<p>' . excerpt(10) . '</p> '?>
                 <div class="time-stamp"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ); ?></div>
                 <hr>
 

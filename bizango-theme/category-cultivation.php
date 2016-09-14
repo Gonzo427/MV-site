@@ -18,7 +18,7 @@ if ( have_posts() ) : ?>
 <h1 class="archive-title margin-bottom-40 light-border-bottom padding-bottom-20 padding-top-20" >Category: <span class="orange"><?php single_cat_title( '', true ); ?></span></h1>
 
 </header>
-<div class="page_half fl" >
+<div class="padding-bottom-20" >
 <?php
 // The Loop
 while ( have_posts() ) : the_post(); ?>
@@ -50,16 +50,19 @@ while ( have_posts() ) : the_post(); ?>
             {
               echo '<p>' . get_field('post_excerpt') . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
             }else{
-              echo '<p>' . the_excerpt() . '</p><a class="read-more" href="<?php the_permalink(); ?>">Read More ></a>';
+              echo '<p>' . excerpt(50) . '</p> <a class="read-more"  href=" ' . get_permalink() . '" > Read More ></a>';
             }?>
           </div>
         </div>
        
     </div><!--end of list-of-posts-->
 
-<?php endwhile; 
-  
-else: ?>
+<?php endwhile; ?>
+<div class="nav-previous alignleft"><?php next_posts_link( '< Older posts' ); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts >' ); ?></div>
+
+
+<?php else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
 </div><!--end page_half-->
@@ -67,21 +70,11 @@ else: ?>
    
   </div>
 
- <div class="page_half fr" >
-   <!--SIDEBAR--> 
-    <?php //the_field('category_content'); ?>
-    <?php
-  /*  $queried_object = get_queried_object();
-    $taxonomy = $queried_object->taxonomy;
-    $term_id = $queried_object->term_id;
-    $subheading = get_field('category_content', $taxonomy . '_' . $term_id);
-*/
-    ?>
-
+ <div class="margin-top-40 light-border-top" >
+   <!--descriptor text--> 
+    
     <?php echo category_description(175); ?>
 
-<span class="sub_heading"><?php echo $subheading; ?></span>
-  
   </div>    
 </div>
 <?php get_footer(); ?>

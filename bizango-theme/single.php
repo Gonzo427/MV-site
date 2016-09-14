@@ -82,7 +82,7 @@ get_header();
               $image = get_field('post_image');
               $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
-              if( $image ) { echo wp_get_attachment_image( $image, $size );}?>
+              //if( $image ) { echo wp_get_attachment_image( $image, $size );}?>
 
                <h3> <?php the_field('subtitle'); ?></h3>
                <p><?php the_content(); ?></p> <!-- Page Content -->
