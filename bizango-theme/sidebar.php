@@ -19,6 +19,7 @@
       
         
         <!--NEWS STORIES-->
+          <?php query_posts('showposts=7&cat=175,1067,2067,2079,-34,-35,-177,-122,-2972,-2073,-2076,-2078,-2069,-2075'); ?>
          <div class="news-group thick-top-border">
           <h2>Latest News</h2>
         <?php include "latest-news.php"; ?>

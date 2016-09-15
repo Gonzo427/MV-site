@@ -27,6 +27,7 @@ while ( have_posts() ) : the_post(); ?>
         <div class="list-of-posts group">   
           <!--post thumbnail images -->
         <div class="category-thumb"> 
+          <a href="<?php the_permalink(); ?>">
           <?php 
           $image = get_field('post_image');
           $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
@@ -39,6 +40,7 @@ while ( have_posts() ) : the_post(); ?>
           }else{//use default image if no thumbnail available
            echo '<img src=" '.$upload_dir['baseurl'] .'/2016/01/IMG_2054-e1452531274736-1024x657.jpg ">';
             }?>
+            </a>
         </div>
 
         <div class="posts-content">

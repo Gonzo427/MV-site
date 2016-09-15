@@ -25,8 +25,8 @@ get_header();
 ?>
 
    <!--SIDEBAR--> 
-         <div class="page_sidebar fr">
-        <?php get_sidebar(); ?>
+         <div class="page_sidebar fr margin-bottom-20">
+            <?php get_sidebar('secondary'); ?>
         </div>
                      
 

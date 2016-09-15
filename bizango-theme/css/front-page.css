@@ -321,6 +321,7 @@ input.wpcf7-form-control[type="submit"]{
     padding: 10px;
     border: 0;
     background: #e35539;
+    width: 35%;
 }
 
 .formbox-title-704450{
@@ -332,17 +333,24 @@ input.wpcf7-form-control[type="submit"]{
 
 .formbox-editor-704450 fieldset > input, .formbox-editor fieldset > textarea, .formbox-editable-field, input.wpcf7-form-control, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select{
     margin: 10px !important;
-    padding: 10px;
+    padding: 0 10px;
     text-align: center;
     text-transform: uppercase;
     font-size: 10px;
     color: #221e20;
     letter-spacing: .12em;
      border: 1px solid lightgrey;
+     border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+input.wpcf7-form-control{
+	padding: 20px;
+	width: 68%;
 }
 select.wpcf7-form-control.wpcf7-select{
-	border-radius: 0;
-    height: 25px;
+    height: 45px;
+    width: 75%;
     margin: 20px 0px;
     background: white;
 }

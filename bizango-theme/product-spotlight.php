@@ -18,7 +18,7 @@
                     $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
                     if( $image ) {
-                      echo wp_get_attachment_image( $image, $size ); 
+                      echo '<a href=" '.get_permalink( $post->ID).' ">' . wp_get_attachment_image( $image, $size )  . '</a>'; 
 
                     } elseif( has_post_thumbnail() ) {
                          the_post_thumbnail($size);
@@ -48,7 +48,7 @@
                   $image = get_field('post_image');
                   $size = 'full'; // (thumbnail, medium, large, full or custom size)
                   ?>       
-                  <?php if( $image ) {echo wp_get_attachment_image( $image, $size );}?>     
+                  <?php if( $image ) {echo '<a href=" '.get_permalink( $post->ID).' ">' . wp_get_attachment_image( $image, $size ) . '</a>';}?>     
 
                   </div>      
                       <div class="sp-wrap padding-25">

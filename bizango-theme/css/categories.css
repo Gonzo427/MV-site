@@ -26,7 +26,10 @@
 .category .page_half{
 	width: 48%;
 }
-
+.more, .less {
+    text-transform: uppercase;
+    color: #4e9f26;
+}
 @media only screen and (max-width: 767px){
 	.category-thumb {
 	    float: none;

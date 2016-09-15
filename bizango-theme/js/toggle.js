@@ -1,16 +1,23 @@
 jQuery(function($){
 
 	$(document).ready(function(){
+		var $expanded = $('.expanded');
+		var $more = $(".more");
+		var $less = $(".less");
 
-		$(".toggle_container").hide();
+		$expanded.hide();
 
-		$(".toggle-trigger").click(function(){
-
-			$(this).toggleClass("active").next().slideToggle("normal");
-
-		return false; //Prevent the browser jump to the link anchor
+		$more.click(function(){
+		    $expanded.show();
+		    $more.hide();
 
 		});
+		$less.click(function(){
+		    $expanded.hide();
+		    $more.show();
+
+		});
+
 
 	});
 

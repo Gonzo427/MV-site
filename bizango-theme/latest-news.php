@@ -10,7 +10,7 @@
 
 
        
-        <?php query_posts('showposts=7&cat=175,1067,2067,2079,-35,-177,-122,-2972,-2073,-2076,-2078,-2069,-2075'); ?>
+      
        
         <?php while (have_posts()) : the_post(); ?>
 

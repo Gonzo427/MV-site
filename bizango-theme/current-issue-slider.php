@@ -8,7 +8,7 @@
 
 
  ?>    
-
+<!-- kljhsdf -->
      <?php query_posts('showposts=1&cat=2078'); ?>
              <?php if ( have_posts() ) while ( have_posts() ) : the_post();  ?>
   <!--slider code-->

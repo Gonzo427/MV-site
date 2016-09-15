@@ -21,11 +21,11 @@
                   $size = 'feature-thumb'; // (thumbnail, medium, large, full or custom size)
                   $upload_dir = wp_upload_dir();
                   if( $image ) {
-                    echo wp_get_attachment_image( $image, $size );
+                    echo     '<a href=" '.get_permalink( $post->ID).' ">' . wp_get_attachment_image( $image, $size ) . '</a>';
                   } elseif( has_post_thumbnail() ) {
                        the_post_thumbnail($size);
                   }else{//use default image if no thumbnail available
-                   echo '<img src=" '.$upload_dir['baseurl'] .'/2016/08/marijuana-hands-1.jpg">';
+                   echo '<a href=" '.get_permalink( $post->ID).' "><img src=" '.$upload_dir['baseurl'] .'/2016/08/marijuana-hands-1.jpg"></a>';
                     }?>
 
             </div>

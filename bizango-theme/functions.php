@@ -93,8 +93,8 @@ function my_register_sidebars() {
     );
     register_sidebar(
         array(
-        'name'          => __( 'Secondary Sidebar', 'theme_name' ),
-        'id'            => 'secondary',
+        'name'          => __( 'Secondary', 'theme_name' ),
+        'id'            => 'sidebar-secondary',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h3 class="widget-title">',
@@ -244,19 +244,6 @@ function woocommerce_button_proceed_to_checkout() {
        <?php
 }
 
-
-
-//allow HTML to be used in category descriptions
-
-$filters = array('term_description' , 'category_description' , 'pre_term_description');
-foreach ( $filters as $filter ) {
-remove_filter($filter, 'wptexturize');
-remove_filter($filter, 'convert_chars');
-remove_filter($filter, 'wpautop');
-remove_filter($filter, 'wp_filter_kses');
-remove_filter($filter, 'strip_tags');
-}
-add_filter( 'category_description', 'do_shortcode' );
 
 
 //this code creates a shortcode to create Pull Quotes in a post

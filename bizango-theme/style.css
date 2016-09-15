@@ -581,7 +581,7 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	border-top: 1px solid #e0e0e0;
 }
 .shortcode.box.gray {
-    background: #d9d9d9;
+    background: #d9d9d9 !important;
 }
 
 
