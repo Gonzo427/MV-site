@@ -22,7 +22,7 @@
 					<a href="https://www.instagram.com/mjventure/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/instagram.png"></a>
 					<a href="https://twitter.com/mjventure"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/twitter.png"></a>
 				</p>
-				<p>SUBSCRIBE   |   <a href="/product-category/subscriptions/">MAGAZINE</a>   <a href="/product-category/digital/">DIGITAL</a></p>
+				<p>SUBSCRIBE:  <a href="/product-category/subscriptions/">MAGAZINE</a>  |  <a href="/product-category/digital/">DIGITAL</a></p>
 			</div>
 
 

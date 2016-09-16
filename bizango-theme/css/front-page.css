@@ -2,6 +2,7 @@
 .cover-story-img{
 	height: 500px;
 	position: relative;
+	
 }
 .white-bg{
 	background:white;
@@ -199,7 +200,6 @@ img.mag-cover{
 .main-ad{
 	background: lightgrey;
 	margin: 25px 0;
-	height: 90px;
 	max-width: 100%;
 }
 .sidebar-ad {
@@ -345,13 +345,13 @@ input.wpcf7-form-control[type="submit"]{
 	-webkit-border-radius: 4px;
 }
 input.wpcf7-form-control{
-	padding: 20px;
+	padding: 10px 20px;
 	width: 68%;
 }
 select.wpcf7-form-control.wpcf7-select{
     height: 45px;
     width: 75%;
-    margin: 20px 0px;
+    margin: 20px 0px !important;
     background: white;
 }
 div.wpcf7 {
@@ -699,12 +699,14 @@ ol.flex-control-nav{
 	.feature-group{
 		display: inline-block;
 		width: 100%;
+		box-shadow: 0;
 	}
 	.feature-story{
-		width: 100%;
+		width: 95%;
 		padding-bottom: 50px;
 		display: block;
 		text-align: center;
+		margin: 0 auto 10px;
 	}
 	.feature-story ~ .categories{
 		margin: 15px 0 0 30px;
@@ -732,6 +734,7 @@ ol.flex-control-nav{
 	
 	input.wpcf7-form-control{
 		margin: 0 !important;
+		width: 80%;
 	}
 	
 

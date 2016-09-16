@@ -35,9 +35,8 @@
 			
 <div id="hero_frame">		
 
-		<div class="page_frame group">
+		<div class="page_frame group sticky-header">
 			<a id="logo" href="/">&nbsp;</a>
-
 
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/mag.png" class="mag">
 			
@@ -56,7 +55,7 @@
 		</div>
 
 	<div id="nav_frame">
-		<div class="page_frame group">
+		<div class="page_frame group sticky-nav">
 			<div id="nav">
 			<?php wp_nav_menu(array('theme_location' => 'main-menu','menu' => '', 'menu_class' => 'nav', 'show_home' => false)); ?> 
 			</div>

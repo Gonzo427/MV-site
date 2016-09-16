@@ -103,7 +103,7 @@ get_header();
                 <a class="comment-btn" style="cursor:pointer" onclick="$('#respond').toggle();">Comment</a>
                 <?php comments_template('comments.php'); ?> 
              </div>
-                <!--end comments section -->
+            <!--end comments section -->
         </div>
           
         </div><!-- .post-content-page -->
@@ -114,10 +114,7 @@ get_header();
         wp_reset_query(); //resetting the page query
 
         ?>
-        <div class="page_sidebar fr">
-       
-        <?php get_sidebar(); ?>
-        </div>
+        
          
            <div class="page_two_thirds group">
            <!--NEWS STORIES-->
@@ -131,6 +128,10 @@ get_header();
             
            </div>
             <!-- END: Email Signup Form -->
+        
+        <div class="page_sidebar fr">
+            <?php get_sidebar(); ?>
+        </div>
     </div><!--end page_frame group-->
 
 <?php get_footer(); ?> 

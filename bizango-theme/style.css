@@ -62,32 +62,61 @@ a:hover{text-decoration:none;}
 
 /* BIZANGO PAGE LAYOUT STRUCTURE */
 
-#page_body{position: relative;
-}
-#body_home #page_body{
-}
+#page_body{position: relative;}
+#body_home #page_body{}
 
+/* STICKY HEADER */
+.sticky{
+	height: 100px;
+	transition: all 0.4s ease;
+}
+.sticky-header{
+	height: 170px;
+	transition: all 0.4s ease;
+}
+.sticky-nav{
+	height: 44px;
+	transition: all 0.4s ease;
+}
+.sticky .sticky-header{
+	height: 100px;
+	transition: all 0.4s ease;
+}
+.sticky .sticky-nav{
+	height: 43px;
+}
+.sticky #nav{
+	top: -62px;
+}
+.sticky .mag, .sticky .navbutton{
+	display: none;
+}
+.sticky .search-form{
+	width: 50%;
+    display: block;
+    margin-top: -31px;
+}
 #hero_frame{
-	position:relative;width:100%;
+	position:fixed;
+	z-index: 22222222;
+	top: 0;
+	width:100%;
 	background-color: #ffffff;
 	background-position: bottom center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-top:14px solid #f0f0f0;
+	transition: all 0.4s ease;
 }
 body.home #hero_frame{
 
 }
-
-
 .page_frame{
     margin:0px auto;position:relative;width:1100px;
 }
 .page_full{
 	width: 90%;padding: 0 5%;
 }
-
-
 .page_sidebar{
 	position: relative;
 	width:28%;
@@ -100,20 +129,18 @@ body.home #hero_frame{
 	position: relative;
 	width: 45%;
 }
-.page_half_noguttter{
+.page_half_nogutter{
 	position: relative;
 	width: 50%;
 }
 .page_quarter{
 	position: relative;
 	width: 25%;
-	
 }
 .page_three_quarter{
 	position: relative;
 	width: 75%;
 }
-
 .page_third{
 	position: relative;
 	width: 33.33%;
@@ -133,6 +160,7 @@ body.home #hero_frame{
 }
 #nav{
     position:relative;
+    transition: all 0.4s ease;
 }
 #nav > .nav{float: left;}
 #nav ul{
@@ -506,12 +534,14 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 #breadcrumbs a:hover {
 	text-decoration:none;
 }
-
-
 .main_content{
 	background-size: cover;
 	background-position: top left;
 	position: relative;
+	top: 170px;
+}
+.sticky ~ .main_content{
+
 }
 
 /* helpers-> clearfix */
@@ -611,7 +641,13 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 /* Tablet & Small Desktop*/
 @media only screen and (max-width: 1150px){
-	
+	.sticky-header {
+	    height: auto;
+	}
+	#hero_frame{
+		position: relative;
+	}
+	.main_content{ top: 0; }
 	.page_sidebar, .page_content{
 		width: 80%;
 		margin: 0 auto;
@@ -619,14 +655,15 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		display: block;
 		clear: both;
 	}
-
+	.page_sidebar{
+		top: 40px;
+		margin-bottom: 50px;
+	}
 	.page_two_thirds{
 		width: 90%;
 		margin: 0 auto;
 	}
-	.thick-top-border{
-		border: 0;
-	}
+	
 	.margin-bottom-40, .margin-top-40{
 		margin: 0;
 	}
@@ -706,13 +743,19 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	#mobile_nav .nav li a{
 		color: white;
 	}
+	#mobile_nav .nav li a:hover{
+		color: #adadad;
+	}
 	#mobile_nav .nav li:last-child{
 		border-bottom: none;
 	}
 	.sub-menu {
 	    top: 5px;
 		position: relative;
+		margin: 0 auto;
+		width: 90%;
 	}
+	
 	.sub-menu li {
 	    background-color: #676767 !important;
 	    top: 11px;
@@ -739,11 +782,14 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	.fl,.fr,.page_tricol_left_double,.page_frame,.product-spotlight, .living-the-life{
 		float:none;
 	}
+	.page_sidebar{
+		top: 10px;
+	}
 	.alignright{
 		float: none;
 		margin-left: 0;
 	}
-	div#subnav{width:90%;}
+	div#subnav{width:75%;}
 	textarea, .copy{
 		width: 100%;
 	}
@@ -792,10 +838,20 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 
 /*- Mobile Styles phone*/
 @media only screen and (max-width: 659px){
+	#footer{
+		height: 80%;
+	}
+	div#subnav{width:95%;}
     input{-webkit-appearance: none;-webkit-border-radius:0; }
 
+    ul.subnav{
+    	bottom: 20px;
+    }
     ul.subnav li {
     	margin: 0;
+    }
+    ul.subnav a{
+    	font-size: 12px;
     }
 
 

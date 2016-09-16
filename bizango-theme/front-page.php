@@ -23,7 +23,7 @@ get_header();
    
             
         <div class="cover-snippet-wrap" >
-            <div class=" page_frame cover-content">
+            <div class="page_frame cover-content">
             
             <!--display most recent story with "Cover Story" category -->
             <div class="flex-wrap">
@@ -72,7 +72,7 @@ get_header();
     <div class="page_frame group ">
      <div class="page_content fl">
      <!--FEATURE STORIES -->
-      <?php query_posts('cat=-2072,35,&showposts=3'); ?><!--display only 3 of the most recent stories with category = Features -->
+      <?php query_posts('cat=-2072,-34,35,&showposts=3'); ?><!--display only 3 of the most recent stories with category = Features -->
       <?php include "feature-stories.php"; ?>
 
     <!--end feature group--> 

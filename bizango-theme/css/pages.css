@@ -11,7 +11,11 @@
     margin-top: -15px;
     display: inline-block;
 }
-
+.page .main_content{
+	margin-bottom: 180px;
+	top: 185px;
+}
+.page-template-page-advertise .main_content{top: 0px;}
 
 .left-0{
 	left: 0 !important;
@@ -150,6 +154,8 @@ a.media-kit{
 /* Desktop */
 @media only screen and (max-width: 1150px){
 	.page_wrap {width: 95%; padding: 10px;}
+	.page .main_content{ top: 0; }
+	.page-template-page-advertise .main_content{top: -200px;}
 }
 
 
