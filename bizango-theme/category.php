@@ -19,7 +19,7 @@ if ( have_posts() ) : ?>
 
 
 </header>
-
+<div class="padding-bottom-20" >
 <?php
 
 // The Loop
@@ -65,7 +65,7 @@ while ( have_posts() ) : the_post(); ?>
 
 <?php else: ?>
 <p>Sorry, no posts matched your criteria.</p>
-
+</div><!--end main content-->
 
 <?php endif; ?>
 

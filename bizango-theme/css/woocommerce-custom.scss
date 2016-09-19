@@ -12,8 +12,12 @@
  .product-header-bg{
  	background-image: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/advertise-header-img.png);
  	padding: 44px 0;
+ 	position:relative;
+ 	top:233px;
  }
-
+.sticky ~  .product-header-bg{
+	top: 134px;
+}
  .product-header-bg h1{
  	color: white;
  }
@@ -43,6 +47,12 @@
  }
 
 .woocommerce{
+	.main_content {
+	    top: 233px;
+	}
+	.sticky ~ .main_content {
+	    top: 134px;
+	}
 	.page_full{
 		margin-top: -30px !important;
 		padding-top: 33px !important;	
@@ -167,9 +177,40 @@
 }
 
 /*- Small Desktop */
+@media only screen and (max-width: 1150px){
+	.woocommerce{
+		.main_content {
+		    top: 0px;
+		}
+	}
+
+	.product-header-bg{
+		top: 0;
+	}
+	.advertise-wrap{
+		text-align: center;
+	}
+	.advertise{
+		p{
+			padding-left: 0;
+		}
+	}
+}
+
+
 @media only screen and (max-width: 1069px){
 	.advertise{
 		max-width: 50%;
+	}
+	.back-issues {
+		p{
+			padding: 29px 45px;
+		}
+		a{
+			float: left;
+			margin-left: 45px;
+			margin-top: -35px;
+		}
 	}
 }
 
@@ -191,16 +232,7 @@
 	.woocommerce .now-available {
 	    margin-bottom: 50px;
 	}
-	.back-issues {
-		p{
-			padding: 29px 45px;
-		}
-		a{
-			float: left;
-			margin-left: 45px;
-			margin-top: -35px;
-		}
-	}
+	
 }
 
 /*- Mobile Styles Large */

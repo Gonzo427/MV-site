@@ -4,7 +4,10 @@
 .post-bg{
 	width: 100%;
     padding: 45px 0;
-    margin-top:199px;
+    margin-top:233px;
+}
+.sticky ~ .post-bg{
+    margin-top: 146px;
 }
 
 /**/
@@ -44,8 +47,6 @@
     -moz-box-shadow: none;
     box-shadow: none;
 }
-
-
 .single h1, .single .news-feed h3, .single .news-group h2 , .single .news-feed p, p.byline, p.post-date, .news-signup p{
 	color: white;
 	margin: 0;
@@ -129,7 +130,7 @@ span.post-category-info{
 }
 .comment-btn {
     background: #e35539;
-    padding: 12px 45px;
+    padding: 12px 5%;
     color: white;
     text-transform: uppercase;
     font-size: 11px;

@@ -87,7 +87,6 @@ get_header();
 
         <div class="page_frame group"> 
         <div class="post_content white-bg fl thick-top-border">
-        <div >
             <?php 
 
               $image = get_field('post_image');
@@ -103,35 +102,29 @@ get_header();
                 <a class="comment-btn" style="cursor:pointer" onclick="$('#respond').toggle();">Comment</a>
                 <?php comments_template('comments.php'); ?> 
              </div>
-            <!--end comments section -->
-        </div>
-          
+            <!--end comments section -->   
         </div><!-- .post-content-page -->
-
           
         <?php
         endwhile; //resetting the page loop
         wp_reset_query(); //resetting the page query
-
         ?>
-        
          
-           <div class="page_two_thirds group">
-           <!--NEWS STORIES-->
-            <?php query_posts('cat=35&showposts=3'); ?>
-             <?php include "feature-stories.php"; ?>
-
-            <!--end news stories-->
-             <!-- Email Signup Form-->
-           <?php include "email-signup.php"; ?>
-            
-            
-           </div>
-            <!-- END: Email Signup Form -->
         
         <div class="page_sidebar fr">
             <?php get_sidebar(); ?>
         </div>
+
+         <div class="page_two_thirds group">
+           <!--NEWS STORIES-->
+            <?php query_posts('cat=35&showposts=3'); ?>
+            <?php include "feature-stories.php"; ?>
+            <!--end news stories-->
+
+             <!-- Email Signup Form-->
+            <?php include "email-signup.php"; ?>
+             <!-- END: Email Signup Form -->
+           </div>
     </div><!--end page_frame group-->
 
 <?php get_footer(); ?> 

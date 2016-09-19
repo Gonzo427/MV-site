@@ -8,7 +8,12 @@
  */
 .product-header-bg {
   background-image: url(http://bizango.wpengine.com/wp-content/uploads/2016/05/advertise-header-img.png);
-  padding: 44px 0; }
+  padding: 44px 0;
+  position: relative;
+  top: 233px; }
+
+.sticky ~ .product-header-bg {
+  top: 134px; }
 
 .product-header-bg h1 {
   color: white; }
@@ -32,6 +37,10 @@
   border-radius: 0;
   font-family: 'Lato', Helvetica, Arial, sans-serif; }
 
+.woocommerce .main_content {
+  top: 233px; }
+.woocommerce .sticky ~ .main_content {
+  top: 134px; }
 .woocommerce .page_full {
   margin-top: -30px !important;
   padding-top: 33px !important; }
@@ -122,9 +131,28 @@
     font-weight: 700; }
 
 /*- Small Desktop */
+@media only screen and (max-width: 1150px) {
+  .woocommerce .main_content {
+    top: 0px; }
+
+  .product-header-bg {
+    top: 0; }
+
+  .advertise-wrap {
+    text-align: center; }
+
+  .advertise p {
+    padding-left: 0; } }
 @media only screen and (max-width: 1069px) {
   .advertise {
-    max-width: 50%; } }
+    max-width: 50%; }
+
+  .back-issues p {
+    padding: 29px 45px; }
+  .back-issues a {
+    float: left;
+    margin-left: 45px;
+    margin-top: -35px; } }
 /* Tablet*/
 @media only screen and (max-width: 960px) {
   .woocommerce .four-features .feature-group {
@@ -138,14 +166,7 @@
     padding-left: 0; }
 
   .woocommerce .now-available {
-    margin-bottom: 50px; }
-
-  .back-issues p {
-    padding: 29px 45px; }
-  .back-issues a {
-    float: left;
-    margin-left: 45px;
-    margin-top: -35px; } }
+    margin-bottom: 50px; } }
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px) {
   .wc-proceed-to-checkout {

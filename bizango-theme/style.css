@@ -70,31 +70,40 @@ a:hover{text-decoration:none;}
 	height: 100px;
 	transition: all 0.4s ease;
 }
-.sticky-header{
-	height: 170px;
-	transition: all 0.4s ease;
+.sticky-header {
+    height: 170px;
+    transition: all .4s ease;
 }
 .sticky-nav{
 	height: 44px;
 	transition: all 0.4s ease;
 }
 .sticky .sticky-header{
-	height: 100px;
+	height: 70px;
 	transition: all 0.4s ease;
 }
 .sticky .sticky-nav{
 	height: 43px;
 }
-.sticky #nav{
-	top: -62px;
+.sticky-header {
+    height: auto;
+    transition: all 0.4s ease;
 }
-.sticky .mag, .sticky .navbutton{
+.sticky #nav{
+	top: -92px;
+}
+.sticky .mag, .sticky .navbutton, .sticky .menu-sub-menu-container, .sticky #subscribe{
 	display: none;
 }
 .sticky .search-form{
-	width: 50%;
     display: block;
-    margin-top: -31px;
+    margin-top: -20px;
+}
+#menu-item-5856{
+	display: none;
+}
+.extra-item #menu-item-5856{
+	display: inline;
 }
 #hero_frame{
 	position:fixed;
@@ -149,6 +158,7 @@ body.home #hero_frame{
 	position: relative;
 	width: 69%;
 	clear:left;
+	display: inline-block;
 }
 .abs{
 	position: absolute;
@@ -455,7 +465,8 @@ img.illustration{
     background-size: contain;
     margin-top: 16px;
     margin-bottom: 15px;
-    max-width: 100% 
+    max-width: 100%;
+    transition: all .2s ease;
 }
 
 #newsflash{
@@ -534,14 +545,27 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 #breadcrumbs a:hover {
 	text-decoration:none;
 }
+.home .main_content{
+	top: 102px !important;
+}
 .main_content{
 	background-size: cover;
 	background-position: top left;
 	position: relative;
+	top: 205px;
+	transition: all .2s ease;
+	min-height:600px;
+}
+.search .main_content{
+	min-height: 375px;
+	top: 250px;
+}
+.search  .sticky ~ .main_content{
+	min-height: 305px;
 	top: 170px;
 }
 .sticky ~ .main_content{
-
+	top: 120px;
 }
 
 /* helpers-> clearfix */
@@ -647,7 +671,14 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	#hero_frame{
 		position: relative;
 	}
-	.main_content{ top: 0; }
+	.main_content{ top: 40px; }
+	.home .main_content{
+		top: 0px !important;
+	}
+	.search .main_content {
+	    min-height: 175px;
+	    top: 25px;
+	}
 	.page_sidebar, .page_content{
 		width: 80%;
 		margin: 0 auto;
@@ -659,9 +690,13 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 		top: 40px;
 		margin-bottom: 50px;
 	}
+	.page-template-page-advertise .page_sidebar {
+		top: 0;
+	}
 	.page_two_thirds{
 		width: 90%;
 		margin: 0 auto;
+		display: block;
 	}
 	
 	.margin-bottom-40, .margin-top-40{
@@ -764,19 +799,28 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
 	/*******FOOTER ******/
 	#footer{
 		height: 296px;
-		background-size: 36%;
-		background-position: top right;
+		background-image: none !important;
+		margin-top: 10px;
 	}
 	.col2{
 		width: 50%;
 	}
-
+	.col3{
+		float: right;
+		margin-top: -120px;
+	}
+	.copy{
+		width: 100%;
+		padding-top: 35px;
+	}
 
 }
 
 /*- Mobile Styles Large */
 @media only screen and (max-width: 767px){
-
+	.main_content{
+		min-height: 715px;
+	}
 	.page_tricol_right img.illustration{width: 50%; margin: 10px auto;}
 	.collection_list_item{margin-bottom: 10px;}
 	.fl,.fr,.page_tricol_left_double,.page_frame,.product-spotlight, .living-the-life{
@@ -827,8 +871,8 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
     .col2, .col3{
 		width: 50%;
 	}	
-     .col4 {
-		display: none;
+     .col3 {
+		margin-top: 0;
 	}
 	#footer .page_frame{
 		background-color:#ededed;
@@ -870,5 +914,8 @@ p.collection_list_item_readmore{text-align:right;clear:both;}
     .tagline{
     	margin: 4px 10px 20px;
     }
+    .padding-25 {
+	    padding: 5px;
+	}
 
 }

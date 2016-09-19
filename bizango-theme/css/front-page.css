@@ -2,7 +2,7 @@
 .cover-story-img{
 	height: 500px;
 	position: relative;
-	
+
 }
 .white-bg{
 	background:white;
@@ -310,7 +310,6 @@ input[placeholder="Email Address *"]{
 	
 }
 
-
 /* CONTACT US PAGE */
 .formbox-field-email-704450 input{
 	height: 30px;
@@ -322,6 +321,7 @@ input.wpcf7-form-control[type="submit"]{
     border: 0;
     background: #e35539;
     width: 35%;
+    border-radius: 0;
 }
 
 .formbox-title-704450{
@@ -548,7 +548,11 @@ ol.flex-control-nav{
 		margin-top: 60px;
 	}
 	.sponsored-excerpt {
-	    width: 50%;
+	    width: 54%;
+	}
+	.instagram {
+	    width: 70%;
+	    margin: 25px auto;
 	}
 	.btnSubmit{
 		padding: 20% 14px;
@@ -565,20 +569,24 @@ ol.flex-control-nav{
 	.g-4,.g-5,.g-6{
 		margin: 0 auto !important;
 	}
-
 }
 
 /*- Mobile Styles Large */
 @media only screen and (max-width: 960px){
 	.now-available{
 		background: none;
+		margin-bottom: 0px;
 	}
 	.news-signup p{
    		font-size: 2em !important;
    }
    .sponsored-wrap{
-		margin-top: 75px;
+		margin-top: 0px;
 		text-align: center;
+	}
+	.sponsored-excerpt {
+	    margin: 0 auto;
+		float: none;
 	}
 	.cover-month-year,.flexslider-controls, img.mag-cover, .in-this-issue{
 		display: none !important; 
@@ -726,6 +734,7 @@ ol.flex-control-nav{
 		/******COVER IMAGE *****/
 	.cover-snippet-wrap{
 		background-color: white;
+		width: 100%;
 	}
 	.cover-blurb {
     	width: 100%;
@@ -737,5 +746,13 @@ ol.flex-control-nav{
 		width: 80%;
 	}
 	
+/*small screens */
+@media only screen and (max-width: 367px){
+	.instagram{
+		width: 100%;
+	}
+	.sponsored-content img {
+	    max-width: 100%;
+	}
 
 }

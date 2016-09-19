@@ -41,7 +41,8 @@ get_header();
     <?php wp_reset_postdata(); ?>
 
 <?php else : ?>
-    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <div class="padding-25 margin-bottom-20 white-bg thick-top-border">
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p></div>
 <?php endif; ?>
 </div>
 </div>
